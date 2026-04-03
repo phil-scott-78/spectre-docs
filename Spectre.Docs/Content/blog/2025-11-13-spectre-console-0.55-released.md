@@ -103,3 +103,5 @@ that instantiated this class directly will need an alternative approach.
 Finally, ANSI output is now disabled when stdout or stderr is redirected. This
 is a behavior change: output that previously included ANSI escape codes when
 piped or redirected will now be plain text.
+
+**Full Changelog**: https://github.com/spectreconsole/spectre.console/compare/0.54.0...0.55.0
