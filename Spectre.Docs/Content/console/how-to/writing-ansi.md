@@ -5,7 +5,7 @@ uid: "write-ansi"
 order: 2180
 ---
 
-As of version `0.54.1-alpha.0.33`, the Spectre.Console library relies on a library called
+As of version `0.55.0`, the Spectre.Console library relies on a library called
 `Spectre.Console.Ansi` to emit ANSI/VT escape sequences and
 [markup](xref:console-markup-reference) in the terminal.
 
