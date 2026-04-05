@@ -6,12 +6,14 @@ using Spectre.Console;
 using MyLittleContentEngine;
 using MyLittleContentEngine.MonorailCss;
 using MyLittleContentEngine.Services.Content.CodeAnalysis.Configuration;
+using MyLittleContentEngine.Services.Spa;
 using MyLittleContentEngine.UI.Components;
 using Spectre.Docs.Components;
 using Spectre.Docs.Components.Layouts;
 using Spectre.Docs.Components.Reference;
 using Spectre.Docs.Components.Shared;
 using Spectre.Docs.Services;
+using Spectre.Docs.Slots;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,6 +57,10 @@ builder.Services.AddContentEngineService(_ => new ContentEngineOptions
         SolutionPath = "../Spectre.Docs.slnx",
     })
     .WithFlatFileRedirects() // this will allow links without a trailing slash to redirect to the new URL with a trailing slash
+    .WithSpaNavigation(spa =>
+    {
+        spa.AddIsland<SpectreArticleIslandRenderer>();
+    })
     // this allows us to use blazor components within Markdown.
     // see https://phil-scott-78.github.io/MyLittleContentEngine/guides/markdown-extensions#blazor-within-markdown
     .AddMdazor()
@@ -130,5 +136,6 @@ app.MapRazorComponents<App>();
 // this adds the route for styles.css which is generated dynamically based on the used
 // CSS classes.
 app.UseMonorailCss();
+app.UseSpaNavigation();
 
 await app.RunOrBuildContent(args);
