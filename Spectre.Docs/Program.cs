@@ -54,6 +54,7 @@ builder.Services.AddContentEngineService(_ => new ContentEngineOptions
     {
         SolutionPath = "../Spectre.Docs.slnx",
     })
+    .WithFlatFileRedirects() // this will allow links without a trailing slash to redirect to the new URL with a trailing slash
     // this allows us to use blazor components within Markdown.
     // see https://phil-scott-78.github.io/MyLittleContentEngine/guides/markdown-extensions#blazor-within-markdown
     .AddMdazor()
