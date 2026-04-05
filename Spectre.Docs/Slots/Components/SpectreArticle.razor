@@ -1,0 +1,45 @@
+@using MyLittleContentEngine.UI.Components
+
+<div class="bg-white dark:bg-base-900 lg:rounded-lg lg:shadow-sm lg:border lg:border-base-200 lg:dark:border-base-800">
+    <div class="p-6 lg:p-8">
+        <div class="max-w-7xl mx-auto">
+            <header class="mb-8 pb-8 border-b border-base-200 dark:border-base-700">
+                <h1 class="text-3xl lg:text-4xl font-extrabold text-base-900 dark:text-base-100 mb-3 text-pretty">
+                    @Title
+                </h1>
+
+                @if (!string.IsNullOrEmpty(Description))
+                {
+                    <p class="text-lg text-base-600 dark:text-base-400 text-pretty">
+                        @Description
+                    </p>
+                }
+            </header>
+
+            <div class="lg:flex lg:gap-8">
+                <article class="flex-1 min-w-0">
+                    <div class="prose dark:prose-invert max-w-full prose-headings:scroll-m-20">
+                        @((MarkupString)HtmlContent)
+                    </div>
+                </article>
+
+                <aside class="hidden xl:block w-64 shrink-0">
+                    <div class="sticky top-24">
+                        <h3 class="text-sm font-semibold text-base-900 dark:text-base-100 uppercase tracking-wider mb-3">
+                            On this page
+                        </h3>
+                        <div class="text-sm">
+                            <OutlineNavigation ContentSelector="article" />
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string Description { get; set; } = "";
+    [Parameter] public string HtmlContent { get; set; } = "";
+}

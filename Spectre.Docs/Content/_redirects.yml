@@ -45,7 +45,6 @@ redirects:
   /cli/unit-testing: /cli/how-to/testing-command-line-applications
   /cli/migration: /cli/
   /cli/opencli: /cli/
-  /cli: /cli/tutorials/quick-start-your-first-cli-app
 
   # Appendix Section
   /appendix/styles: /console/reference/text-style-reference

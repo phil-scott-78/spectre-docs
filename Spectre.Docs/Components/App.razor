@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="@GetVersioned("/styles.css")">
     <script src="@GetVersioned("/_content/MyLittleContentEngine.UI/scripts.js")" defer></script>
+    <script src="@GetVersioned("/_content/MyLittleContentEngine.UI/spa-engine.js")" defer></script>
 
     <script>
         // Dark mode initialization
@@ -25,6 +26,15 @@
 <body data-sidebar-open="false" class="bg-white dark:bg-base-900 text-base-900 dark:text-base-100 transition-colors duration-200 dark:scheme-dark data-[sidebar-open=true]:overflow-hidden">
     <Routes/>
 
+    <script>
+        document.addEventListener('spa:before-navigate', () => {
+            const overlay = document.getElementById('sidebar-overlay');
+            if (overlay && !overlay.classList.contains('hidden')) {
+                overlay.classList.add('hidden');
+                document.body.setAttribute('data-sidebar-open', 'false');
+            }
+        });
+    </script>
 </body>
 </html>
 
