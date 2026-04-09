@@ -51,14 +51,7 @@ return app.Run(args);
 
 Run the application:
 
-```bash
-dotnet run -- myfile.txt
-# Starting to process: myfile.txt
-# Processing step 1...
-# Processing step 2...
-# Processing step 3...
-# Processing complete!
-```
+<Screenshot Src="/assets/cli-logging-step1.svg" Alt="Running file processing without logging" Embed="true" />
 
 This works, but we're using `Console.WriteLine` directly. We have no way to control verbosity or integrate with
 logging infrastructure.
@@ -107,13 +100,7 @@ return app.Run(args);
 
 Run it again:
 
-```bash
-dotnet run -- myfile.txt
-# info: ProcessCommand[0]
-#       Starting to process: myfile.txt
-# info: ProcessCommand[0]
-#       Processing step 1...
-```
+<Screenshot Src="/assets/cli-logging-step2.svg" Alt="Running file processing with structured logging" Embed="true" />
 
 Now we have structured logging with category names and log levels. But the level is hard-coded. Let's make it
 configurable.
@@ -179,17 +166,7 @@ The `TypeRegistrar` and `TypeResolver` stay the same as Step 2.
 
 Try different log levels:
 
-```bash
-dotnet run -- myfile.txt
-# info: Processing step 1...
-
-dotnet run -- myfile.txt --logLevel Debug
-# dbug: Detailed step 1 information
-# info: Processing step 1...
-
-dotnet run -- myfile.txt --logLevel Warning
-# warn: This is a warning message
-```
+<Screenshot Src="/assets/cli-logging-step3.svg" Alt="Running with different log levels" Embed="true" />
 
 This pattern has several advantages:
 

@@ -23,15 +23,7 @@ T:Spectre.Docs.Cli.Examples.DemoApps.FlagArguments.ServerCommand.Settings
 
 This produces the following usage:
 
-```
-USAGE:
-    myapp [OPTIONS]
-
-OPTIONS:
-    --port [PORT]           The port to listen on (default: 3000 if flag present)
-    --timeout [SECONDS]     Connection timeout in seconds
-    -h, --host              The host to bind to [default: localhost]
-```
+<Screenshot Src="/assets/cli-flag-arguments-help.svg" Alt="Help output showing flag value options" Embed="true" />
 
 ## Check if a Flag Was Provided
 

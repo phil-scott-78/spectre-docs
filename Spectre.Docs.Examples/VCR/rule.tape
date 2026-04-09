@@ -1,5 +1,4 @@
 Output "Spectre.Docs/Content/assets/rule.svg"
-Output "Spectre.Docs/Content/assets/rule.gif"
 Set DisableCursor true
 Set FontSize 22
 Set Theme "one dark"

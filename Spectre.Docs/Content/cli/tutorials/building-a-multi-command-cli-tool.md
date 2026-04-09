@@ -53,14 +53,7 @@ return app.Run(args);
 
 Run the commands:
 
-```bash
-dotnet run -- add Newtonsoft.Json
-# Added package Newtonsoft.Json
-
-dotnet run -- list
-# Packages:
-#   (none yet)
-```
+<Screenshot Src="/assets/cli-multi-command-step1.svg" Alt="Running add and list commands" />
 
 Both commands work. Try running `dotnet run -- --help` to see the auto-generated help listing both commands. The CLI knows about `add` and `list` without any extra configuration.
 
@@ -98,16 +91,7 @@ return app.Run(args);
 
 Now the commands are organized hierarchically:
 
-```bash
-dotnet run -- add package Newtonsoft.Json
-# Added package Newtonsoft.Json
-
-dotnet run -- add reference ../MyLib/MyLib.csproj
-# Added reference to ../MyLib/MyLib.csproj
-
-dotnet run -- add --help
-# Shows 'package' and 'reference' as subcommands
-```
+<Screenshot Src="/assets/cli-multi-command-step2.svg" Alt="Running hierarchical add commands and help" />
 
 The `add` branch groups related commands together. Users can run `add --help` to discover what's available.
 
@@ -146,20 +130,7 @@ return app.Run(args);
 
 The `--verbose` flag now works across all commands:
 
-```bash
-dotnet run -- add package Serilog --version 3.0.0 --verbose
-# Searching for package Serilog...
-# Resolving version 3.0.0...
-# Installing to ./packages...
-# Added package Serilog v3.0.0
-
-dotnet run -- list --verbose
-# Reading project file...
-# Packages:
-#   Newtonsoft.Json (13.0.1)
-# References:
-#   ../MyLib/MyLib.csproj
-```
+<Screenshot Src="/assets/cli-multi-command-step3.svg" Alt="Running commands with verbose output" />
 
 Settings inheritance keeps your code DRY. Define common options once, use them everywhere.
 

@@ -23,12 +23,7 @@ T:Spectre.Docs.Cli.Examples.DemoApps.MakingOptionsRequired.DeployCommand.Setting
 
 Help output marks these options clearly:
 
-```
-OPTIONS:
-    -e, --environment    Target environment. Required
-    -v, --version        Version to deploy. Required
-        --dry-run        Preview changes without applying them
-```
+<Screenshot Src="/assets/cli-required-options-help.svg" Alt="Help output showing required options" Embed="true" />
 
 ## Validate Across Multiple Options
 

@@ -1,5 +1,3 @@
-Output "anim.svg"
-
 Set DisableCursor true
 Set FontSize 22
 Set Theme "one dark"

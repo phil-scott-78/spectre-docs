@@ -14,7 +14,16 @@
                     ? $"width: 100%; aspect-ratio: {_aspectRatio};"
                     : "width: 100%;";
             }
-            <img fetchpriority="high" src="@Src" alt="@Alt" style="@imgStyle" />
+            @if (_svgContent != null)
+            {
+                <div style="@imgStyle" role="img" aria-label="@Alt">
+                    @((MarkupString)_svgContent)
+                </div>
+            }
+            else
+            {
+                <img fetchpriority="high" src="@Src" alt="@Alt" style="@imgStyle" />
+            }
         </div>
     </div>
 </div>
@@ -26,22 +35,36 @@
     [Parameter]
     public string Alt { get; set; } = "Screenshot";
 
+    [Parameter]
+    public bool Embed { get; set; }
+
     private string? _aspectRatio;
+    private string? _svgContent;
 
     protected override void OnParametersSet()
     {
         _aspectRatio = null;
+        _svgContent = null;
 
         // Only process SVG files from /assets/
         if (!string.IsNullOrEmpty(Src) &&
             Src.StartsWith("/assets/", StringComparison.OrdinalIgnoreCase) &&
             Src.EndsWith(".svg", StringComparison.OrdinalIgnoreCase))
         {
-            _aspectRatio = TryGetAspectRatio(Src);
+            var contentPath = ResolvePath(Src);
+            if (contentPath != null && File.Exists(contentPath))
+            {
+                if (Embed)
+                {
+                    _svgContent = TryReadAndPrepareSvg(contentPath);
+                }
+
+                _aspectRatio = TryParseAspectRatio(_svgContent, contentPath);
+            }
         }
     }
 
-    private string? TryGetAspectRatio(string srcUrl)
+    private string? ResolvePath(string srcUrl)
     {
         try
         {
@@ -54,19 +77,56 @@
                 relativePath = relativePath.Replace('/', Path.DirectorySeparatorChar);
             }
 
-            var contentPath = Path.Combine(Environment.ContentRootPath, "Content", relativePath);
+            return Path.Combine(Environment.ContentRootPath, "Content", relativePath);
+        }
+        catch
+        {
+            return null;
+        }
+    }
 
-            if (!File.Exists(contentPath))
+    private static string? TryReadAndPrepareSvg(string contentPath)
+    {
+        try
+        {
+            var svg = File.ReadAllText(contentPath);
+
+            // Inject width="100%" so inline SVG scales to fill container.
+            // viewBox handles aspect ratio preservation automatically.
+            svg = System.Text.RegularExpressions.Regex.Replace(
+                svg,
+                @"<svg\b",
+                @"<svg width=""100%"" ",
+                System.Text.RegularExpressions.RegexOptions.None,
+                TimeSpan.FromSeconds(1));
+
+            return svg;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    private string? TryParseAspectRatio(string? fullContent, string contentPath)
+    {
+        try
+        {
+            string content;
+            if (fullContent != null)
             {
-                return null;
+                // Reuse already-read content from embed mode
+                content = fullContent.Length > 1024 ? fullContent[..1024] : fullContent;
             }
-
-            // Read only first 1KB - viewBox should be in opening <svg> tag
-            using var stream = new FileStream(contentPath, FileMode.Open, FileAccess.Read, FileShare.Read);
-            using var reader = new StreamReader(stream);
-            var buffer = new char[1024];
-            var charsRead = reader.Read(buffer, 0, buffer.Length);
-            var content = new string(buffer, 0, charsRead);
+            else
+            {
+                // Read only first 1KB - viewBox should be in opening <svg> tag
+                using var stream = new FileStream(contentPath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                using var reader = new StreamReader(stream);
+                var buffer = new char[1024];
+                var charsRead = reader.Read(buffer, 0, buffer.Length);
+                content = new string(buffer, 0, charsRead);
+            }
 
             // Parse viewBox="minX minY width height" - captures the last two numbers (width and height)
             var match = System.Text.RegularExpressions.Regex.Match(

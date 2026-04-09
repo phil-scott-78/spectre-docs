@@ -23,16 +23,7 @@ T:Spectre.Docs.Cli.Examples.DemoApps.DefiningCommandsAndArguments.FileCopyComman
 
 This settings class produces the following usage:
 
-```
-USAGE:
-    myapp <source> [destination] [OPTIONS]
-
-OPTIONS:
-    -f, --force                 Overwrite existing files without prompting
-    -b, --buffer-size <INT>     Buffer size in KB for the copy operation [default: 64]
-        --preserve-timestamps   Preserve original file timestamps
-    -v                          Enable verbose output
-```
+<Screenshot Src="/assets/cli-defining-arguments-help.svg" Alt="Help output showing arguments and options" Embed="true" />
 
 Boolean properties become flags—users include them to set `true`, omit them for `false`. Properties with `[DefaultValue]` show their defaults in help text.
 

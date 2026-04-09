@@ -52,14 +52,7 @@ foreach (var group in settings.Lookups)
 
 Output:
 
-```
-env:
-  - dev
-  - staging
-  - prod
-region:
-  - us
-```
+<Screenshot Src="/assets/cli-dictionary-lookup-output.svg" Alt="Lookup option output showing grouped values" Embed="true" />
 
 ## Use Read-Only Dictionaries
 

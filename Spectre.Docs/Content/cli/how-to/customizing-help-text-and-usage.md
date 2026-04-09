@@ -21,17 +21,9 @@ By default, help text shows the executable name (often ending in `.dll` during d
 M:Spectre.Docs.Cli.Examples.DemoApps.CustomizingHelpText.Demo.RunAsync(System.String[])
 ```
 
-This produces help output like:
+This produces the following help output:
 
-```
-USAGE:
-    myapp <environment> [OPTIONS]
-
-EXAMPLES:
-    myapp production
-    myapp staging --force
-    myapp dev --dry-run --verbose
-```
+<Screenshot Src="/assets/cli-customizing-help-usage.svg" Alt="Help output with custom application name and examples" Embed="true" />
 
 ## Customize Help Styling
 

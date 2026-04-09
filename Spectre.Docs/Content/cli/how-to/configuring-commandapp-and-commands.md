@@ -5,11 +5,11 @@ uid: "cli-app-configuration"
 order: 2050
 ---
 
-When building a CLI with multiple commands, use `CommandApp.Configure` to register commands, set up aliases, and customize how your application appears in help output.
+When building a CLI with multiple commands, use `CommandApp.Configure` to register commands, define aliases, and customize how your application appears in help output.
 
 ## What We're Building
 
-A multi-command CLI with `add`, `remove`, and `list`—each with aliases (like `a` for `add`) and descriptions shown in help:
+A multi-command CLI with `add`, `remove`, and `list`—each with descriptions and examples in help, plus aliases so users can type shorter names like `a` for `add`:
 
 <Screenshot Src="/assets/cli-configuring-app.svg" Alt="Configuring CommandApp demonstration" />
 
@@ -21,19 +21,7 @@ Use `AddCommand<T>("name")` to register each command, then chain methods to add 
 M:Spectre.Docs.Cli.Examples.DemoApps.ConfiguringCommandApp.Demo.RunAsync(System.String[])
 ```
 
-This produces help output like:
-
-```
-USAGE:
-    myapp [COMMAND] [OPTIONS]
-
-COMMANDS:
-    add (a)              Add a new item
-    remove (rm, delete)  Remove an item
-    list (ls)            List all items
-```
-
-Users can invoke commands by name or any alias: `myapp rm file.txt` works the same as `myapp remove file.txt`.
+Aliases aren't displayed in help output, but they work as alternative names. Users can invoke commands by name or any alias — `myapp rm file.txt` works the same as `myapp remove file.txt`.
 
 ## Configure Global Settings
 

@@ -52,13 +52,7 @@ return app.Run(args);
 
 Run the application:
 
-```bash
-dotnet run -- Alice
-# Hello, Alice!
-
-dotnet run -- Alice --formal
-# Good day, Alice.
-```
+<Screenshot Src="/assets/cli-di-step1.svg" Alt="Running greeting command without DI" Embed="true" />
 
 This works, but the greeting logic is embedded in the command. If we wanted to test this command, we'd have no way to
 substitute different greeting behavior. Let's fix that.
@@ -105,10 +99,7 @@ return app.Run(args);
 
 Run it again:
 
-```bash
-dotnet run -- Alice
-# Hello, Alice!
-```
+<Screenshot Src="/assets/cli-di-step2.svg" Alt="Running greeting command with DI service" Embed="true" />
 
 The output looks the same, but now the greeting logic is in a separate service. The framework automatically injects
 `IGreetingService` into the command's constructor.
@@ -179,16 +170,7 @@ The `TypeRegistrar` and `TypeResolver` stay the same - they're reusable infrastr
 
 Try all the greeting styles using the `--style` option:
 
-```bash
-dotnet run -- Alice
-# Hello, Alice!
-
-dotnet run -- Alice --style Formal
-# Good day, Alice.
-
-dotnet run -- Alice --style Enthusiastic
-# Hey there, Alice! Great to see you!
-```
+<Screenshot Src="/assets/cli-di-step3.svg" Alt="Running greeting command with different styles" Embed="true" />
 
 This pattern has several advantages:
 
