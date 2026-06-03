@@ -17,8 +17,8 @@ A configuration command accepting key-value pairs like `--value port=8080`, plus
 
 Use `IDictionary<string, T>` to collect key-value pairs. Users specify values in `key=value` format:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.DictionaryOptions.ConfigCommand.Settings
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/DictionaryOptions/Main.cs > ConfigCommand.Settings
 ```
 
 Users invoke the command with repeated options:

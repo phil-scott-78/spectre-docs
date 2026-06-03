@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.53.0 released!
-Description: Someone said CancellationToken?
-Date: 2025-10-26
+title: Spectre.Console 0.53.0 released!
+description: Someone said CancellationToken?
+date: 2025-10-26
 ---
 
 Version `0.53.0` of Spectre.Console has been released!

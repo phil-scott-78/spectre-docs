@@ -1,11 +1,11 @@
 @page "/"
 @using System.Collections.Immutable
 @using Spectre.Console
-@inject ContentEngineOptions ContentEngineOptions
+@inject PenningtonOptions PenningtonOptions
 @inject IMarkdownContentService<SpectreConsoleFrontMatter> ConsoleContentServices
 @inject IMarkdownContentService<SpectreConsoleCliFrontMatter> CliContentServices
 
-<PageTitle>@ContentEngineOptions.SiteTitle</PageTitle>
+<PageTitle>@PenningtonOptions.SiteTitle</PageTitle>
 
 <HeadContent>
     <meta name="description" content="Documentation for Spectre.Console and Spectre.CLI - rich console UI library and command-line application framework for .NET" />
@@ -181,8 +181,8 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _consolePages = await ConsoleContentServices.GetAllContentPagesAsync();
-        _cliPages = await CliContentServices.GetAllContentPagesAsync();
+        _consolePages = (await ConsoleContentServices.GetAllContentPagesAsync()).ToImmutableList();
+        _cliPages = (await CliContentServices.GetAllContentPagesAsync()).ToImmutableList();
 
         await base.OnInitializedAsync();
     }

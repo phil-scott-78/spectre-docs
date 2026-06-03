@@ -14,32 +14,32 @@ When you have an operation without measurable progress, use `AnsiConsole.Status(
 
 To indicate activity, wrap your operation in a status context.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.ShowingActivityStatusHowTo.ShowSpinner
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/ShowingActivityStatusHowTo.cs > ShowingActivityStatusHowTo.ShowSpinner
 ```
 
 ## Update the Status Message
 
 To show what's happening, call `ctx.Status()` with new text.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.ShowingActivityStatusHowTo.UpdateStatusMessage
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/ShowingActivityStatusHowTo.cs > ShowingActivityStatusHowTo.UpdateStatusMessage
 ```
 
 ## Change the Spinner Style
 
 If you want a different animation, use `.Spinner()` and `.SpinnerStyle()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.ShowingActivityStatusHowTo.ChangeSpinnerStyle
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/ShowingActivityStatusHowTo.cs > ShowingActivityStatusHowTo.ChangeSpinnerStyle
 ```
 
 ## Use Async
 
 To use with async operations, call `.StartAsync()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.ShowingActivityStatusHowTo.UseAsync
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/ShowingActivityStatusHowTo.cs > ShowingActivityStatusHowTo.UseAsync
 ```
 
 ## See Also

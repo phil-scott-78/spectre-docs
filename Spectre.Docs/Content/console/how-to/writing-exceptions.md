@@ -11,32 +11,32 @@ When you catch an exception and want to display it with formatting and colors, u
 
 To display an exception with default formatting, pass it to `WriteException`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.WritingExceptionsHowTo.WriteBasicException
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/WritingExceptionsHowTo.cs > WritingExceptionsHowTo.WriteBasicException
 ```
 
 ## Shorten File Paths
 
 To make stack traces more readable, use `ExceptionFormats.ShortenPaths`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.WritingExceptionsHowTo.ShortenFilePaths
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/WritingExceptionsHowTo.cs > WritingExceptionsHowTo.ShortenFilePaths
 ```
 
 ## Shorten Everything with Links
 
 For the cleanest output with clickable source links, combine `ShortenEverything` and `ShowLinks`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.WritingExceptionsHowTo.ShortenEverythingWithLinks
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/WritingExceptionsHowTo.cs > WritingExceptionsHowTo.ShortenEverythingWithLinks
 ```
 
 ## Customize Colors
 
 To match your application's theme, use `ExceptionSettings` with a custom `ExceptionStyle`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.WritingExceptionsHowTo.CustomizeColors
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/WritingExceptionsHowTo.cs > WritingExceptionsHowTo.CustomizeColors
 ```
 
 ## See Also

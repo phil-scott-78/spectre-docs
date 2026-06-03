@@ -23,24 +23,24 @@ For **tabular data with rows and columns**, use [Table](xref:console-widget-tabl
 
 Create a panel by passing text or any renderable content.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.BasicPanelExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Panel.cs > PanelExamples.BasicPanelExample
 ```
 
 ## Headers
 
 Add a title to identify the panel's content.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelHeaderExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Panel.cs > PanelExamples.PanelHeaderExample
 ```
 
 ### Header Alignment
 
 Position headers on the left, center, or right of the panel border.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelHeaderAlignmentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Panel.cs > PanelExamples.PanelHeaderAlignmentExample
 ```
 
 ## Borders
@@ -49,8 +49,8 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelHead
 
 Choose a border style to match your application's visual tone.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelBorderStylesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Panel.cs > PanelExamples.PanelBorderStylesExample
 ```
 
 > [!NOTE]
@@ -60,16 +60,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelBord
 
 Use `NoBorder()` when you want padding and headers without a visible border.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelNoBorderExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Panel.cs > PanelExamples.PanelNoBorderExample
 ```
 
 ### Border Color
 
 Apply color to make panels stand out or convey meaning.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelBorderColorExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Panel.cs > PanelExamples.PanelBorderColorExample
 ```
 
 ## Layout
@@ -78,24 +78,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelBord
 
 Control the space between content and the border.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelPaddingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Panel.cs > PanelExamples.PanelPaddingExample
 ```
 
 ### Expanding to Fill Width
 
 By default, panels fit their content. Use `Expand()` to fill the available width.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelExpandExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Panel.cs > PanelExamples.PanelExpandExample
 ```
 
 ### Fixed Width
 
 Set an explicit width when you need consistent sizing.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelWidthExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Panel.cs > PanelExamples.PanelWidthExample
 ```
 
 ## Nesting Content
@@ -104,24 +104,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelWidt
 
 Create visual hierarchy by placing panels inside panels.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelNestingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Panel.cs > PanelExamples.PanelNestingExample
 ```
 
 ### Tables in Panels
 
 Combine panels with other widgets like tables for structured displays.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelWithTableExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Panel.cs > PanelExamples.PanelWithTableExample
 ```
 
 ## Combining Options
 
 Panels support combining multiple styling options for rich displays.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.PanelExamples.PanelFullySyledExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Panel.cs > PanelExamples.PanelFullySyledExample
 ```
 
 ## See Also

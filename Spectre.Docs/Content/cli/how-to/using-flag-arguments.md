@@ -17,8 +17,8 @@ The `--port` flag used three ways: omitted entirely, present without a value (us
 
 Use `FlagValue<T>` with square brackets in the template to indicate the value is optional. When users specify `--port` without a value, the flag is set but uses the type's default. When they specify `--port 8080`, the flag is set with that value.
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.FlagArguments.ServerCommand.Settings
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/FlagArguments/Main.cs > ServerCommand.Settings
 ```
 
 This produces the following usage:
@@ -37,8 +37,8 @@ OPTIONS:
 
 The `FlagValue<T>` type has two properties: `IsSet` indicates whether the flag was present on the command line, and `Value` contains the parsed value (or the type's default if no value was given).
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Cli.Examples.DemoApps.FlagArguments.ServerCommand.Execute(Spectre.Console.Cli.CommandContext,Spectre.Docs.Cli.Examples.DemoApps.FlagArguments.ServerCommand.Settings,System.Threading.CancellationToken)
+```csharp:symbol,bodyonly
+Spectre.Docs.Cli.Examples/DemoApps/FlagArguments/Main.cs > ServerCommand.Execute
 ```
 
 This lets you distinguish between:

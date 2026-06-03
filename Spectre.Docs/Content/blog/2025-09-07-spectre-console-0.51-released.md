@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.51.1 released!
-Description: Not a substitute for human interaction.
-Date: 2025-09-07
+title: Spectre.Console 0.51.1 released!
+description: Not a substitute for human interaction.
+date: 2025-09-07
 ---
 
 Version `0.51.1` of Spectre.Console has been released!

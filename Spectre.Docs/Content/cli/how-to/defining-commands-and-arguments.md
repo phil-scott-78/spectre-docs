@@ -17,8 +17,8 @@ A file copy command with a required source path, optional destination, and vario
 
 Use `[CommandArgument]` with a position index and template: angle brackets `<name>` for required arguments, square brackets `[name]` for optional ones. For named parameters, use `[CommandOption]` with short and/or long forms separated by `|`.
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.DefiningCommandsAndArguments.FileCopyCommand.Settings
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/DefiningCommandsAndArguments/Main.cs > FileCopyCommand.Settings
 ```
 
 This settings class produces the following usage:
@@ -40,8 +40,8 @@ Boolean properties become flags—users include them to set `true`, omit them fo
 
 For commands that process multiple files or need repeatable options, use array types. An array argument captures all remaining positional values and must be the last argument. Array options can be specified multiple times.
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.DefiningCommandsAndArguments.MultiFileCommand.Settings
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/DefiningCommandsAndArguments/Main.cs > MultiFileCommand.Settings
 ```
 
 Users invoke this as:
@@ -54,8 +54,8 @@ myapp file1.txt file2.txt file3.txt --tag api --tag production
 
 When an option should only accept specific values, use an enum type. The framework validates input and displays allowed values in help text.
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.DefiningCommandsAndArguments.BuildCommand.Settings
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/DefiningCommandsAndArguments/Main.cs > BuildCommand.Settings
 ```
 
 Invalid values produce a clear error message listing the allowed options.

@@ -25,8 +25,8 @@ For **displaying existing images**, use [CanvasImage](xref:console-widget-canvas
 
 Create a canvas with specified dimensions and set individual pixels using `SetPixel(x, y, color)`. Pixels use zero-based coordinates starting from the top-left corner.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CanvasExamples.BasicCanvasExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Canvas.cs > CanvasExamples.BasicCanvasExample
 ```
 
 ## Creating Patterns
@@ -35,16 +35,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CanvasExamples.BasicCan
 
 Use loops to create repeating patterns across the canvas.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CanvasExamples.CanvasPatternExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Canvas.cs > CanvasExamples.CanvasPatternExample
 ```
 
 ### Gradients
 
 Create smooth color transitions by calculating pixel colors based on position.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CanvasExamples.CanvasGradientExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Canvas.cs > CanvasExamples.CanvasGradientExample
 ```
 
 ## Controlling Size and Scaling
@@ -53,24 +53,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CanvasExamples.CanvasGr
 
 Use `MaxWidth` to constrain the rendered canvas width. The canvas automatically scales while maintaining the aspect ratio.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CanvasExamples.CanvasScalingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Canvas.cs > CanvasExamples.CanvasScalingExample
 ```
 
 ### Pixel Width
 
 Use `PixelWidth` to control how many console characters each pixel occupies. Larger values create wider, more visible pixels.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CanvasExamples.CanvasPixelWidthExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Canvas.cs > CanvasExamples.CanvasPixelWidthExample
 ```
 
 ### Disabling Scaling
 
 Set `Scale = false` to prevent automatic resizing when the canvas exceeds available space. This ensures pixel-perfect rendering but may cause clipping.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CanvasExamples.CanvasNoScalingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Canvas.cs > CanvasExamples.CanvasNoScalingExample
 ```
 
 ## Advanced Usage
@@ -79,24 +79,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CanvasExamples.CanvasNo
 
 Combine pixel operations to create custom data visualizations like bar charts or graphs.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CanvasExamples.CanvasBarVisualizationExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Canvas.cs > CanvasExamples.CanvasBarVisualizationExample
 ```
 
 ### Drawing Lines
 
 Create line patterns by calculating pixel positions along a path.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CanvasExamples.CanvasDiagonalLineExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Canvas.cs > CanvasExamples.CanvasDiagonalLineExample
 ```
 
 ### Complex Compositions
 
 Build sophisticated graphics by combining multiple drawing operations with helper methods.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CanvasExamples.CanvasComplexPatternExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Canvas.cs > CanvasExamples.CanvasComplexPatternExample
 ```
 
 ## See Also

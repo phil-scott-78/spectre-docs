@@ -17,8 +17,8 @@ A multi-command CLI with `add`, `remove`, and `list`—each with aliases (like `
 
 Use `AddCommand<T>("name")` to register each command, then chain methods to add descriptions, aliases, and examples:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Cli.Examples.DemoApps.ConfiguringCommandApp.Demo.RunAsync(System.String[])
+```csharp:symbol,bodyonly
+Spectre.Docs.Cli.Examples/DemoApps/ConfiguringCommandApp/Main.cs > Demo.RunAsync
 ```
 
 This produces help output like:
@@ -39,8 +39,8 @@ Users can invoke commands by name or any alias: `myapp rm file.txt` works the sa
 
 Access `config.Settings` to adjust parsing behavior:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Cli.Examples.DemoApps.ConfiguringCommandApp.SettingsDemo.RunAsync(System.String[])
+```csharp:symbol,bodyonly
+Spectre.Docs.Cli.Examples/DemoApps/ConfiguringCommandApp/Main.cs > SettingsDemo.RunAsync
 ```
 
 Common settings include:

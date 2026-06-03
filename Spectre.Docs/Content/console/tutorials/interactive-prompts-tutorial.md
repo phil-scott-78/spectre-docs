@@ -28,8 +28,8 @@ Here's what our pizza order flow will look like:
 
 Let's start by asking for the customer's name. The `Ask<string>()` method displays a prompt and waits for input:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.InteractivePromptsTutorial.AskCustomerName
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/InteractivePromptsTutorial.cs > InteractivePromptsTutorial.AskCustomerName
 ```
 
 Run the code:
@@ -50,8 +50,8 @@ You've captured your first user input.
 
 Now let's let the user pick from a list of options. A `SelectionPrompt` shows an interactive menu where users navigate with arrow keys:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.InteractivePromptsTutorial.ChoosePizzaSize
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/InteractivePromptsTutorial.cs > InteractivePromptsTutorial.ChoosePizzaSize
 ```
 
 Run it:
@@ -72,8 +72,8 @@ An interactive menu with just a few lines of code.
 
 What if the user wants to pick multiple items? That's where `MultiSelectionPrompt` comes in. Users can toggle items with the spacebar and confirm with Enter:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.InteractivePromptsTutorial.SelectToppings
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/InteractivePromptsTutorial.cs > InteractivePromptsTutorial.SelectToppings
 ```
 
 Run it:
@@ -94,8 +94,8 @@ Your users can now make multiple selections.
 
 Before placing the order, let's ask for confirmation. The `Confirm()` method presents a simple yes/no question:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.InteractivePromptsTutorial.ConfirmOrder
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/InteractivePromptsTutorial.cs > InteractivePromptsTutorial.ConfirmOrder
 ```
 
 Run it:
@@ -116,8 +116,8 @@ Now you can get confirmation before important actions.
 
 Let's put it all together into a complete ordering flow with a styled order summary:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.InteractivePromptsTutorial.Run(Spectre.Console.IAnsiConsole)
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/InteractivePromptsTutorial.cs > InteractivePromptsTutorial.Run
 ```
 
 Run the complete application:

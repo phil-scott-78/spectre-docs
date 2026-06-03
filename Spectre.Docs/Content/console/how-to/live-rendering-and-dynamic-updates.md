@@ -14,32 +14,32 @@ When you need to update output without scrolling, use `AnsiConsole.Live()`.
 
 To modify content and refresh the display, call `ctx.Refresh()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.LiveRenderingHowTo.UpdateInPlace
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/LiveRenderingHowTo.cs > LiveRenderingHowTo.UpdateInPlace
 ```
 
 ## Replace Content
 
 To swap the entire display, use `ctx.UpdateTarget()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.LiveRenderingHowTo.ReplaceContent
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/LiveRenderingHowTo.cs > LiveRenderingHowTo.ReplaceContent
 ```
 
 ## Clear on Complete
 
 If you want the display cleared after, use `.AutoClear(true)`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.LiveRenderingHowTo.AutoClearOnComplete
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/LiveRenderingHowTo.cs > LiveRenderingHowTo.AutoClearOnComplete
 ```
 
 ## Use Async
 
 To use with async operations, call `.StartAsync()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.LiveRenderingHowTo.UseAsync
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/LiveRenderingHowTo.cs > LiveRenderingHowTo.UseAsync
 ```
 
 ## See Also

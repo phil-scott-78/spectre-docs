@@ -17,8 +17,8 @@ A file processor returning specific exit codes—scripts can distinguish "file n
 
 For most applications, `SetExceptionHandler` provides the cleanest approach. It intercepts exceptions from both the parsing phase and command execution, letting you format errors consistently and return specific exit codes.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Cli.Examples.DemoApps.HandlingErrorsAndExitCodes.Demo.RunAsync(System.String[])
+```csharp:symbol,bodyonly
+Spectre.Docs.Cli.Examples/DemoApps/HandlingErrorsAndExitCodes/Main.cs > Demo.RunAsync
 ```
 
 The handler receives the exception and an `ITypeResolver` (which is `null` during parsing, before the command is resolved). Use pattern matching to return different exit codes based on exception type—automation scripts can then distinguish between "file not found" (exit 3), "invalid operation" (exit 2), and general errors (exit 1).
@@ -27,8 +27,8 @@ The handler receives the exception and an `ITypeResolver` (which is `null` durin
 
 When you need full control over exception flow—perhaps to integrate with a logging framework, perform cleanup, or handle exceptions at different layers—use `PropagateExceptions()`. This re-throws exceptions from `app.Run()`, letting you catch them in your own try-catch block.
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.HandlingErrorsAndExitCodes.PropagateExceptionsDemo
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/HandlingErrorsAndExitCodes/Main.cs > PropagateExceptionsDemo
 ```
 
 This approach requires more code but gives you complete flexibility. You can catch specific exception types, access their properties for detailed messages, and integrate with any error reporting system.

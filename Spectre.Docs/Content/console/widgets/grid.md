@@ -24,8 +24,8 @@ For **structured data with visible borders**, use [Table](xref:console-widget-ta
 
 Add columns first, then populate rows with content. Each row must have the same number of cells as columns.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.BasicGridExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Grid.cs > GridExamples.BasicGridExample
 ```
 
 ## Column Configuration
@@ -34,32 +34,32 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.BasicGridE
 
 Use fixed widths to control column sizing precisely, or omit width for auto-sizing based on content.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridColumnWidthExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Grid.cs > GridExamples.GridColumnWidthExample
 ```
 
 ### Alignment
 
 Align content within columns using `Justify.Left`, `Justify.Right`, or `Justify.Center`. Right-align numeric data for easier comparison.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridAlignmentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Grid.cs > GridExamples.GridAlignmentExample
 ```
 
 ### Padding
 
 Control spacing between columns with custom padding. Adjust the right padding to increase or decrease column separation.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridPaddingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Grid.cs > GridExamples.GridPaddingExample
 ```
 
 ### Preventing Text Wrap
 
 Use `NoWrap` when content should be truncated rather than wrapped to multiple lines.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridNoWrapExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Grid.cs > GridExamples.GridNoWrapExample
 ```
 
 ## Grid Layout
@@ -68,16 +68,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridNoWrap
 
 Use `Expand = true` to make the grid fill available console width—useful for dashboards or full-width layouts.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridExpandExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Grid.cs > GridExamples.GridExpandExample
 ```
 
 ### Fixed Grid Width
 
 Constrain the entire grid to a specific width when you need precise sizing.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridWidthExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Grid.cs > GridExamples.GridWidthExample
 ```
 
 ## Working with Rows
@@ -86,16 +86,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridWidthE
 
 Insert empty rows to create visual separation between groups of content.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridEmptyRowsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Grid.cs > GridExamples.GridEmptyRowsExample
 ```
 
 ### Adding Multiple Columns
 
 Use the `AddColumns()` extension method to quickly add several columns at once.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridAddColumnsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Grid.cs > GridExamples.GridAddColumnsExample
 ```
 
 ## Advanced Usage
@@ -104,24 +104,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridAddCol
 
 Embed other widgets like Panels, Charts, or Progress bars within grid cells for rich layouts.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridNestedContentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Grid.cs > GridExamples.GridNestedContentExample
 ```
 
 ### Complex Layouts
 
 Combine multiple features to create sophisticated layouts with mixed content types.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridComplexLayoutExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Grid.cs > GridExamples.GridComplexLayoutExample
 ```
 
 ### Dashboard Layouts
 
 Create multi-level layouts by nesting grids to build complex dashboard-style interfaces.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.GridExamples.GridDashboardExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Grid.cs > GridExamples.GridDashboardExample
 ```
 
 ## See Also

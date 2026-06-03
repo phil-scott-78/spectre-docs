@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.41 released!
-Description: In this release we (mostly Phil) have been focusing on getting the new fancy Roslyn Analyzers out the door...
-Date: 2021-07-19
+title: Spectre.Console 0.41 released!
+description: In this release we (mostly Phil) have been focusing on getting the new fancy Roslyn Analyzers out the door...
+date: 2021-07-19
 ---
 
 In this release, we (mostly [Phil](https://twitter.com/philco78)) have been focusing on getting the new fancy Roslyn Analyzers out the door.

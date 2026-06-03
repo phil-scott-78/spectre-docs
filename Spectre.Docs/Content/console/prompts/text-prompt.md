@@ -25,8 +25,8 @@ For **selecting from a predefined list of options**, use [SelectionPrompt](xref:
 
 Use `AnsiConsole.Ask<T>()` for the simplest way to prompt for user input.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.BasicAskExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.BasicAskExample
 ```
 
 ## Default Values
@@ -35,24 +35,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.Basi
 
 You can provide a default value that users can accept by pressing Enter.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.AskWithDefaultExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.AskWithDefaultExample
 ```
 
 ### Configuring Default Display
 
 Use `DefaultValue()` to set a default and control whether it's shown to the user.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.DefaultValueExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.DefaultValueExample
 ```
 
 ## Type Conversion
 
 TextPrompt automatically converts input to your target type using built-in type converters.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.TypeConversionExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.TypeConversionExample
 ```
 
 This works with any type that has a `TypeConverter`, including `int`, `decimal`, `DateTime`, `Guid`, and custom types.
@@ -61,8 +61,8 @@ This works with any type that has a `TypeConverter`, including `int`, `decimal`,
 
 For more control over prompt behavior, create a `TextPrompt<T>` instance directly instead of using `Ask()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.TextPromptBasicExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.TextPromptBasicExample
 ```
 
 ## Secret Input
@@ -71,16 +71,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.Text
 
 Use `Secret()` to mask sensitive input with asterisks by default.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.SecretInputExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.SecretInputExample
 ```
 
 ### Custom Mask Characters
 
 Specify a custom mask character or use `null` to completely hide input.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.CustomMaskExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.CustomMaskExample
 ```
 
 ## Validation
@@ -89,16 +89,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.Cust
 
 Use `Validate()` with a boolean function to check if input is acceptable.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.SimpleValidationExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.SimpleValidationExample
 ```
 
 ### Rich Validation
 
 For more complex validation with custom error messages, use `ValidationResult`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.RichValidationExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.RichValidationExample
 ```
 
 ## Restricting to Choices
@@ -107,8 +107,8 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.Rich
 
 Use `AddChoices()` to restrict input to specific values, displayed as options to the user.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.ChoicesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.ChoicesExample
 ```
 
 This is useful for limited options where users can type their choice. For better UX with many options, use [SelectionPrompt](xref:console-prompt-selection) instead.
@@ -117,32 +117,32 @@ This is useful for limited options where users can type their choice. For better
 
 Use `HideChoices()` when you want to validate against specific values without revealing them.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.HiddenChoicesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.HiddenChoicesExample
 ```
 
 ## Optional Input
 
 Use `AllowEmpty()` to make input optional, allowing users to press Enter without typing anything.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.AllowEmptyExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.AllowEmptyExample
 ```
 
 ## Styling
 
 Customize the appearance of your prompts with different colors for the prompt text, default values, and choices.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.StylingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.StylingExample
 ```
 
 ## Custom Converters
 
 Use `WithConverter()` to control how choices are displayed to users while keeping their underlying values.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.TextPromptExamples.CustomConverterExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/TextPrompt.cs > TextPromptExamples.CustomConverterExample
 ```
 
 ## See Also

@@ -80,7 +80,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _posts = await BlogService.GetAllContentPagesAsync();
-        _posts = _posts.Where(p => !p.FrontMatter.IsDraft).ToList();
+        var all = await BlogService.GetAllContentPagesAsync();
+        _posts = all.Where(p => !p.FrontMatter.IsDraft).ToList();
     }
 }

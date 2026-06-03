@@ -23,8 +23,8 @@ For **simple side-by-side content** without nested regions, use [Columns](xref:c
 
 Split a layout into columns or rows, then update each section by name.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.BasicLayoutExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Layout.cs > LayoutExamples.BasicLayoutExample
 ```
 
 ## Navigation and Updates
@@ -33,16 +33,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.BasicLay
 
 Use named sections to access and update specific regions, making your layout easier to manage and modify.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.LayoutNavigationExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Layout.cs > LayoutExamples.LayoutNavigationExample
 ```
 
 ### Splitting into Rows
 
 Use `SplitRows()` to create vertical sections like headers, content areas, and footers.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.LayoutRowsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Layout.cs > LayoutExamples.LayoutRowsExample
 ```
 
 ## Size Control
@@ -51,24 +51,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.LayoutRo
 
 Use `Size()` to set exact widths or heights for sections that need consistent dimensions, like sidebars or headers.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.LayoutFixedSizeExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Layout.cs > LayoutExamples.LayoutFixedSizeExample
 ```
 
 ### Proportional Sizing with Ratios
 
 Use `Ratio()` to distribute space proportionally when sections should scale relative to each other.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.LayoutRatioExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Layout.cs > LayoutExamples.LayoutRatioExample
 ```
 
 ### Minimum Sizes
 
 Use `MinimumSize()` to ensure sections remain readable even when space is constrained.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.LayoutMinimumSizeExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Layout.cs > LayoutExamples.LayoutMinimumSizeExample
 ```
 
 ## Advanced Usage
@@ -77,40 +77,40 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.LayoutMi
 
 Create complex multi-level layouts by splitting sections recursively to build sophisticated interfaces.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.LayoutNestedExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Layout.cs > LayoutExamples.LayoutNestedExample
 ```
 
 ### Dashboard Layout
 
 Combine multiple layout techniques to create a complete dashboard with headers, sidebars, content areas, and status bars.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.LayoutDashboardExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Layout.cs > LayoutExamples.LayoutDashboardExample
 ```
 
 ### Three-Column Layout
 
 Create a classic application layout with navigation, main content, and sidebar regions containing different widget types.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.LayoutThreeColumnExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Layout.cs > LayoutExamples.LayoutThreeColumnExample
 ```
 
 ### Dynamic Visibility
 
 Control section visibility at runtime to show or hide regions based on application state.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.LayoutVisibilityExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Layout.cs > LayoutExamples.LayoutVisibilityExample
 ```
 
 ### Dynamic Content Updates
 
 Update section content in response to events or state changes for interactive interfaces.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.LayoutExamples.LayoutDynamicUpdateExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Layout.cs > LayoutExamples.LayoutDynamicUpdateExample
 ```
 
 ## See Also

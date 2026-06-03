@@ -4,10 +4,10 @@ This is the documentation website for **Spectre.Console** (rich console UI libra
 
 ## Technology Stack
 
-- **.NET 10.0** - Blazor Server application
-- **MyLittleContentEngine** - Markdown-based content management framework
+- **.NET 11.0** - Blazor Server application
+- **Pennington** - Markdown-based content engine for .NET
 - **MonorailCss** - Utility-first CSS framework
-- **Roslyn** - Code analysis for live code sample integration
+- **Pennington.TreeSitter** - Tree-sitter code-fragment extraction for live code samples
 
 ## Getting Started
 
@@ -119,68 +119,71 @@ Your blog content here...
 
 Blog posts are automatically sorted by date (newest first) and appear at `/blog/your-file-name`.
 
-## Linking to Code with xmldocid
+## Linking to Code with `:symbol` fences
 
-The site uses **Roslyn integration** to embed live code from your source files directly into documentation. This ensures code samples are always up-to-date with the actual implementation.
+The site uses **Pennington.TreeSitter** to embed live code from your source files directly into documentation. This ensures code samples are always up-to-date with the actual implementation.
 
 ### Syntax
 
-Use the special code fence `` ```csharp:xmldocid ``:
+Use the special code fence `` ```csharp:symbol ``. The body is a source file path (relative to the repo root) optionally followed by `> Type.Member`:
 
 ````markdown
-```csharp:xmldocid
-M:Spectre.Docs.Examples.AsciiCast.Samples.ProgressSample.Run(Spectre.Console.IAnsiConsole)
-M:Spectre.Docs.Examples.AsciiCast.Samples.ProgressSample.CreateTasks(Spectre.Console.ProgressContext,System.Random)
+```csharp:symbol
+Spectre.Docs.Examples/Showcase/ProgressSample.cs > ProgressSample.Run
+Spectre.Docs.Examples/Showcase/ProgressSample.cs > ProgressSample.CreateTasks
 ```
 ````
 
-### XML Doc ID Format
+### Reference format
 
-Use standard .NET XML documentation identifiers:
+Address code by **file path + name path** — a name path survives the line shifts that break hard-coded ranges:
 
-| Type | Prefix | Example |
-|------|--------|---------|
-| Method | `M:` | `M:Namespace.ClassName.MethodName(Param.Type)` |
-| Type/Class | `T:` | `T:Spectre.Console.Examples.MyExample` |
-| Property | `P:` | `P:Namespace.ClassName.PropertyName` |
-| Field | `F:` | `F:Namespace.ClassName.FieldName` |
+| Target | Body shape | Example |
+|--------|------------|---------|
+| Whole file | `<path>` | `Spectre.Docs.Examples/Showcase/ProgressSample.cs` |
+| A type | `<path> > Type` | `... > ProgressSample` |
+| A member | `<path> > Type.Member` | `... > ProgressSample.Run` |
+| Nested member | `<path> > Outer.Inner.Member` | `... > DrawCommand.Settings` |
 
-**Finding XML Doc IDs:**
+Modifiers (comma-separated, order-independent) follow the suffix:
 
-1. Navigate to the source file containing the code
-2. For methods: `M:` + full namespace + class + method name + parameter types
-3. For classes: `T:` + full namespace + class name
+| Modifier | Effect |
+|----------|--------|
+| `,bodyonly` | Render only the member body, stripping the declaration and braces |
+| `,imports` | Prepend the file's top-of-file `using` statements |
+| `,signatures` | Replace member bodies with `{ … }` for an outline view |
+| `symbol-diff` | Emit a unified diff between two members (exactly two references) |
 
 **Example from progress.md:**
 
 ````markdown
-```csharp:xmldocid
-M:Spectre.Docs.Examples.AsciiCast.Samples.ProgressSample.Run(Spectre.Console.IAnsiConsole)
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/Showcase/ProgressSample.cs > ProgressSample.Run
 ```
 ````
 
-This extracts the `Run` method from `ProgressSample.cs` and renders it with syntax highlighting.
+This extracts the body of the `Run` method from `ProgressSample.cs` and renders it with syntax highlighting.
 
 ### How It Works
 
-The site is configured to analyze the solution via Roslyn (`Program.cs:42-45`):
+Tree-sitter is wired in `Program.cs`, reading source files directly — no MSBuild workspace, no compilation:
 
 ```csharp
-.WithConnectedRoslynSolution(_ => new CodeAnalysisOptions
+builder.Services.AddTreeSitter(treeSitter =>
 {
-    SolutionPath = "../Spectre.Docs.sln",
-})
+    treeSitter.ContentRoot = ".."; // repo root, so fence paths resolve against the sibling example projects
+});
 ```
 
-When MyLittleContentEngine encounters `csharp:xmldocid`:
-1. Parses the XML Doc ID
-2. Uses Roslyn to find the symbol in the compiled solution
-3. Extracts the source code
+When Pennington encounters a `csharp:symbol` fence:
+1. Resolves the file path relative to `ContentRoot`
+2. Uses tree-sitter to locate the named member within the file
+3. Extracts the source text (applying any modifiers)
 4. Renders as syntax-highlighted HTML
 
 This approach provides:
 - **Always up-to-date code** - Changes in source automatically reflect in docs
-- **Type safety** - Broken references fail at build time
+- **Rename-safe references** - A name path tolerates line shifts; broken references surface in the build report
 - **No duplication** - Single source of truth for code
 
 

@@ -24,16 +24,16 @@ For **tabular data with rows and columns**, use [Table](xref:console-widget-tabl
 
 Create a tree with a root label and add child nodes using `AddNode()`. The method returns the added node, allowing you to chain further children.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.BasicTreeExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.BasicTreeExample
 ```
 
 ## Building Nested Structures
 
 Call `AddNode()` on returned nodes to create deeper hierarchies. Each node can have its own children, creating multi-level trees.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.NestedTreeExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.NestedTreeExample
 ```
 
 ## Styling Node Labels
@@ -42,16 +42,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.NestedTree
 
 Use markup in node labels to apply colors, styles, and formatting to individual nodes.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.MarkupTreeExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.MarkupTreeExample
 ```
 
 ### With Tree-Wide Styling
 
 Use `Style()` to apply a consistent style to all tree guide lines, which helps create a cohesive visual appearance.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.TreeStylingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.TreeStylingExample
 ```
 
 ## Guide Styles
@@ -62,32 +62,32 @@ The tree guide controls the appearance of the connecting lines between nodes. Ch
 
 Use `TreeGuide.Ascii` for maximum compatibility with terminals that don't support Unicode, or when output needs to be plain text.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.TreeAsciiGuideExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.TreeAsciiGuideExample
 ```
 
 ### Line Guide
 
 Use `TreeGuide.Line` (the default) for clean Unicode box-drawing characters that work in most modern terminals.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.TreeLineGuideExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.TreeLineGuideExample
 ```
 
 ### DoubleLine Guide
 
 Use `TreeGuide.DoubleLine` for a more prominent appearance with double-line Unicode characters.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.TreeDoubleLineGuideExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.TreeDoubleLineGuideExample
 ```
 
 ### BoldLine Guide
 
 Use `TreeGuide.BoldLine` for heavy Unicode characters that stand out in dense tree structures.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.TreeBoldLineGuideExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.TreeBoldLineGuideExample
 ```
 
 > [!NOTE]
@@ -99,16 +99,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.TreeBoldLi
 
 Use `Collapse()` on individual nodes to hide their children, which is useful for large trees where you want to show only top-level structure initially.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.TreeExpansionExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.TreeExpansionExample
 ```
 
 ### Collapsing the Entire Tree
 
 Set `Expanded = false` on the tree itself to collapse all nodes, showing only the root.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.TreeCollapseAllExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.TreeCollapseAllExample
 ```
 
 ## Advanced Usage
@@ -117,24 +117,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.TreeCollap
 
 Use `AddNodes()` to add several sibling nodes at once, which is more concise than multiple `AddNode()` calls.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.TreeAddNodesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.TreeAddNodesExample
 ```
 
 ### Embedding Other Renderables
 
 Add any `IRenderable` (panels, tables, text) as node content to create rich, composite visualizations.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.TreeWithRenderablesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.TreeWithRenderablesExample
 ```
 
 ### Building from Data Structures
 
 Dynamically construct trees from dictionaries, file systems, or other hierarchical data sources.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TreeExamples.TreeFromDataExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Tree.cs > TreeExamples.TreeFromDataExample
 ```
 
 ## See Also

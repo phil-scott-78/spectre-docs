@@ -11,32 +11,32 @@ When you need to display data in rows and columns, use `Table`.
 
 To create a table, add columns then rows.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.DisplayingTabularDataHowTo.CreateBasicTable
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/DisplayingTabularDataHowTo.cs > DisplayingTabularDataHowTo.CreateBasicTable
 ```
 
 ## Style the Borders
 
 If you want rounded borders, call `.RoundedBorder()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.DisplayingTabularDataHowTo.ApplyBorderStyle
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/DisplayingTabularDataHowTo.cs > DisplayingTabularDataHowTo.ApplyBorderStyle
 ```
 
 ## Align Columns
 
 To right-align a column, use `.RightAligned()` in the column configuration.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.DisplayingTabularDataHowTo.AlignColumns
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/DisplayingTabularDataHowTo.cs > DisplayingTabularDataHowTo.AlignColumns
 ```
 
 ## Add a Title and Footer
 
 If you need a title, use `.Title()`. For totals, set column footers.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.DisplayingTabularDataHowTo.AddTitleAndFooter
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/DisplayingTabularDataHowTo.cs > DisplayingTabularDataHowTo.AddTitleAndFooter
 ```
 
 ## See Also

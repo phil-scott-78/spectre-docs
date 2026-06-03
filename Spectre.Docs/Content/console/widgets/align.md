@@ -23,16 +23,16 @@ For **adding spacing around content**, use [Padder](xref:console-widget-padder) 
 
 Create aligned content using the static factory methods `Align.Left()`, `Align.Center()`, or `Align.Right()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.BasicAlignExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Align.cs > AlignExamples.BasicAlignExample
 ```
 
 ## Horizontal Alignment
 
 Position content on the left, center, or right. Left alignment is the default for most widgets.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.HorizontalAlignmentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Align.cs > AlignExamples.HorizontalAlignmentExample
 ```
 
 ## Vertical Alignment
@@ -41,24 +41,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.Horizonta
 
 Use vertical alignment with a specified height to position content vertically within a defined space.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.VerticalAlignmentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Align.cs > AlignExamples.VerticalAlignmentExample
 ```
 
 ### Combining Alignments
 
 Combine horizontal and vertical alignment to position content in both dimensions simultaneously.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.CombinedAlignmentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Align.cs > AlignExamples.CombinedAlignmentExample
 ```
 
 ## Using Extension Methods
 
 Use the fluent extension methods like `TopAligned()`, `MiddleAligned()`, and `BottomAligned()` for more readable code.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.FluentExtensionsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Align.cs > AlignExamples.FluentExtensionsExample
 ```
 
 ## Controlling Dimensions
@@ -67,8 +67,8 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.FluentExt
 
 By default, Align uses the content's natural width. Use `Width()` to define the alignment container's width.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.WidthControlExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Align.cs > AlignExamples.WidthControlExample
 ```
 
 ### Height
@@ -81,16 +81,16 @@ Set an explicit height with `Height()` when using vertical alignment to define t
 
 Create layouts with different horizontal alignments for visual variety or functional purpose.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.MultipleAlignmentsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Align.cs > AlignExamples.MultipleAlignmentsExample
 ```
 
 ### Centering Tables
 
 Center tables to draw focus and improve presentation for data displays.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.AlignTableExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Align.cs > AlignExamples.AlignTableExample
 ```
 
 ## Advanced Usage
@@ -99,16 +99,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.AlignTabl
 
 Combine Align with containers like Panel to create multi-level alignment for complex layouts.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.NestedAlignExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Align.cs > AlignExamples.NestedAlignExample
 ```
 
 ### Title Screens
 
 Use centered alignment for application splash screens or welcome messages.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.AlignExamples.TitleScreenExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Align.cs > AlignExamples.TitleScreenExample
 ```
 
 ## See Also

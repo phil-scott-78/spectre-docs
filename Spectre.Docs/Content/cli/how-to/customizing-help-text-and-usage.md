@@ -17,8 +17,8 @@ Customized help output with a branded application name and usage examples showin
 
 By default, help text shows the executable name (often ending in `.dll` during development). Use `SetApplicationName` to display a cleaner name, and `AddExample` to show users how to invoke your CLI with common argument patterns.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Cli.Examples.DemoApps.CustomizingHelpText.Demo.RunAsync(System.String[])
+```csharp:symbol,bodyonly
+Spectre.Docs.Cli.Examples/DemoApps/CustomizingHelpText/Main.cs > Demo.RunAsync
 ```
 
 This produces help output like:
@@ -37,8 +37,8 @@ EXAMPLES:
 
 To change colors and formatting in help output, configure `HelpProviderStyles`. You can style descriptions, arguments, options, and examples independently using Spectre.Console markup syntax.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Cli.Examples.DemoApps.CustomizingHelpText.StyledHelpDemo.RunAsync(System.String[])
+```csharp:symbol,bodyonly
+Spectre.Docs.Cli.Examples/DemoApps/CustomizingHelpText/Main.cs > StyledHelpDemo.RunAsync
 ```
 
 Available style classes include `DescriptionStyle`, `ArgumentStyle`, `OptionStyle`, `CommandStyle`, and `ExampleStyle`—each with properties for different elements like headers, required vs optional items, and default values.
@@ -47,8 +47,8 @@ Available style classes include `DescriptionStyle`, `ArgumentStyle`, `OptionStyl
 
 For maximum accessibility, piping to files, or environments without color support, disable all styling by setting `HelpProviderStyles` to `null`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Cli.Examples.DemoApps.CustomizingHelpText.PlainTextHelpDemo.RunAsync(System.String[])
+```csharp:symbol,bodyonly
+Spectre.Docs.Cli.Examples/DemoApps/CustomizingHelpText/Main.cs > PlainTextHelpDemo.RunAsync
 ```
 
 ## Implement a Custom Help Provider

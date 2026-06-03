@@ -14,32 +14,32 @@ When you have operations with measurable progress, use `AnsiConsole.Progress()`.
 
 To show progress, call `ctx.AddTask()` and update with `task.Increment()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.ShowingProgressBarsHowTo.CreateProgressBar
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/ShowingProgressBarsHowTo.cs > ShowingProgressBarsHowTo.CreateProgressBar
 ```
 
 ## Track Multiple Tasks
 
 To track several operations at once, add multiple tasks to the context.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.ShowingProgressBarsHowTo.TrackMultipleTasks
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/ShowingProgressBarsHowTo.cs > ShowingProgressBarsHowTo.TrackMultipleTasks
 ```
 
 ## Customize Columns
 
 If you want different columns, use `.Columns()` to configure the display.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.ShowingProgressBarsHowTo.CustomizeColumns
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/ShowingProgressBarsHowTo.cs > ShowingProgressBarsHowTo.CustomizeColumns
 ```
 
 ## Style the Progress Bar
 
 To change colors, set styles on `ProgressBarColumn`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.ShowingProgressBarsHowTo.StyleProgressBar
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/ShowingProgressBarsHowTo.cs > ShowingProgressBarsHowTo.StyleProgressBar
 ```
 
 ## See Also

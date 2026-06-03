@@ -25,8 +25,8 @@ Here's what our coffee brewing simulation will look like:
 
 Let's start by showing a spinner while our "coffee grinder" runs. The `Status()` method displays an animated spinner with a message:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.StatusSpinnersTutorial.ShowBasicSpinner
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/StatusSpinnersTutorial.cs > StatusSpinnersTutorial.ShowBasicSpinner
 ```
 
 Run the code:
@@ -47,8 +47,8 @@ Your first status spinner.
 
 Real tasks have multiple stages. Let's update the status message as our coffee progresses through grinding, brewing, and pouring:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.StatusSpinnersTutorial.UpdateStatusText
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/StatusSpinnersTutorial.cs > StatusSpinnersTutorial.UpdateStatusText
 ```
 
 Run it:
@@ -69,8 +69,8 @@ Your status now reflects what's actually happening.
 
 Spectre.Console includes many spinner styles. Let's try a few to see the difference:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.StatusSpinnersTutorial.TryDifferentSpinners
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/StatusSpinnersTutorial.cs > StatusSpinnersTutorial.TryDifferentSpinners
 ```
 
 Run it:
@@ -91,8 +91,8 @@ You can now customize the look and feel of your spinners.
 
 Let's put it all together into a complete brewing experience that changes both the message and spinner style at each stage:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.StatusSpinnersTutorial.Run(Spectre.Console.IAnsiConsole)
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/StatusSpinnersTutorial.cs > StatusSpinnersTutorial.Run
 ```
 
 Run the complete application:

@@ -23,22 +23,22 @@ For **part-to-whole relationships** (showing how pieces make up a total), use [B
 
 Add items with a label, value, and optional color.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BarChartExamples.BasicBarChartExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BarChart.cs > BarChartExamples.BasicBarChartExample
 ```
 
 ## Adding a Title
 
 Use `Label()` to add context above the chart. Supports markup for styling.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BarChartExamples.BarChartLabelExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BarChart.cs > BarChartExamples.BarChartLabelExample
 ```
 
 Align the label with `LeftAlignLabel()`, `CenterLabel()`, or `RightAlignLabel()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BarChartExamples.BarChartLabelAlignmentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BarChart.cs > BarChartExamples.BarChartLabelAlignmentExample
 ```
 
 ## Customizing Values
@@ -47,32 +47,32 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BarChartExamples.BarCha
 
 When displaying currency, percentages, or units, use `UseValueFormatter()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BarChartExamples.BarChartFormattingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BarChart.cs > BarChartExamples.BarChartFormattingExample
 ```
 
 ### Hiding Values
 
 Use `HideValues()` when the visual comparison matters more than exact numbers.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BarChartExamples.BarChartValuesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BarChart.cs > BarChartExamples.BarChartValuesExample
 ```
 
 ## Scaling
 
 By default, bars scale relative to the largest value. Use `WithMaxValue()` to set a fixed scale—useful when comparing against a target or showing progress toward a goal.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BarChartExamples.BarChartMaxValueExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BarChart.cs > BarChartExamples.BarChartMaxValueExample
 ```
 
 ## Working with Data Collections
 
 Use `AddItems()` to add multiple items from a collection of `BarChartItem` objects.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BarChartExamples.BarChartAddItemsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BarChart.cs > BarChartExamples.BarChartAddItemsExample
 ```
 
 ## See Also

@@ -11,32 +11,32 @@ When you need to structure console output, use layout widgets.
 
 To emphasize content with a border, use `Panel`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.OrganizingLayoutHowTo.WrapInPanel
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/OrganizingLayoutHowTo.cs > OrganizingLayoutHowTo.WrapInPanel
 ```
 
 ## Arrange Side by Side
 
 To place content horizontally, use `Columns`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.OrganizingLayoutHowTo.ArrangeSideBySide
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/OrganizingLayoutHowTo.cs > OrganizingLayoutHowTo.ArrangeSideBySide
 ```
 
 ## Create a Grid
 
 To arrange content in rows and columns, use `Grid`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.OrganizingLayoutHowTo.CreateGrid
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/OrganizingLayoutHowTo.cs > OrganizingLayoutHowTo.CreateGrid
 ```
 
 ## Center Content
 
 To center content horizontally, use `Align.Center()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.OrganizingLayoutHowTo.CenterContent
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/OrganizingLayoutHowTo.cs > OrganizingLayoutHowTo.CenterContent
 ```
 
 ## See Also

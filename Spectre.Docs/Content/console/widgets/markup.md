@@ -21,40 +21,40 @@ For **programmatic control over styling** or when styles are determined at runti
 
 Use `AnsiConsole.MarkupLine()` for quick styled output.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.MarkupExamples.BasicMarkupExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Markup.cs > MarkupExamples.BasicMarkupExample
 ```
 
 ## Creating Markup Objects
 
 Create `Markup` objects when you need to embed styled text in containers like panels, tables, or layouts.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.MarkupExamples.MarkupObjectExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Markup.cs > MarkupExamples.MarkupObjectExample
 ```
 
 ## Escaping Content
 
 Use `Markup.Escape()` when working with user-provided or dynamic content that might contain bracket characters. Without escaping, brackets are interpreted as markup tags.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.MarkupExamples.MarkupEscapeExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Markup.cs > MarkupExamples.MarkupEscapeExample
 ```
 
 ## Working with Containers
 
 Markup objects work well as content inside panels, tables, and other container widgets.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.MarkupExamples.MarkupInContainersExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Markup.cs > MarkupExamples.MarkupInContainersExample
 ```
 
 ## Removing Markup
 
 Use `Markup.Remove()` to strip all markup tags from a string, leaving only plain text.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.MarkupExamples.MarkupRemoveExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Markup.cs > MarkupExamples.MarkupRemoveExample
 ```
 
 ## See Also

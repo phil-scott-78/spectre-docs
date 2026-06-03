@@ -17,8 +17,8 @@ A deployment command where `--environment` and `--version` are mandatory. Missin
 
 The simplest approach is to use the `isRequired` parameter on the `CommandOption` attribute.
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.MakingOptionsRequired.DeployCommand.Settings
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/MakingOptionsRequired/Main.cs > DeployCommand.Settings
 ```
 
 Help output marks these options clearly:

@@ -17,8 +17,8 @@ A git-style CLI with nested `remote` subcommandsâ€”`add`, `remove`, and `list`â€
 
 Use `AddBranch` to define a parent command with nested subcommands. Use the generic overload when you want shared settings/options for the branch:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Cli.Examples.DemoApps.CommandHierarchies.Demo.RunAsync(System.String[])
+```csharp:symbol,bodyonly
+Spectre.Docs.Cli.Examples/DemoApps/CommandHierarchies/Main.cs > Demo.RunAsync
 ```
 
 This creates commands like `myapp remote add`, `myapp remote remove`, and `myapp remote list`. Running `myapp remote --help` shows all subcommands.
@@ -27,10 +27,10 @@ This creates commands like `myapp remote add`, `myapp remote remove`, and `myapp
 
 Define a base settings class for the branch, then inherit from it in subcommand settings:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.CommandHierarchies.RemoteSettings
-T:Spectre.Docs.Cli.Examples.DemoApps.CommandHierarchies.RemoteAddSettings
-T:Spectre.Docs.Cli.Examples.DemoApps.CommandHierarchies.RemoteListSettings
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/CommandHierarchies/Main.cs > RemoteSettings
+Spectre.Docs.Cli.Examples/DemoApps/CommandHierarchies/Main.cs > RemoteAddSettings
+Spectre.Docs.Cli.Examples/DemoApps/CommandHierarchies/Main.cs > RemoteListSettings
 ```
 
 The `--verbose` flag is now available on all remote subcommands, and can be specified either before or after the subcommand name: `myapp remote --verbose add origin https://...` or `myapp remote add origin https://... --verbose`.

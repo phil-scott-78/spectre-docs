@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.52.0 released!
-Description: Don't eat (too much) glue.
-Date: 2025-10-10
+title: Spectre.Console 0.52.0 released!
+description: Don't eat (too much) glue.
+date: 2025-10-10
 ---
 
 Version `0.52.0` of Spectre.Console has been released!

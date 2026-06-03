@@ -35,9 +35,9 @@ dotnet add package Spectre.Console.Cli
 
 Replace `Program.cs` with a command that processes files:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.Logging.NoLogging.ProcessSettings
-T:Spectre.Docs.Cli.Examples.DemoApps.Logging.NoLogging.ProcessCommand
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/Logging/NoLogging/Main.cs > ProcessSettings
+Spectre.Docs.Cli.Examples/DemoApps/Logging/NoLogging/Main.cs > ProcessCommand
 ```
 
 Wire it up:
@@ -77,13 +77,13 @@ dotnet add package Microsoft.Extensions.DependencyInjection
 
 Create the DI bridge classes and update the command to inject `ILogger<T>`:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.Logging.WithLogging.TypeRegistrar
-T:Spectre.Docs.Cli.Examples.DemoApps.Logging.WithLogging.TypeResolver
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/Logging/WithLogging/Main.cs > TypeRegistrar
+Spectre.Docs.Cli.Examples/DemoApps/Logging/WithLogging/Main.cs > TypeResolver
 ```
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.Logging.WithLogging.ProcessCommand
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/Logging/WithLogging/Main.cs > ProcessCommand
 ```
 
 Configure logging in your entry point:
@@ -126,21 +126,21 @@ Now we'll add command-line control over the log level using a base settings clas
 
 First, create a `LogLevelSwitch` that holds the current minimum level, and a base `LogCommandSettings` class:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.Logging.LoggingComplete.LogLevelSwitch
-T:Spectre.Docs.Cli.Examples.DemoApps.Logging.LoggingComplete.LogCommandSettings
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/Logging/LoggingComplete/Main.cs > LogLevelSwitch
+Spectre.Docs.Cli.Examples/DemoApps/Logging/LoggingComplete/Main.cs > LogCommandSettings
 ```
 
 Create an interceptor that reads the settings and updates the switch before command execution:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.Logging.LoggingComplete.LogInterceptor
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/Logging/LoggingComplete/Main.cs > LogInterceptor
 ```
 
 Update your settings to inherit from `LogCommandSettings`:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.Logging.LoggingComplete.ProcessSettings
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/Logging/LoggingComplete/Main.cs > ProcessSettings
 ```
 
 Configure the logging filter to check the switch, and register the interceptor:

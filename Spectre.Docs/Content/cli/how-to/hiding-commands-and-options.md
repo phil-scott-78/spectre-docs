@@ -17,8 +17,8 @@ Notice `diagnostics` doesn't appear in help but still works when invoked directl
 
 To hide a command from help output, chain `.IsHidden()` when configuring it:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Cli.Examples.DemoApps.HidingCommandsAndOptions.Demo.RunAsync(System.String[])
+```csharp:symbol,bodyonly
+Spectre.Docs.Cli.Examples/DemoApps/HidingCommandsAndOptions/Main.cs > Demo.RunAsync
 ```
 
 Running `--help` shows only `deploy` and `status`, but `diagnostics` still works when invoked directly.
@@ -27,8 +27,8 @@ Running `--help` shows only `deploy` and `status`, but `diagnostics` still works
 
 For options, set `IsHidden = true` on the attribute:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.HidingCommandsAndOptions.DeployCommand.Settings
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/HidingCommandsAndOptions/Main.cs > DeployCommand.Settings
 ```
 
 The `--skip-hooks` option won't appear in `deploy --help`, but users can still pass it.

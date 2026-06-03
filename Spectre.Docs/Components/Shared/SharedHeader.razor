@@ -1,6 +1,6 @@
 @inject NavigationManager NavigationManager
 
-<header
+<header data-spa-pin
     class="sticky top-0 h-16 z-50 w-full border-b border-base-200 dark:border-base-800 bg-white/95 dark:bg-base-900/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-base-900/60">
     <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
@@ -92,7 +92,11 @@
             </div>
 
             <!-- Navigation -->
-            <nav class="hidden md:flex items-center space-x-1 text-xs lg:text-sm font-medium">
+            @* SPA region: only the active-class anchors change between pages, and the buttons
+               with event handlers (theme toggle, search, mobile menu) sit outside this region.
+               data-spa-no-transition keeps the swap behind the pinned header snapshot. *@
+            <nav data-spa-region="primary-nav" data-spa-no-transition data-spa-region-key="@CurrentSection"
+                 class="hidden md:flex items-center space-x-1 text-xs lg:text-sm font-medium">
                 <a href="/"
                    class="px-2 lg:px-3 py-2 rounded-md @(CurrentSection == "" ? "bg-base-100 dark:bg-base-800 text-base-900 dark:text-base-100" : "text-base-600 dark:text-base-400 hover:text-base-900 dark:hover:text-base-100 hover:bg-base-100 dark:hover:bg-base-800") transition-colors duration-250">
                     Home
@@ -173,7 +177,10 @@
     </div>
 
     <!-- Mobile Navigation -->
+    @* Same SPA-region treatment as the desktop nav: only the link list swaps; the nav
+       element (which carries data-expanded toggled by JS) stays in place. *@
     <nav id="mobile-menu" data-expanded="false"
+         data-spa-region="mobile-nav" data-spa-no-transition data-spa-region-key="@CurrentSection"
          class="md:hidden data-[expanded=false]:hidden bg-base-100 dark:bg-base-950 border-b border-base-200 dark:border-base-800 shadow-md">
         <div class="px-2 pt-2 pb-3 space-y-1">
             <a href="/"

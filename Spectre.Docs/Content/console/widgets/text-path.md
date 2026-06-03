@@ -23,8 +23,8 @@ For **plain text without path semantics**, use [Text](xref:console-widget-text) 
 
 Pass a file path string to the constructor. TextPath normalizes separators automatically.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextPathExamples.BasicTextPathExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/TextPath.cs > TextPathExamples.BasicTextPathExample
 ```
 
 ## Styling Components
@@ -39,24 +39,24 @@ TextPath lets you style four distinct components independently:
 
 Use convenience methods to set foreground colors for each component.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextPathExamples.TextPathColorsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/TextPath.cs > TextPathExamples.TextPathColorsExample
 ```
 
 ### Full Styles
 
 Apply complete styles including background colors, decorations like bold or underline.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextPathExamples.TextPathStylesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/TextPath.cs > TextPathExamples.TextPathStylesExample
 ```
 
 ## Alignment
 
 Control text alignment with `LeftJustified()`, `Centered()`, or `RightJustified()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextPathExamples.TextPathAlignmentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/TextPath.cs > TextPathExamples.TextPathAlignmentExample
 ```
 
 ## Smart Truncation
@@ -68,16 +68,16 @@ When a path exceeds available width, TextPath intelligently truncates by:
 
 This ensures the most important parts—where the file is rooted and what file it is—remain visible.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextPathExamples.TextPathTruncationExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/TextPath.cs > TextPathExamples.TextPathTruncationExample
 ```
 
 ## Cross-Platform Paths
 
 TextPath handles both Windows and Unix path formats, normalizing separators for consistent display.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextPathExamples.TextPathUnixExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/TextPath.cs > TextPathExamples.TextPathUnixExample
 ```
 
 ## See Also

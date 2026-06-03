@@ -23,8 +23,8 @@ For **comparing independent values** (where items don't sum to a meaningful tota
 
 Add items with a label, value, and color. The bar automatically scales segments proportionally.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BreakdownChartExamples.BasicBreakdownChartExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BreakdownChart.cs > BreakdownChartExamples.BasicBreakdownChartExample
 ```
 
 ## Displaying Values
@@ -33,24 +33,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BreakdownChartExamples.
 
 Use `ShowPercentage()` when relative proportions matter more than absolute numbers.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BreakdownChartExamples.BreakdownChartPercentageExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BreakdownChart.cs > BreakdownChartExamples.BreakdownChartPercentageExample
 ```
 
 ### With Custom Formatting
 
 Use `UseValueFormatter()` to add units or custom formatting.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BreakdownChartExamples.BreakdownChartFormattingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BreakdownChart.cs > BreakdownChartExamples.BreakdownChartFormattingExample
 ```
 
 ## Controlling the Legend
 
 The legend (tags) below the chart shows labels and values. Control visibility when space is limited or when the chart speaks for itself.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BreakdownChartExamples.BreakdownChartTagsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BreakdownChart.cs > BreakdownChartExamples.BreakdownChartTagsExample
 ```
 
 ## Layout
@@ -59,24 +59,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BreakdownChartExamples.
 
 Use `Compact()` (default) for tight layouts. Use `FullSize()` to add spacing between the bar and legend for better readability.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BreakdownChartExamples.BreakdownChartCompactExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BreakdownChart.cs > BreakdownChartExamples.BreakdownChartCompactExample
 ```
 
 ### Fixed Width
 
 By default the chart expands to fill available width. Use `Width()` to constrain it.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BreakdownChartExamples.BreakdownChartWidthExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BreakdownChart.cs > BreakdownChartExamples.BreakdownChartWidthExample
 ```
 
 ## Working with Data Collections
 
 Use `AddItems()` to add multiple items from a collection of `BreakdownChartItem` objects.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.BreakdownChartExamples.BreakdownChartAddItemsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/BreakdownChart.cs > BreakdownChartExamples.BreakdownChartAddItemsExample
 ```
 
 ## See Also

@@ -11,32 +11,32 @@ When you need to show parent-child relationships, use `Tree`.
 
 To create a tree, pass a root label and call `.AddNode()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.DisplayingHierarchicalDataHowTo.CreateBasicTree
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/DisplayingHierarchicalDataHowTo.cs > DisplayingHierarchicalDataHowTo.CreateBasicTree
 ```
 
 ## Add Nested Levels
 
 To nest deeper, call `.AddNode()` on child nodes.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.DisplayingHierarchicalDataHowTo.AddNestedLevels
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/DisplayingHierarchicalDataHowTo.cs > DisplayingHierarchicalDataHowTo.AddNestedLevels
 ```
 
 ## Style the Tree
 
 If you want colored nodes, use markup. To change line style, call `.Guide()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.DisplayingHierarchicalDataHowTo.StyleTheTree
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/DisplayingHierarchicalDataHowTo.cs > DisplayingHierarchicalDataHowTo.StyleTheTree
 ```
 
 ## Embed Widgets
 
 To embed panels or other widgets, pass them to `.AddNode()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.DisplayingHierarchicalDataHowTo.EmbedRichContent
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/DisplayingHierarchicalDataHowTo.cs > DisplayingHierarchicalDataHowTo.EmbedRichContent
 ```
 
 ## See Also

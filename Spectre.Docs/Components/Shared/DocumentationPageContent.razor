@@ -1,5 +1,3 @@
-@using MyLittleContentEngine.Services.Content.TableOfContents
-
 @if (PostContent == null || NavigationInfo == null)
 {
     <div>Not found</div>
@@ -8,20 +6,35 @@
 
 <PageTitle>@SiteTitle - @NavigationInfo.PageTitle</PageTitle>
 
-<PageWrapper Outline="@Outline">
-    <HeaderContent>
-        <PageHeader
-            Title="@NavigationInfo.PageTitle"
-            Description="@Description"
-            Tags="@Tags"
-            Theme="@Theme" />
-    </HeaderContent>
-    <ChildContent>
-        <div class="prose dark:prose-invert max-w-full prose-headings:scroll-m-20">
-            @((MarkupString)PostContent)
-        </div>
-    </ChildContent>
-</PageWrapper>
+<div class="max-w-7xl mx-auto">
+    <PageHeader
+        Title="@NavigationInfo.PageTitle"
+        Description="@Description"
+        Tags="@Tags"
+        Theme="@Theme" />
+
+    <div class="lg:flex lg:gap-8">
+        <article class="flex-1 min-w-0">
+            <div class="prose dark:prose-invert max-w-full prose-headings:scroll-m-20">
+                @((MarkupString)PostContent)
+            </div>
+        </article>
+
+        @if (Outline is { Length: > 0 })
+        {
+            <aside class="hidden xl:block w-64 shrink-0">
+                <div class="sticky top-24">
+                    <h3 class="text-sm font-semibold text-base-900 dark:text-base-100 uppercase tracking-wider mb-3">
+                        On this page
+                    </h3>
+                    <div class="text-sm">
+                        <OutlineNavigation ContentSelector="article" />
+                    </div>
+                </div>
+            </aside>
+        }
+    </div>
+</div>
 
 @code {
     [Parameter] public string? PostContent { get; set; }

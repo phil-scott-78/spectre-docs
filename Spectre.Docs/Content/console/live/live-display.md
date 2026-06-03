@@ -27,8 +27,8 @@ For **progress tracking with multiple tasks**, use [Progress](xref:console-live-
 
 Create a live display by passing any renderable to `AnsiConsole.Live()`, then update it within the context.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.BasicLiveDisplayExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.BasicLiveDisplayExample
 ```
 
 ## Updating Content
@@ -37,24 +37,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.BasicL
 
 Modify properties of mutable widgets like Table, then call `ctx.Refresh()` to update the display.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.LiveDisplayWithTableExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.LiveDisplayWithTableExample
 ```
 
 ### Replacing the Target
 
 Use `ctx.UpdateTarget()` to completely replace the displayed renderable with a different widget.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.LiveDisplayUpdateTargetExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.LiveDisplayUpdateTargetExample
 ```
 
 ### Displaying Panels
 
 Wrap dynamic content in panels for polished status displays.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.LiveDisplayWithPanelExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.LiveDisplayWithPanelExample
 ```
 
 ## Handling Overflow
@@ -65,24 +65,24 @@ When content exceeds the console height, LiveDisplay provides several overflow s
 
 Show an ellipsis indicator when content is truncated.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.LiveDisplayOverflowEllipsisExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.LiveDisplayOverflowEllipsisExample
 ```
 
 ### Crop Mode
 
 Silently crop content that doesn't fit, combined with cropping direction control.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.LiveDisplayOverflowCropExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.LiveDisplayOverflowCropExample
 ```
 
 ### Visible Mode
 
 Allow content to scroll naturally when it exceeds console height.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.LiveDisplayOverflowVisibleExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.LiveDisplayOverflowVisibleExample
 ```
 
 ## Cropping Direction
@@ -93,48 +93,48 @@ Control which part of overflowing content remains visible.
 
 Keep the most recent content visible by removing old content from the top.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.LiveDisplayCroppingTopExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.LiveDisplayCroppingTopExample
 ```
 
 ### Crop from Bottom
 
 Keep the initial content visible by removing new content from the bottom.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.LiveDisplayCroppingBottomExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.LiveDisplayCroppingBottomExample
 ```
 
 ## Auto Clear
 
 Remove the live display from the console when the context completes.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.LiveDisplayAutoClearExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.LiveDisplayAutoClearExample
 ```
 
 ## Async Operations
 
 Use `StartAsync()` for asynchronous work within the live display context.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.LiveDisplayAsyncExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.LiveDisplayAsyncExample
 ```
 
 ## Returning Values
 
 Return results from the live display context using the generic `Start<T>()` method.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.LiveDisplayReturnValueExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.LiveDisplayReturnValueExample
 ```
 
 ## Combining Widgets
 
 Create sophisticated dashboards by combining multiple widgets in layouts.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.LiveDisplayExamples.LiveDisplayCompositeExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/LiveDisplay.cs > LiveDisplayExamples.LiveDisplayCompositeExample
 ```
 
 ## See Also

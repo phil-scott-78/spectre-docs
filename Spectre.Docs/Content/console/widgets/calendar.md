@@ -24,14 +24,14 @@ For **displaying dates inline within text**, use [Markup](xref:console-widget-ma
 
 Create a calendar by specifying the year and month. Events are marked with an asterisk and highlighted in blue by default.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.BasicCalendarExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Calendar.cs > CalendarExamples.BasicCalendarExample
 ```
 
 You can also create a calendar from a `DateTime` object to show the current month.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.CalendarFromDateExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Calendar.cs > CalendarExamples.CalendarFromDateExample
 ```
 
 ## Highlighting Dates
@@ -40,28 +40,28 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.Calend
 
 Use `AddCalendarEvent()` to mark specific dates as important. Each event appears with an asterisk indicator.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.CalendarEventsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Calendar.cs > CalendarExamples.CalendarEventsExample
 ```
 
 You can pass `DateTime` objects instead of individual year, month, and day values.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.CalendarEventDateTimeExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Calendar.cs > CalendarExamples.CalendarEventDateTimeExample
 ```
 
 ### Customizing Event Styles
 
 Use `HighlightStyle()` to change the default appearance for all event dates.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.CalendarHighlightStyleExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Calendar.cs > CalendarExamples.CalendarHighlightStyleExample
 ```
 
 For more control, assign custom styles to individual events by passing a `Style` to `AddCalendarEvent()`. This is useful when different events have different priorities or categories.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.CalendarCustomEventStylesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Calendar.cs > CalendarExamples.CalendarCustomEventStylesExample
 ```
 
 ## Customizing Appearance
@@ -70,22 +70,22 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.Calend
 
 Use `HeaderStyle()` to customize the month and year display at the top of the calendar.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.CalendarHeaderStyleExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Calendar.cs > CalendarExamples.CalendarHeaderStyleExample
 ```
 
 Use `HideHeader()` when you need a more compact display or when the month is obvious from context.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.CalendarHideHeaderExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Calendar.cs > CalendarExamples.CalendarHideHeaderExample
 ```
 
 ### Border Styles
 
 Customize the calendar border to match your application's visual style. Since Calendar uses a table internally, all table borders are supported.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.CalendarBorderExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Calendar.cs > CalendarExamples.CalendarBorderExample
 ```
 
 > [!NOTE]
@@ -97,8 +97,8 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.Calend
 
 Set the `Culture` property to control the week start day, day names, and month formatting. This ensures calendars match your users' regional expectations.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.CalendarCultureExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Calendar.cs > CalendarExamples.CalendarCultureExample
 ```
 
 ## Advanced Usage
@@ -107,8 +107,8 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.Calend
 
 Display several months together using the [Columns](xref:console-widget-columns) widget. This is useful for showing quarterly views or comparing date ranges.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.CalendarExamples.MultipleCalendarsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Calendar.cs > CalendarExamples.MultipleCalendarsExample
 ```
 
 ## See Also
