@@ -36,7 +36,7 @@ public sealed class ApiReferenceContentService(IServiceProvider services) : ICon
             yield return Page(ApiReferenceService.BaseUrl(area), component);
 
             var provider = scope.ServiceProvider.GetRequiredKeyedService<IApiMetadataProvider>(area);
-            foreach (var type in await provider.GetTypesAsync())
+            foreach (var type in ApiReferenceService.DistinctBySlug(await provider.GetTypesAsync()))
             {
                 yield return Page(ApiReferenceService.LinkFor(area, type), component);
             }
@@ -58,6 +58,34 @@ public sealed class ApiReferenceContentService(IServiceProvider services) : ICon
                 null))
             .ToImmutableList();
         return Task.FromResult(items);
+    }
+
+    public async Task<ImmutableList<ContentTocItem>> GetIndexableEntriesAsync()
+    {
+        // The default would index only the nav entries (the two index pages), so a type that
+        // appears nowhere else — e.g. IAnsiConsole — is unreachable via search, and types that do
+        // appear only match the big index listing rather than their own page. Add one searchable
+        // entry per type so each type page surfaces directly. Kept out of nav (SearchOnly) and out
+        // of llms.txt (ExcludeFromLlms) to avoid bloating either with the full type list.
+        var builder = ImmutableList.CreateBuilder<ContentTocItem>();
+        builder.AddRange(await GetContentTocEntriesAsync());
+
+        using var scope = services.CreateScope();
+        foreach (var (area, _) in Areas)
+        {
+            var provider = scope.ServiceProvider.GetRequiredKeyedService<IApiMetadataProvider>(area);
+            foreach (var type in ApiReferenceService.DistinctBySlug(await provider.GetTypesAsync()))
+            {
+                builder.Add(new ContentTocItem(
+                    type.Name,
+                    ContentRouteFactory.FromUrl(new UrlPath(ApiReferenceService.LinkFor(area, type)), string.Empty),
+                    int.MaxValue,
+                    [area, "reference", "api"],
+                    area,
+                    null) { Description = type.Summary, SearchOnly = true, ExcludeFromLlms = true });
+            }
+        }
+        return builder.ToImmutable();
     }
 
     public Task<ImmutableList<ContentToCopy>> GetContentToCopyAsync() =>

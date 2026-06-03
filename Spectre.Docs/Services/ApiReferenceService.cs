@@ -41,9 +41,25 @@ public sealed class ApiReferenceService(IServiceProvider services, IXmlDocHtmlRe
     /// <summary>Trailing-slashed page URL for a type (e.g. <c>/console/reference/api/Spectre.Console.Table/</c>).</summary>
     public static string LinkFor(string area, ApiTypeSummary type) => $"{BaseUrl(area)}{SlugFor(type)}/";
 
-    /// <summary>All documented types for an area, already sorted by full type name.</summary>
+    /// <summary>All documented types for an area, sorted by full type name and de-duplicated by slug.</summary>
     public async Task<IReadOnlyList<ApiTypeSummary>> GetTypesAsync(string area) =>
-        await Provider(area).GetTypesAsync();
+        DistinctBySlug(await Provider(area).GetTypesAsync());
+
+    /// <summary>
+    /// Drops types that collapse to the same slug. A type defined in more than one of an area's
+    /// assemblies (Spectre shares source across packages, e.g. <c>CharExtensions</c>) otherwise
+    /// yields the same route twice.
+    /// </summary>
+    public static IReadOnlyList<ApiTypeSummary> DistinctBySlug(IEnumerable<ApiTypeSummary> types)
+    {
+        var seen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var result = new List<ApiTypeSummary>();
+        foreach (var type in types)
+        {
+            if (seen.Add(SlugFor(type))) result.Add(type);
+        }
+        return result;
+    }
 
     /// <summary>
     /// Resolves a route slug to a rendered type page, or <see langword="null"/> when the slug
