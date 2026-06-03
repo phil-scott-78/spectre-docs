@@ -1,4 +1,5 @@
 @using System.Reflection
+@using System.Net
 @using Spectre.Docs.Services
 @inject XmlDocumentationService XmlDocs
 
@@ -14,220 +15,17 @@
     </div>
     return;
 }
-<div class="not-prose space-y-8">
-    @* Type Summary *@
-    @if (!string.IsNullOrEmpty(_typeSummary))
-    {
-    <p class="text-base-700 dark:text-base-300">@_typeSummary</p>
-
-    }
-
-    @* Constructors *@
-    @if (_constructors.Any())
-    {
-        <section>
-            <h3 class="text-lg font-semibold mb-4 text-base-900 dark:text-base-100">
-                Constructors
-            </h3>
-            <div class="space-y-4">
-                @foreach (var ctor in _constructors)
-                {
-                    <div class="border border-base-200 dark:border-base-700 rounded-lg p-4 bg-base-50 dark:bg-base-800/90">
-                        <div class="mb-2">
-                            <code
-                                class="text-sm py-1 rounded text-base-900 dark:text-base-100 font-mono">
-                                @ctor.Signature
-                            </code>
-                        </div>
-                        @if (!string.IsNullOrEmpty(ctor.Summary))
-                        {
-                            <p class="text-sm text-base-600 dark:text-base-400 mt-2">@ctor.Summary</p>
-                        }
-                        @if (ctor.Parameters.Any())
-                        {
-                            <div class="mt-3">
-                                <p class="text-xs font-semibold text-base-700 dark:text-base-300 mb-2">Parameters:</p>
-                                <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
-                                    @foreach (var param in ctor.Parameters)
-                                    {
-                                        <div class="text-xs text-base-600 dark:text-base-400">
-                                            <code class="text-primary-600 dark:text-primary-500 rounded">@param.Name</code>
-                                            @if (!string.IsNullOrEmpty(param.Type))
-                                            {
-                                                <span class="text-base-500 dark:text-base-500"> (@param.Type)</span>
-                                            }
-                                        </div>
-                                        <div class="text-xs text-base-600 dark:text-base-400">
-                                            @if (!string.IsNullOrEmpty(param.Description))
-                                            {
-                                                @param.Description
-                                            }
-                                        </div>
-                                    }
-                                </div>
-                            </div>
-                        }
-                    </div>
-                }
-            </div>
-        </section>
-    }
-
-    @* Properties *@
-    @if (_properties.Any())
-    {
-        <section>
-            <h3 class="text-lg font-semibold mb-4 text-base-900 dark:text-base-100">
-                Properties
-            </h3>
-            <div class="space-y-4">
-                @foreach (var prop in _properties)
-                {
-                    <div class="border border-base-200 dark:border-base-700 rounded-lg p-4 bg-base-50 dark:bg-base-800/90">
-                        <div class="mb-2">
-                            <code
-                                class="text-sm py-1 rounded text-base-900 dark:text-base-100 font-mono">
-                                @prop.Name
-                            </code>
-                            <span class="text-xs text-base-500 dark:text-base-500 ml-2">: @prop.Type</span>
-                        </div>
-                        @if (!string.IsNullOrEmpty(prop.Summary))
-                        {
-                            <p class="text-sm text-base-600 dark:text-base-400">@prop.Summary</p>
-                        }
-                    </div>
-                }
-            </div>
-        </section>
-    }
-
-    @* Methods *@
-    @if (_methods.Any())
-    {
-        <section>
-            <h3 class="text-lg font-semibold mb-4 text-base-900 dark:text-base-100">
-                Methods
-            </h3>
-            <div class="space-y-4">
-                @foreach (var method in _methods)
-                {
-                    <div class="border border-base-200 dark:border-base-700 rounded-lg p-4 bg-base-50 dark:bg-base-800/90">
-                        <div class="mb-2">
-                            <code
-                                class="text-sm py-1 rounded text-base-900 dark:text-base-100 font-mono">
-                                @method.Signature
-                            </code>
-                        </div>
-                        @if (!string.IsNullOrEmpty(method.Summary))
-                        {
-                            <p class="text-sm text-base-600 dark:text-base-400 mt-2">@method.Summary</p>
-                        }
-                        @if (method.Parameters.Any())
-                        {
-                            <div class="mt-4">
-                                <p class="text-xs font-semibold text-base-700 dark:text-base-300 mb-1">Parameters:</p>
-                                <div class="grid grid-cols-1 lg:grid-cols-[33%_1fr] gap-x-4 gap-y-2">
-                                    @foreach (var param in method.Parameters)
-                                    {
-                                        <div class="text-xs text-base-600 dark:text-base-400">
-                                            <code class="text-primary-600 dark:text-primary-500 rounded">@param.Name</code>
-                                            @if (!string.IsNullOrEmpty(param.Type))
-                                            {
-                                                <span class="text-base-500 dark:text-base-500"> (@param.Type)</span>
-                                            }
-                                        </div>
-                                        <div class="text-xs text-base-600 dark:text-base-400">
-                                            @if (!string.IsNullOrEmpty(param.Description))
-                                            {
-                                                @param.Description
-                                            }
-                                        </div>
-                                    }
-                                </div>
-                            </div>
-                        }
-                        @if (!string.IsNullOrEmpty(method.Returns))
-                        {
-                            <div class="mt-4">
-                                <p class="text-xs font-semibold text-base-700 dark:text-base-300">Returns:</p>
-                                <p class="text-xs text-base-600 dark:text-base-400">@method.Returns</p>
-                            </div>
-                        }
-                    </div>
-                }
-            </div>
-        </section>
-    }
-
-    @* Extension Methods *@
-    @if (_extensionMethods.Any())
-    {
-        <section>
-            <h3 class="text-lg font-semibold mb-4 text-base-900 dark:text-base-100">
-                Extension Methods
-            </h3>
-            <div class="space-y-4">
-                @foreach (var ext in _extensionMethods)
-                {
-                    <div class="border border-base-200 dark:border-base-700 rounded-lg p-4 bg-base-50 dark:bg-base-800/90">
-                        <div class="mb-2">
-                            <code
-                                class="text-sm py-1 rounded text-base-900 dark:text-base-100 font-mono">
-                                @ext.Signature
-                            </code>
-                        </div>
-                        @if (!string.IsNullOrEmpty(ext.Summary))
-                        {
-                            <p class="text-sm text-base-600 dark:text-base-400 mt-2">@ext.Summary</p>
-                        }
-                        @if (ext.Parameters.Any())
-                        {
-                            <div class="mt-4">
-                                <p class="text-xs font-semibold text-base-700 dark:text-base-300 mb-1">Parameters:</p>
-                                <div class="grid grid-cols-1 lg:grid-cols-[33%_1fr] gap-x-4 gap-y-2">
-                                    @foreach (var param in ext.Parameters)
-                                    {
-                                        <div class="text-xs text-base-600 dark:text-base-400">
-                                            <code class="text-primary-600 dark:text-primary-500 rounded">@param.Name</code>
-                                            @if (!string.IsNullOrEmpty(param.Type))
-                                            {
-                                                <span class="text-base-500 dark:text-base-500"> (@param.Type)</span>
-                                            }
-                                        </div>
-                                        <div class="text-xs text-base-600 dark:text-base-400">
-                                            @if (!string.IsNullOrEmpty(param.Description))
-                                            {
-                                                @param.Description
-                                            }
-                                        </div>
-                                    }
-                                </div>
-                            </div>
-                        }
-                        @if (!string.IsNullOrEmpty(ext.Returns))
-                        {
-                            <div class="mt-4">
-                                <p class="text-xs font-semibold text-base-700 dark:text-base-300">Returns:</p>
-                                <p class="text-xs text-base-600 dark:text-base-400">@ext.Returns</p>
-                            </div>
-                        }
-                    </div>
-                }
-            </div>
-        </section>
-    }
-</div>
+@if (_model is not null)
+{
+    <ApiReferenceView Model="_model" />
+}
 
 @code {
     [Parameter] public string TypeName { get; set; } = string.Empty;
 
     private bool _isLoading = true;
     private string? _error;
-    private string? _typeSummary;
-    private readonly List<ConstructorApiInfo> _constructors = [];
-    private readonly List<PropertyApiInfo> _properties = [];
-    private readonly List<MethodApiInfo> _methods = [];
-    private readonly List<ExtensionMethodApiInfo> _extensionMethods = [];
+    private ApiReferenceModel? _model;
 
     protected override async Task OnInitializedAsync()
     {
@@ -258,21 +56,14 @@
                 return;
             }
 
-            // Load type summary
             var typeDoc = XmlDocs.GetDocumentation(type);
-            _typeSummary = typeDoc?.Summary;
 
-            // Load constructors
-            LoadConstructors(type);
-
-            // Load properties
-            LoadProperties(type);
-
-            // Load methods
-            LoadMethods(type);
-
-            // Load extension methods
-            LoadExtensionMethods(type);
+            _model = new ApiReferenceModel(
+                SummaryHtml: Enc(typeDoc?.Summary),
+                Constructors: LoadConstructors(type),
+                Properties: LoadProperties(type),
+                Methods: LoadMethods(type),
+                ExtensionMethods: LoadExtensionMethods(type));
         }
         catch (Exception ex)
         {
@@ -284,89 +75,68 @@
         }
     }
 
-    private void LoadConstructors(Type type)
+    private List<ApiMemberView> LoadConstructors(Type type)
     {
+        var result = new List<ApiMemberView>();
         var constructors = type.GetConstructors(BindingFlags.Public | BindingFlags.Instance)
-            .OrderBy(c => c.GetParameters().Length)
-            .ToList();
+            .OrderBy(c => c.GetParameters().Length);
 
         foreach (var ctor in constructors)
         {
             var doc = XmlDocs.GetDocumentation(ctor);
             var parameters = ctor.GetParameters();
-
-            var paramInfos = parameters.Select(p =>
-            {
-                var paramDoc = doc?.Parameters.FirstOrDefault(pd => pd.Name == p.Name);
-                return new ParameterApiInfo(
-                    p.Name ?? "",
-                    GetFriendlyTypeName(p.ParameterType),
-                    paramDoc?.Description);
-            }).ToList();
-
             var signature = $"{type.Name}({string.Join(", ", parameters.Select(p => $"{GetFriendlyTypeName(p.ParameterType)} {p.Name}"))})";
-
-            _constructors.Add(new ConstructorApiInfo(
-                signature,
-                doc?.Summary,
-                paramInfos));
+            result.Add(new ApiMemberView(
+                WebUtility.HtmlEncode(signature),
+                Enc(doc?.Summary),
+                null,
+                ToParams(parameters, doc)));
         }
+        return result;
     }
 
-    private void LoadProperties(Type type)
+    private List<ApiPropertyView> LoadProperties(Type type)
     {
+        var result = new List<ApiPropertyView>();
         var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-            .OrderBy(p => p.Name)
-            .ToList();
+            .OrderBy(p => p.Name);
 
         foreach (var prop in properties)
         {
             var doc = XmlDocs.GetDocumentation(prop);
-
-            _properties.Add(new PropertyApiInfo(
-                prop.Name,
-                GetFriendlyTypeName(prop.PropertyType),
-                doc?.Summary));
+            result.Add(new ApiPropertyView(prop.Name, GetFriendlyTypeName(prop.PropertyType), Enc(doc?.Summary)));
         }
+        return result;
     }
 
-    private void LoadMethods(Type type)
+    private List<ApiMemberView> LoadMethods(Type type)
     {
+        var result = new List<ApiMemberView>();
         var methods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
             .Where(m => !m.IsSpecialName) // Exclude property getters/setters
-            .OrderBy(m => m.Name)
-            .ToList();
+            .OrderBy(m => m.Name);
 
         foreach (var method in methods)
         {
             var doc = XmlDocs.GetDocumentation(method);
             var parameters = method.GetParameters();
-
-            var paramInfos = parameters.Select(p =>
-            {
-                var paramDoc = doc?.Parameters.FirstOrDefault(pd => pd.Name == p.Name);
-                return new ParameterApiInfo(
-                    p.Name ?? "",
-                    GetFriendlyTypeName(p.ParameterType),
-                    paramDoc?.Description);
-            }).ToList();
-
             var signature = $"{method.Name}({string.Join(", ", parameters.Select(p => $"{GetFriendlyTypeName(p.ParameterType)} {p.Name}"))})";
             if (method.ReturnType != typeof(void))
             {
                 signature = $"{GetFriendlyTypeName(method.ReturnType)} {signature}";
             }
-
-            _methods.Add(new MethodApiInfo(
-                signature,
-                doc?.Summary,
-                doc?.Returns,
-                paramInfos));
+            result.Add(new ApiMemberView(
+                WebUtility.HtmlEncode(signature),
+                Enc(doc?.Summary),
+                Enc(doc?.Returns),
+                ToParams(parameters, doc)));
         }
+        return result;
     }
 
-    private void LoadExtensionMethods(Type type)
+    private List<ApiMemberView> LoadExtensionMethods(Type type)
     {
+        var result = new List<ApiMemberView>();
         var extensionMethods = XmlDocumentationService.Assemblies
             .SelectMany(GetLoadableTypes)
             .Where(t => t.IsSealed && !t.IsGenericType && !t.IsNested)
@@ -375,37 +145,32 @@
             .Where(m => m.GetParameters().Length > 0 &&
                         (m.GetParameters()[0].ParameterType == type ||
                          m.GetParameters()[0].ParameterType.IsAssignableFrom(type)))
-            .OrderBy(m => m.Name)
-            .ToList();
+            .OrderBy(m => m.Name);
 
         foreach (var method in extensionMethods)
         {
             var doc = XmlDocs.GetDocumentation(method);
             var parameters = method.GetParameters().Skip(1).ToArray(); // Skip 'this' parameter
-
-            var paramInfos = parameters.Select(p =>
-            {
-                var paramDoc = doc?.Parameters.FirstOrDefault(pd => pd.Name == p.Name);
-                return new ParameterApiInfo(
-                    p.Name ?? "",
-                    GetFriendlyTypeName(p.ParameterType),
-                    paramDoc?.Description);
-            }).ToList();
-
             var signature = $"{method.Name}({string.Join(", ", parameters.Select(p => $"{GetFriendlyTypeName(p.ParameterType)} {p.Name}"))})";
             if (method.ReturnType != typeof(void))
             {
                 signature = $"{GetFriendlyTypeName(method.ReturnType)} {signature}";
             }
-
-            _extensionMethods.Add(new ExtensionMethodApiInfo(
-                signature,
-                doc?.Summary,
-                doc?.Returns,
-                paramInfos,
-                method.DeclaringType?.FullName ?? "Unknown"));
+            result.Add(new ApiMemberView(
+                WebUtility.HtmlEncode(signature),
+                Enc(doc?.Summary),
+                Enc(doc?.Returns),
+                ToParams(parameters, doc)));
         }
+        return result;
     }
+
+    private List<ApiParamView> ToParams(ParameterInfo[] parameters, XmlDocumentation? doc) =>
+        parameters.Select(p =>
+        {
+            var paramDoc = doc?.Parameters.FirstOrDefault(pd => pd.Name == p.Name);
+            return new ApiParamView(p.Name ?? "", GetFriendlyTypeName(p.ParameterType), Enc(paramDoc?.Description));
+        }).ToList();
 
     private static IEnumerable<Type> GetLoadableTypes(Assembly assembly)
     {
@@ -418,6 +183,8 @@
             return ex.Types.Where(t => t != null)!;
         }
     }
+
+    private static string? Enc(string? s) => string.IsNullOrEmpty(s) ? null : WebUtility.HtmlEncode(s);
 
     private string GetFriendlyTypeName(Type type)
     {
@@ -443,15 +210,4 @@
 
         return type.Name;
     }
-
-    private record ConstructorApiInfo(string Signature, string? Summary, List<ParameterApiInfo> Parameters);
-
-    private record PropertyApiInfo(string Name, string Type, string? Summary);
-
-    private record MethodApiInfo(string Signature, string? Summary, string? Returns, List<ParameterApiInfo> Parameters);
-
-    private record ExtensionMethodApiInfo(string Signature, string? Summary, string? Returns, List<ParameterApiInfo> Parameters, string DeclaringType);
-
-    private record ParameterApiInfo(string Name, string Type, string? Description);
-
 }

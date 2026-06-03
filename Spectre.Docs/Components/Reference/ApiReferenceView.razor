@@ -1,0 +1,116 @@
+@* Shared presentation for an API reference type. Markup mirrors the original
+   WidgetApiReference so the inline widget and the full /console/api · /cli/api
+   pages render identically; data comes from ApiReferenceModel. *@
+
+<div class="not-prose space-y-8">
+    @if (!string.IsNullOrEmpty(Model.SummaryHtml))
+    {
+        <p class="text-base-700 dark:text-base-300">@((MarkupString)Model.SummaryHtml)</p>
+    }
+
+    @if (Model.Constructors.Count > 0)
+    {
+        <section>
+            <h3 class="text-lg font-semibold mb-4 text-base-900 dark:text-base-100">Constructors</h3>
+            <div class="space-y-4">
+                @foreach (var ctor in Model.Constructors)
+                {
+                    <div class="border border-base-200 dark:border-base-700 rounded-lg p-4 bg-base-50 dark:bg-base-800/90">
+                        <div class="mb-2">
+                            <code class="text-sm py-1 rounded text-base-900 dark:text-base-100 font-mono">@((MarkupString)ctor.SignatureHtml)</code>
+                        </div>
+                        @if (!string.IsNullOrEmpty(ctor.SummaryHtml))
+                        {
+                            <p class="text-sm text-base-600 dark:text-base-400 mt-2">@((MarkupString)ctor.SummaryHtml)</p>
+                        }
+                        <ApiParameterGrid Parameters="ctor.Parameters" />
+                    </div>
+                }
+            </div>
+        </section>
+    }
+
+    @if (Model.Properties.Count > 0)
+    {
+        <section>
+            <h3 class="text-lg font-semibold mb-4 text-base-900 dark:text-base-100">Properties</h3>
+            <div class="space-y-4">
+                @foreach (var prop in Model.Properties)
+                {
+                    <div class="border border-base-200 dark:border-base-700 rounded-lg p-4 bg-base-50 dark:bg-base-800/90">
+                        <div class="mb-2">
+                            <code class="text-sm py-1 rounded text-base-900 dark:text-base-100 font-mono">@prop.Name</code>
+                            <span class="text-xs text-base-500 dark:text-base-500 ml-2">: @prop.Type</span>
+                        </div>
+                        @if (!string.IsNullOrEmpty(prop.SummaryHtml))
+                        {
+                            <p class="text-sm text-base-600 dark:text-base-400">@((MarkupString)prop.SummaryHtml)</p>
+                        }
+                    </div>
+                }
+            </div>
+        </section>
+    }
+
+    @if (Model.Methods.Count > 0)
+    {
+        <section>
+            <h3 class="text-lg font-semibold mb-4 text-base-900 dark:text-base-100">Methods</h3>
+            <div class="space-y-4">
+                @foreach (var method in Model.Methods)
+                {
+                    <div class="border border-base-200 dark:border-base-700 rounded-lg p-4 bg-base-50 dark:bg-base-800/90">
+                        <div class="mb-2">
+                            <code class="text-sm py-1 rounded text-base-900 dark:text-base-100 font-mono">@((MarkupString)method.SignatureHtml)</code>
+                        </div>
+                        @if (!string.IsNullOrEmpty(method.SummaryHtml))
+                        {
+                            <p class="text-sm text-base-600 dark:text-base-400 mt-2">@((MarkupString)method.SummaryHtml)</p>
+                        }
+                        <ApiParameterGrid Parameters="method.Parameters" />
+                        @if (!string.IsNullOrEmpty(method.ReturnsHtml))
+                        {
+                            <div class="mt-4">
+                                <p class="text-xs font-semibold text-base-700 dark:text-base-300">Returns:</p>
+                                <p class="text-xs text-base-600 dark:text-base-400">@((MarkupString)method.ReturnsHtml)</p>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </section>
+    }
+
+    @if (Model.ExtensionMethods.Count > 0)
+    {
+        <section>
+            <h3 class="text-lg font-semibold mb-4 text-base-900 dark:text-base-100">Extension Methods</h3>
+            <div class="space-y-4">
+                @foreach (var ext in Model.ExtensionMethods)
+                {
+                    <div class="border border-base-200 dark:border-base-700 rounded-lg p-4 bg-base-50 dark:bg-base-800/90">
+                        <div class="mb-2">
+                            <code class="text-sm py-1 rounded text-base-900 dark:text-base-100 font-mono">@((MarkupString)ext.SignatureHtml)</code>
+                        </div>
+                        @if (!string.IsNullOrEmpty(ext.SummaryHtml))
+                        {
+                            <p class="text-sm text-base-600 dark:text-base-400 mt-2">@((MarkupString)ext.SummaryHtml)</p>
+                        }
+                        <ApiParameterGrid Parameters="ext.Parameters" />
+                        @if (!string.IsNullOrEmpty(ext.ReturnsHtml))
+                        {
+                            <div class="mt-4">
+                                <p class="text-xs font-semibold text-base-700 dark:text-base-300">Returns:</p>
+                                <p class="text-xs text-base-600 dark:text-base-400">@((MarkupString)ext.ReturnsHtml)</p>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </section>
+    }
+</div>
+
+@code {
+    [Parameter, EditorRequired] public required ApiReferenceModel Model { get; set; }
+}

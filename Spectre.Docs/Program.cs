@@ -1,4 +1,5 @@
 using Mdazor;
+using Pennington.ApiMetadata.Reflection;
 using Pennington.Infrastructure;
 using Pennington.MonorailCss;
 using Pennington.TreeSitter;
@@ -73,6 +74,26 @@ builder.Services.AddPennington(penn =>
         md.BasePageUrl = "/blog";
     });
 });
+
+// Reflection-backed API metadata providers, one keyed registration per reference area.
+// These ship in Pennington.ApiMetadata(.Reflection); the higher-level AddApiReference
+// content service is not in this package version, so the /console/api and /cli/api pages
+// render the metadata themselves (see ApiReferenceService + ConsoleApiPage/CliApiPage).
+// Registering a provider also registers the shared IXmlDocParser / IXmlDocHtmlRenderer.
+builder.Services.AddApiMetadataFromCompiledAssembly("console", opts =>
+{
+    opts.FromPackageReference("Spectre.Console");
+    opts.FromPackageReference("Spectre.Console.Json");
+    opts.FromPackageReference("Spectre.Console.ImageSharp");
+});
+builder.Services.AddApiMetadataFromCompiledAssembly("cli", opts =>
+    opts.FromPackageReference("Spectre.Console.Cli"));
+
+builder.Services.AddScoped<ApiReferenceService>();
+
+// Supplies API route discovery (so the static build emits the pages) and the sidebar
+// "API Reference" entry, standing in for the unreleased AddApiReference content service.
+builder.Services.AddSingleton<Pennington.Content.IContentService, ApiReferenceContentService>();
 
 // Tree-sitter-backed code-fragment fences (`:symbol`). Reads source files directly —
 // no MSBuild workspace. ContentRoot is the repo root so fence bodies resolve against

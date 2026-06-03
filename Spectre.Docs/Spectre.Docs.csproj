@@ -14,6 +14,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Pennington" Version="0.1.0-alpha.0.281" />
+    <PackageReference Include="Pennington.ApiMetadata.Reflection" Version="0.1.0-alpha.0.281" />
     <PackageReference Include="Pennington.MonorailCss" Version="0.1.0-alpha.0.281" />
     <PackageReference Include="Pennington.UI" Version="0.1.0-alpha.0.281" />
     <!-- Tree-sitter backs the `:symbol` code fences (replaces the old Roslyn/MSBuild workspace). -->
