@@ -53,7 +53,7 @@ public sealed class ApiReferenceContentService(IServiceProvider services) : ICon
                 "API Reference",
                 ContentRouteFactory.FromUrl(new UrlPath(ApiReferenceService.BaseUrl(a.Area)), string.Empty),
                 int.MaxValue,
-                [a.Area, "reference"],
+                [a.Area, "reference", "api"],
                 a.Area,
                 null))
             .ToImmutableList();
