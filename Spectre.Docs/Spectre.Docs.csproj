@@ -13,16 +13,15 @@
     <Watch Include="..\Spectre.Docs.Cli.Examples\**.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Pennington" Version="0.1.0-alpha.0.281" />
-    <PackageReference Include="Pennington.ApiMetadata.Reflection" Version="0.1.0-alpha.0.281" />
-    <PackageReference Include="Pennington.MonorailCss" Version="0.1.0-alpha.0.281" />
-    <PackageReference Include="Pennington.UI" Version="0.1.0-alpha.0.281" />
-    <!-- Tree-sitter backs the `:symbol` code fences (replaces the old Roslyn/MSBuild workspace). -->
-    <PackageReference Include="Pennington.TreeSitter" Version="0.1.0-alpha.0.281" />
+    <PackageReference Include="Pennington" Version="0.1.0-alpha.0.282" />
+    <PackageReference Include="Pennington.ApiMetadata.Reflection" Version="0.1.0-alpha.0.282" />
+    <PackageReference Include="Pennington.MonorailCss" Version="0.1.0-alpha.0.282" />
+    <PackageReference Include="Pennington.UI" Version="0.1.0-alpha.0.282" />
+    <PackageReference Include="Pennington.TreeSitter" Version="0.1.0-alpha.0.282" />
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.12" />
-    <PackageReference Include="Spectre.Console" Version="0.57.0" />
+    <PackageReference Include="Spectre.Console" Version="0.55.3-alpha.0.18" />
     <PackageReference Include="Spectre.Console.Cli" Version="1.0.0-alpha.0.11" />
-    <PackageReference Include="Spectre.Console.ImageSharp" Version="0.57.0" />
-    <PackageReference Include="Spectre.Console.Json" Version="0.57.0" />
+    <PackageReference Include="Spectre.Console.ImageSharp" Version="0.55.3-alpha.0.18" />
+    <PackageReference Include="Spectre.Console.Json" Version="0.55.3-alpha.0.18" />
   </ItemGroup>
 </Project>
