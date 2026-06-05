@@ -13,6 +13,8 @@
     <Watch Include="..\Spectre.Docs.Cli.Examples\**.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MonorailCss" Version="0.0.5-alpha.0.165" />
+    <PackageReference Include="MonorailCss.Discovery" Version="0.0.5-alpha.0.165" />
     <PackageReference Include="Pennington" Version="0.1.0-alpha.0.282" />
     <PackageReference Include="Pennington.ApiMetadata.Reflection" Version="0.1.0-alpha.0.282" />
     <PackageReference Include="Pennington.MonorailCss" Version="0.1.0-alpha.0.282" />
