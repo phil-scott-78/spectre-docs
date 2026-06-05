@@ -92,6 +92,24 @@ public sealed class ApiReferenceService(IServiceProvider services, IXmlDocHtmlRe
         return new ApiTypePage(summary, model);
     }
 
+    /// <summary>
+    /// Resolves a reflection-style full type name (e.g. <c>Spectre.Console.Table</c> or the
+    /// arity-backtick generic form <c>Spectre.Console.TextPrompt`1</c>) to a rendered member model,
+    /// for the inline <c>&lt;WidgetApiReference&gt;</c> component. The xmldocid backtick maps to the
+    /// same URL-safe slug the route pages use, so a type and its docs page stay in sync.
+    /// </summary>
+    public Task<ApiReferenceModel?> GetModelByTypeNameAsync(string area, string typeName)
+    {
+        var slug = typeName.Replace('`', '-');
+        return ResolveModelAsync(area, slug);
+    }
+
+    private async Task<ApiReferenceModel?> ResolveModelAsync(string area, string slug)
+    {
+        var page = await GetTypePageAsync(area, slug);
+        return page?.Model;
+    }
+
     private ApiMemberView ToMember(ApiMember m) => new(
         SignatureHtml: m.SignatureHtml ?? WebUtility.HtmlEncode(m.Name),
         SummaryHtml: RenderInline(m.Xmldoc.Summary),

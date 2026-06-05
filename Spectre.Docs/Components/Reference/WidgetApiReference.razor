@@ -1,7 +1,5 @@
-@using System.Reflection
-@using System.Net
 @using Spectre.Docs.Services
-@inject XmlDocumentationService XmlDocs
+@inject ApiReferenceService Api
 
 @if (_isLoading)
 {
@@ -21,18 +19,17 @@
 }
 
 @code {
+    /// <summary>Reflection-style full type name, e.g. <c>Spectre.Console.Table</c> or <c>Spectre.Console.TextPrompt`1</c>.</summary>
     [Parameter] public string TypeName { get; set; } = string.Empty;
+
+    /// <summary>API metadata registration key the type belongs to. All inline widget docs are console types.</summary>
+    [Parameter] public string Area { get; set; } = "console";
 
     private bool _isLoading = true;
     private string? _error;
     private ApiReferenceModel? _model;
 
     protected override async Task OnInitializedAsync()
-    {
-        await Task.Run(LoadApiReference);
-    }
-
-    private void LoadApiReference()
     {
         try
         {
@@ -42,28 +39,11 @@
                 return;
             }
 
-            // Get the type from Spectre assemblies
-            Type? type = null;
-            foreach (var assembly in XmlDocumentationService.Assemblies)
+            _model = await Api.GetModelByTypeNameAsync(Area, TypeName);
+            if (_model is null)
             {
-                type = assembly.GetType(TypeName);
-                if (type != null) break;
+                _error = $"No documented API reference found for '{TypeName}'.";
             }
-
-            if (type == null)
-            {
-                _error = $"Type '{TypeName}' not found in Spectre assemblies";
-                return;
-            }
-
-            var typeDoc = XmlDocs.GetDocumentation(type);
-
-            _model = new ApiReferenceModel(
-                SummaryHtml: Enc(typeDoc?.Summary),
-                Constructors: LoadConstructors(type),
-                Properties: LoadProperties(type),
-                Methods: LoadMethods(type),
-                ExtensionMethods: LoadExtensionMethods(type));
         }
         catch (Exception ex)
         {
@@ -73,141 +53,5 @@
         {
             _isLoading = false;
         }
-    }
-
-    private List<ApiMemberView> LoadConstructors(Type type)
-    {
-        var result = new List<ApiMemberView>();
-        var constructors = type.GetConstructors(BindingFlags.Public | BindingFlags.Instance)
-            .OrderBy(c => c.GetParameters().Length);
-
-        foreach (var ctor in constructors)
-        {
-            var doc = XmlDocs.GetDocumentation(ctor);
-            var parameters = ctor.GetParameters();
-            var signature = $"{type.Name}({string.Join(", ", parameters.Select(p => $"{GetFriendlyTypeName(p.ParameterType)} {p.Name}"))})";
-            result.Add(new ApiMemberView(
-                WebUtility.HtmlEncode(signature),
-                Enc(doc?.Summary),
-                null,
-                ToParams(parameters, doc)));
-        }
-        return result;
-    }
-
-    private List<ApiPropertyView> LoadProperties(Type type)
-    {
-        var result = new List<ApiPropertyView>();
-        var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-            .OrderBy(p => p.Name);
-
-        foreach (var prop in properties)
-        {
-            var doc = XmlDocs.GetDocumentation(prop);
-            result.Add(new ApiPropertyView(prop.Name, GetFriendlyTypeName(prop.PropertyType), Enc(doc?.Summary)));
-        }
-        return result;
-    }
-
-    private List<ApiMemberView> LoadMethods(Type type)
-    {
-        var result = new List<ApiMemberView>();
-        var methods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-            .Where(m => !m.IsSpecialName) // Exclude property getters/setters
-            .OrderBy(m => m.Name);
-
-        foreach (var method in methods)
-        {
-            var doc = XmlDocs.GetDocumentation(method);
-            var parameters = method.GetParameters();
-            var signature = $"{method.Name}({string.Join(", ", parameters.Select(p => $"{GetFriendlyTypeName(p.ParameterType)} {p.Name}"))})";
-            if (method.ReturnType != typeof(void))
-            {
-                signature = $"{GetFriendlyTypeName(method.ReturnType)} {signature}";
-            }
-            result.Add(new ApiMemberView(
-                WebUtility.HtmlEncode(signature),
-                Enc(doc?.Summary),
-                Enc(doc?.Returns),
-                ToParams(parameters, doc)));
-        }
-        return result;
-    }
-
-    private List<ApiMemberView> LoadExtensionMethods(Type type)
-    {
-        var result = new List<ApiMemberView>();
-        var extensionMethods = XmlDocumentationService.Assemblies
-            .SelectMany(GetLoadableTypes)
-            .Where(t => t.IsSealed && !t.IsGenericType && !t.IsNested)
-            .SelectMany(t => t.GetMethods(BindingFlags.Static | BindingFlags.Public))
-            .Where(m => m.IsDefined(typeof(System.Runtime.CompilerServices.ExtensionAttribute), false))
-            .Where(m => m.GetParameters().Length > 0 &&
-                        (m.GetParameters()[0].ParameterType == type ||
-                         m.GetParameters()[0].ParameterType.IsAssignableFrom(type)))
-            .OrderBy(m => m.Name);
-
-        foreach (var method in extensionMethods)
-        {
-            var doc = XmlDocs.GetDocumentation(method);
-            var parameters = method.GetParameters().Skip(1).ToArray(); // Skip 'this' parameter
-            var signature = $"{method.Name}({string.Join(", ", parameters.Select(p => $"{GetFriendlyTypeName(p.ParameterType)} {p.Name}"))})";
-            if (method.ReturnType != typeof(void))
-            {
-                signature = $"{GetFriendlyTypeName(method.ReturnType)} {signature}";
-            }
-            result.Add(new ApiMemberView(
-                WebUtility.HtmlEncode(signature),
-                Enc(doc?.Summary),
-                Enc(doc?.Returns),
-                ToParams(parameters, doc)));
-        }
-        return result;
-    }
-
-    private List<ApiParamView> ToParams(ParameterInfo[] parameters, XmlDocumentation? doc) =>
-        parameters.Select(p =>
-        {
-            var paramDoc = doc?.Parameters.FirstOrDefault(pd => pd.Name == p.Name);
-            return new ApiParamView(p.Name ?? "", GetFriendlyTypeName(p.ParameterType), Enc(paramDoc?.Description));
-        }).ToList();
-
-    private static IEnumerable<Type> GetLoadableTypes(Assembly assembly)
-    {
-        try
-        {
-            return assembly.GetTypes();
-        }
-        catch (ReflectionTypeLoadException ex)
-        {
-            return ex.Types.Where(t => t != null)!;
-        }
-    }
-
-    private static string? Enc(string? s) => string.IsNullOrEmpty(s) ? null : WebUtility.HtmlEncode(s);
-
-    private string GetFriendlyTypeName(Type type)
-    {
-        if (type == typeof(void)) return "void";
-        if (type == typeof(int)) return "int";
-        if (type == typeof(string)) return "string";
-        if (type == typeof(bool)) return "bool";
-        if (type == typeof(double)) return "double";
-        if (type == typeof(float)) return "float";
-        if (type == typeof(decimal)) return "decimal";
-        if (type == typeof(long)) return "long";
-        if (type == typeof(short)) return "short";
-        if (type == typeof(byte)) return "byte";
-        if (type == typeof(object)) return "object";
-
-        if (type.IsGenericType)
-        {
-            var genericTypeName = type.Name.Split('`')[0];
-            var genericArgs = type.GetGenericArguments();
-            var genericArgNames = string.Join(", ", genericArgs.Select(GetFriendlyTypeName));
-            return $"{genericTypeName}<{genericArgNames}>";
-        }
-
-        return type.Name;
     }
 }

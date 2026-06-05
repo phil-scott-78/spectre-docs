@@ -8,41 +8,32 @@ using Spectre.Console;
 using Spectre.Docs.Components;
 using Spectre.Docs.Components.Reference;
 using Spectre.Docs.Components.Shared;
-using Spectre.Docs.Components.Layouts;
 using Spectre.Docs.Services;
 using ColorName = Pennington.MonorailCss.ColorName;
 using IContentService = Pennington.Content.IContentService;
 using IContentRenderer = Pennington.Pipeline.IContentRenderer;
-using FrontMatterParser = Pennington.FrontMatter.FrontMatterParser;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorComponents();
 
-// Register XML documentation service for API reference
-builder.Services.AddSingleton<XmlDocumentationService>();
-
-// Typed wrappers over the Pennington content pipeline that preserve the ergonomics
-// the Razor components were already built against. Each wrapper filters by base URL
-// so it only sees pages from its own markdown source — necessary because the shared
-// FrontMatterParser is type-agnostic and will happily bind a /console page to the
-// BlogFrontMatter type otherwise.
+// Typed views over the Pennington content pipeline that preserve the ergonomics the Razor
+// components were already built against. Each is scoped by base URL so it only surfaces pages
+// from its own markdown source; the pipeline does the parsing (each source already binds its
+// own front-matter type), so these just filter, render, and shape the result.
 builder.Services.AddScoped<IMarkdownContentService<SpectreConsoleFrontMatter>>(sp =>
     new MarkdownContentService<SpectreConsoleFrontMatter>(
         sp.GetRequiredService<IEnumerable<IContentService>>(),
-        sp.GetRequiredService<FrontMatterParser>(),
         sp.GetRequiredService<IContentRenderer>(),
         "/console"));
 builder.Services.AddScoped<IMarkdownContentService<SpectreConsoleCliFrontMatter>>(sp =>
     new MarkdownContentService<SpectreConsoleCliFrontMatter>(
         sp.GetRequiredService<IEnumerable<IContentService>>(),
-        sp.GetRequiredService<FrontMatterParser>(),
         sp.GetRequiredService<IContentRenderer>(),
         "/cli"));
 builder.Services.AddScoped<IMarkdownContentService<BlogFrontMatter>>(sp =>
     new MarkdownContentService<BlogFrontMatter>(
         sp.GetRequiredService<IEnumerable<IContentService>>(),
-        sp.GetRequiredService<FrontMatterParser>(),
         sp.GetRequiredService<IContentRenderer>(),
         "/blog"));
 builder.Services.AddScoped<TableOfContentsService>();
@@ -114,9 +105,7 @@ builder.Services
     .AddMdazorComponent<SpinnerList>()
     .AddMdazorComponent<TableBorderList>()
     .AddMdazorComponent<TreeGuideList>()
-    .AddMdazorComponent<WidgetApiReference>()
-    .AddMdazorComponent<TwoColumn>()
-    .AddMdazorComponent<Column>();
+    .AddMdazorComponent<WidgetApiReference>();
 
 builder.Services.AddMonorailCss(_ => new MonorailCssOptions
 {
@@ -131,11 +120,6 @@ builder.Services.AddMonorailCss(_ => new MonorailCssOptions
             ["tertiary-two"] = ColorName.Violet,
         },
     },
-    ExtraStyles = """
-                  #dotnet-compile-error:empty {
-                      display: none;
-                  }
-                  """,
 });
 
 var app = builder.Build();

@@ -25,39 +25,64 @@ public interface IMarkdownContentService<T> where T : class, IFrontMatter, new()
 }
 
 /// <summary>
-/// A typed wrapper over Pennington's content pipeline. Filters the shared
-/// <see cref="IContentService"/> enumerable by URL-prefix so each typed service
-/// only sees pages from its own markdown source, then re-parses each file with
-/// the correct <typeparamref name="T"/> via <see cref="FrontMatterParser"/>.
+/// Shared section-prefix matching used to scope the shared content services to a single
+/// markdown source (<c>/console</c>, <c>/cli</c>, <c>/blog</c>). Kept in one place so the
+/// content service and the navigation service can't drift apart.
+/// </summary>
+internal static class SectionPrefix
+{
+    /// <summary>Leading-slashed, trailing-slash-stripped form; empty/"/" means "match everything".</summary>
+    public static string Normalize(string prefix)
+    {
+        if (string.IsNullOrEmpty(prefix)) return "/";
+        var s = prefix.StartsWith('/') ? prefix : "/" + prefix;
+        return s.Length > 1 && s.EndsWith('/') ? s[..^1] : s;
+    }
+
+    /// <summary>True when <paramref name="path"/> is the section root or sits beneath it (case-insensitive).</summary>
+    public static bool Contains(string normalizedPrefix, string path)
+    {
+        if (string.IsNullOrEmpty(normalizedPrefix) || normalizedPrefix == "/") return true;
+        return path.StartsWith(normalizedPrefix + "/", StringComparison.OrdinalIgnoreCase)
+               || string.Equals(path, normalizedPrefix, StringComparison.OrdinalIgnoreCase)
+               || string.Equals(path, normalizedPrefix + "/", StringComparison.OrdinalIgnoreCase);
+    }
+}
+
+/// <summary>
+/// A typed view over Pennington's content pipeline for the site's Razor components. Each instance
+/// is scoped to one markdown source (<c>/console</c>, <c>/cli</c>, <c>/blog</c>) by URL-prefix, and
+/// pulls already-parsed <see cref="ParsedItem"/>s from the shared <see cref="IContentService"/>
+/// pipeline (<see cref="IContentService.ParseContentAsync"/>) rather than re-reading and re-parsing
+/// files itself — the parser/cache lives in the pipeline. Rendering reuses the shared
+/// <see cref="IContentRenderer"/>, so output matches the engine's own pages.
 /// </summary>
 public sealed class MarkdownContentService<T>(
     IEnumerable<IContentService> contentServices,
-    FrontMatterParser frontMatterParser,
     IContentRenderer renderer,
     string basePageUrlPrefix)
     : IMarkdownContentService<T> where T : class, IFrontMatter, new()
 {
-    private readonly string _prefix = NormalizePrefix(basePageUrlPrefix);
+    private readonly string _prefix = SectionPrefix.Normalize(basePageUrlPrefix);
 
     public async Task<ImmutableList<MarkdownContentPage<T>>> GetAllContentPagesAsync()
     {
         var builder = ImmutableList.CreateBuilder<MarkdownContentPage<T>>();
         foreach (var service in contentServices)
         {
-            await foreach (var discovered in service.DiscoverAsync())
+            await foreach (var item in service.ParseContentAsync())
             {
-                if (!BelongsToSource(discovered.Route)) continue;
-                var parsed = await TryParseAsync(discovered);
-                if (parsed is null) continue;
+                if (!BelongsToSource(item.Route)) continue;
+                if (item.Metadata is not T typed || typed.IsDraft) continue;
 
-                var tags = (parsed.Metadata as ITaggable)?.Tags ?? [];
+                var tags = (typed as ITaggable)?.Tags ?? [];
                 var tagList = tags
                     .Select(t => new Tag(t, t.ToLowerInvariant().Replace(' ', '-')))
                     .ToImmutableList();
 
                 builder.Add(new MarkdownContentPage<T>(
-                    parsed.Metadata,
-                    discovered.Route.CanonicalPath.Value,
+                    typed,
+                    item.Route.CanonicalPath.Value,
                     tagList,
                     []));
             }
@@ -72,21 +97,18 @@ public sealed class MarkdownContentService<T>(
 
         foreach (var service in contentServices)
         {
-            await foreach (var discovered in service.DiscoverAsync())
+            await foreach (var item in service.ParseContentAsync())
             {
-                if (!BelongsToSource(discovered.Route)) continue;
-                if (!candidates.Any(c => discovered.Route.CanonicalPath.Matches(c))) continue;
+                if (!BelongsToSource(item.Route)) continue;
+                if (!candidates.Any(c => item.Route.CanonicalPath.Matches(c))) continue;
+                if (item.Metadata is not T typed || typed.IsDraft) continue;
 
-                var parsed = await TryParseAsync(discovered);
-                if (parsed is null) continue;
-
-                var parsedItem = new ParsedItem(discovered.Route, parsed.Metadata, parsed.Body);
-                var rendered = await renderer.RenderAsync(parsedItem);
+                var rendered = await renderer.RenderAsync(item);
                 if (rendered is not RenderedItem r) continue;
 
                 var page = new MarkdownContentPage<T>(
-                    parsed.Metadata,
-                    discovered.Route.CanonicalPath.Value,
+                    typed,
+                    item.Route.CanonicalPath.Value,
                     r.Content.Tags,
                     r.Content.Outline);
                 return new RenderedMarkdownPage<T>(page, r.Content.Html);
@@ -96,41 +118,13 @@ public sealed class MarkdownContentService<T>(
     }
 
     private bool BelongsToSource(ContentRoute route)
-    {
-        if (string.IsNullOrEmpty(_prefix) || _prefix == "/") return true;
-        var path = route.CanonicalPath.Value;
-        return path.StartsWith(_prefix + "/", StringComparison.OrdinalIgnoreCase)
-               || string.Equals(path, _prefix, StringComparison.OrdinalIgnoreCase)
-               || string.Equals(path, _prefix + "/", StringComparison.OrdinalIgnoreCase);
-    }
-
-    private async Task<ParsedFrontMatter<T>?> TryParseAsync(DiscoveredItem discovered)
-    {
-        if (discovered.Route.SourceFile is not { } sourceFile) return null;
-        var filePath = sourceFile.Value;
-        if (!File.Exists(filePath)) return null;
-
-        var content = await File.ReadAllTextAsync(filePath);
-        var result = frontMatterParser.Parse<T>(content);
-        if (result.Metadata is null) return null;
-        if (result.Metadata.IsDraft) return null;
-        return new ParsedFrontMatter<T>(result.Metadata, result.Body);
-    }
+        => SectionPrefix.Contains(_prefix, route.CanonicalPath.Value);
 
     private static UrlPath NormalizeUrl(string url)
     {
         var s = url ?? string.Empty;
         return new UrlPath(s.StartsWith('/') ? s : "/" + s);
     }
-
-    private static string NormalizePrefix(string prefix)
-    {
-        if (string.IsNullOrEmpty(prefix)) return "/";
-        var s = prefix.StartsWith('/') ? prefix : "/" + prefix;
-        return s.Length > 1 && s.EndsWith('/') ? s[..^1] : s;
-    }
-
-    private sealed record ParsedFrontMatter<TMeta>(TMeta Metadata, string Body) where TMeta : class, IFrontMatter;
 }
 
 public sealed class TableOfContentsService(
@@ -145,15 +139,9 @@ public sealed class TableOfContentsService(
             allItems.AddRange(await service.GetContentTocEntriesAsync());
         }
 
-        var prefix = "/" + sectionKey.Trim('/').ToLowerInvariant();
+        var prefix = SectionPrefix.Normalize(sectionKey);
         var filtered = allItems
-            .Where(i =>
-            {
-                var p = i.Route.CanonicalPath.Value;
-                return p.StartsWith(prefix + "/", StringComparison.OrdinalIgnoreCase)
-                       || string.Equals(p, prefix, StringComparison.OrdinalIgnoreCase)
-                       || string.Equals(p, prefix + "/", StringComparison.OrdinalIgnoreCase);
-            })
+            .Where(i => SectionPrefix.Contains(prefix, i.Route.CanonicalPath.Value))
             .ToList();
 
         var currentUrl = ToUrlPath(currentPath);
