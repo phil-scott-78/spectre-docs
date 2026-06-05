@@ -9,9 +9,7 @@
 <div class="max-w-7xl mx-auto">
     <PageHeader
         Title="@NavigationInfo.PageTitle"
-        Description="@Description"
-        Tags="@Tags"
-        Theme="@Theme" />
+        Description="@Description" />
 
     <div class="lg:flex lg:gap-8">
         <article class="flex-1 min-w-0">
@@ -41,7 +39,5 @@
     [Parameter] public OutlineEntry[]? Outline { get; set; }
     [Parameter] public NavigationInfo? NavigationInfo { get; set; }
     [Parameter] public string? Description { get; set; }
-    [Parameter] public IEnumerable<string>? Tags { get; set; }
     [Parameter] public required string SiteTitle { get; set; }
-    [Parameter] public required string Theme { get; set; }
 }

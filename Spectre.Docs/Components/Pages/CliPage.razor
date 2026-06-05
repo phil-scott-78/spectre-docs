@@ -13,16 +13,13 @@
     Outline="@_outline"
     NavigationInfo="@_navigationInfo"
     Description="@_description"
-    Tags="@_tags"
-    SiteTitle="@PenningtonOptions.SiteTitle"
-    Theme="tertiary-one" />
+    SiteTitle="@PenningtonOptions.SiteTitle" />
 
 @code {
     private string? _postContent;
     private OutlineEntry[]? _outline;
     private NavigationInfo? _navigationInfo;
     private string? _description;
-    private IEnumerable<string>? _tags;
 
     [Parameter] public required string FileName { get; init; } = string.Empty;
 
@@ -42,7 +39,6 @@
             _postContent = renderedPage.HtmlContent;
             _outline = renderedPage.Page.Outline;
             _description = renderedPage.Page.FrontMatter.Description;
-            _tags = renderedPage.Page.FrontMatter.Tags;
 
             _navigationInfo = await TocService.GetNavigationInfoAsync(url);
         }
