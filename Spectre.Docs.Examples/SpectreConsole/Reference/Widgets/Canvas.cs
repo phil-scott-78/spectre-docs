@@ -118,18 +118,6 @@ internal static class CanvasExamples
             }
         }
 
-        AnsiConsole.MarkupLine("[yellow]PixelWidth = 1:[/]");
-        canvas.PixelWidth = 1;
-        AnsiConsole.Write(canvas);
-
-        AnsiConsole.WriteLine();
-        AnsiConsole.MarkupLine("[yellow]PixelWidth = 2 (default):[/]");
-        canvas.PixelWidth = 2;
-        AnsiConsole.Write(canvas);
-
-        AnsiConsole.WriteLine();
-        AnsiConsole.MarkupLine("[yellow]PixelWidth = 4:[/]");
-        canvas.PixelWidth = 4;
         AnsiConsole.Write(canvas);
     }
 

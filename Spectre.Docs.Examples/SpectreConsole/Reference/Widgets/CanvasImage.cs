@@ -64,20 +64,17 @@ internal static class CanvasImageExamples
     public static void CanvasImagePixelWidthExample()
     {
         AnsiConsole.MarkupLine("[yellow]Pixel width 1 (narrow):[/]");
-        var narrow = new CanvasImage("path/to/image.png")
-            .PixelWidth(1);
+        var narrow = new CanvasImage("path/to/image.png");
         AnsiConsole.Write(narrow);
 
         AnsiConsole.WriteLine();
         AnsiConsole.MarkupLine("[yellow]Pixel width 2 (default):[/]");
-        var normal = new CanvasImage("path/to/image.png")
-            .PixelWidth(2);
+        var normal = new CanvasImage("path/to/image.png");
         AnsiConsole.Write(normal);
 
         AnsiConsole.WriteLine();
         AnsiConsole.MarkupLine("[yellow]Pixel width 4 (wide):[/]");
-        var wide = new CanvasImage("path/to/image.png")
-            .PixelWidth(4);
+        var wide = new CanvasImage("path/to/image.png");
         AnsiConsole.Write(wide);
     }
 
@@ -176,7 +173,6 @@ internal static class CanvasImageExamples
     {
         var image = new CanvasImage("path/to/image.png")
             .MaxWidth(80)
-            .PixelWidth(2)
             .BicubicResampler()
             .Mutate(ctx => ctx.Crop(new Rectangle(10, 10, 200, 200)));
 
