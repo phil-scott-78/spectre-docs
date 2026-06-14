@@ -48,30 +48,48 @@ else
 }
 
 <script>
-    // Animate all spinners on the page
-    document.addEventListener('DOMContentLoaded', function() {
-        const spinnerElements = document.querySelectorAll('.spinner-animation');
+    // Animate all spinners on the page.
+    //
+    // SPA-safe by design: this page is normally reached via a client-side
+    // region swap, not a full load, so we must NOT gate on DOMContentLoaded
+    // (it fires once, on the initial load, and never again). The SPA engine
+    // re-executes scripts in swapped-in regions, so running immediately starts
+    // the animations whether the page arrived via full load or SPA navigation.
+    //
+    // The interval self-terminates once its element leaves the document
+    // (element.isConnected goes false when the region's innerHTML is replaced
+    // on navigate-away). That stops the timer instead of leaking it onto a
+    // detached node, and prevents timers stacking when the page is revisited.
+    (function () {
+        document.querySelectorAll('.spinner-animation').forEach(element => {
+            if (element.dataset.spinnerStarted) return;
 
-        spinnerElements.forEach(element => {
             const framesJson = element.getAttribute('data-frames');
             if (!framesJson) return;
 
+            let frames;
             try {
-                const frames = JSON.parse(framesJson);
-                if (!frames || frames.length === 0) return;
-
-                let currentFrame = 0;
-
-                // Animate frames every 150ms
-                setInterval(() => {
-                    currentFrame = (currentFrame + 1) % frames.length;
-                    element.textContent = frames[currentFrame];
-                }, 150);
+                frames = JSON.parse(framesJson);
             } catch (e) {
                 console.error('Failed to parse frames:', e);
+                return;
             }
+            if (!frames || frames.length === 0) return;
+
+            element.dataset.spinnerStarted = 'true';
+            let currentFrame = 0;
+
+            // Animate frames every 150ms.
+            const timer = setInterval(() => {
+                if (!element.isConnected) {
+                    clearInterval(timer);
+                    return;
+                }
+                currentFrame = (currentFrame + 1) % frames.length;
+                element.textContent = frames[currentFrame];
+            }, 150);
         });
-    });
+    })();
 </script>
 
 @code {
