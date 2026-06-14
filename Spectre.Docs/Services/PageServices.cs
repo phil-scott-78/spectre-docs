@@ -104,7 +104,7 @@ public sealed class MarkdownContentService<T>(
                 if (item.Metadata is not T typed || typed.IsDraft) continue;
 
                 var rendered = await renderer.RenderAsync(item);
-                if (rendered is not RenderedItem r) continue;
+                if (rendered.Value is not RenderedItem r) continue;
 
                 var page = new MarkdownContentPage<T>(
                     typed,

@@ -7,10 +7,11 @@ Set Theme "one dark"
 Set TransparentBackground "true"
 Set Cols 82
 Set Rows 12
+Set Size "fit-height"
 Set EndBuffer 5s
 Set WorkingDirectory "./Spectre.Docs.Examples/"
 
-Type "dotnet run -- showcase capabilities"
+Type "dotnet run --no-build -- showcase capabilities"
 Enter
 Wait
 Sleep 1000ms
@@ -20,7 +21,7 @@ Type "$env:NO_COLOR='true'"
 Enter
 Sleep 500ms
 
-Type "dotnet run -- showcase capabilities"
+Type "dotnet run --no-build -- showcase capabilities"
 Enter
 Wait
 Sleep 1000ms
@@ -30,7 +31,7 @@ Type "$env:CI_SERVER='yes'"
 Enter
 Sleep 500MS
 
-Type "dotnet run -- showcase capabilities"
+Type "dotnet run --no-build -- showcase capabilities"
 Enter
 Wait
 Sleep 3s

@@ -94,9 +94,6 @@ public sealed class ApiReferenceContentService(IServiceProvider services) : ICon
     public Task<ImmutableList<CrossReference>> GetCrossReferencesAsync() =>
         Task.FromResult(ImmutableList<CrossReference>.Empty);
 
-    public Task<ImmutableList<ContentToCreate>> GetContentToCreateAsync() =>
-        Task.FromResult(ImmutableList<ContentToCreate>.Empty);
-
     private static DiscoveredItem Page(string url, string componentType) =>
         new(ContentRouteFactory.FromUrl(new UrlPath(url), string.Empty), new RazorPageSource(componentType));
 }

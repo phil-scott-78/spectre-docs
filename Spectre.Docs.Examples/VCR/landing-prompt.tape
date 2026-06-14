@@ -6,5 +6,6 @@ Set TransparentBackground "true"
 Set DisableCursor true
 Set Cols 39
 Set Rows 8
+Set Size fit
 
 Exec "dotnet run --project .\Spectre.Docs.Examples\ --no-build showcase landing-prompt"

@@ -84,7 +84,7 @@ builder.Services.AddScoped<ApiReferenceService>();
 
 // Supplies API route discovery (so the static build emits the pages) and the sidebar
 // "API Reference" entry, standing in for the unreleased AddApiReference content service.
-builder.Services.AddSingleton<Pennington.Content.IContentService, ApiReferenceContentService>();
+builder.Services.AddSingleton<IContentService, ApiReferenceContentService>();
 
 // Tree-sitter-backed code-fragment fences (`:symbol`). Reads source files directly —
 // no MSBuild workspace. ContentRoot is the repo root so fence bodies resolve against
