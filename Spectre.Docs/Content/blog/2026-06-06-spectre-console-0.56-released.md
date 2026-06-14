@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.56.0 released!
-Description: Still not written in Rust.
-Date: 2026-06-06
+title: Spectre.Console 0.56.0 released!
+description: Still not written in Rust.
+date: 2026-06-06
 ---
 
 Version 0.56.0 of Spectre.Console has been released!

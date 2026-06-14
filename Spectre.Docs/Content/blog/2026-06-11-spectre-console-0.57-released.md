@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.57.0 released!
-Description: Contents may have settled during shipping.
-Date: 2026-06-11
+title: Spectre.Console 0.57.0 released!
+description: Contents may have settled during shipping.
+date: 2026-06-11
 ---
 
 Version 0.57.0 of Spectre.Console has been released!
