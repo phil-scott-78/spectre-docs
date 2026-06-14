@@ -57,14 +57,6 @@ Use `MaxWidth` to constrain the rendered canvas width. The canvas automatically 
 Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Canvas.cs > CanvasExamples.CanvasScalingExample
 ```
 
-### Pixel Width
-
-Use `PixelWidth` to control how many console characters each pixel occupies. Larger values create wider, more visible pixels.
-
-```csharp:symbol,bodyonly
-Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Canvas.cs > CanvasExamples.CanvasPixelWidthExample
-```
-
 ### Disabling Scaling
 
 Set `Scale = false` to prevent automatic resizing when the canvas exceeds available space. This ensures pixel-perfect rendering but may cause clipping.

@@ -87,15 +87,6 @@ Use `NoMaxWidth()` to remove size constraints and display the image at full reso
 Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/CanvasImage.cs > CanvasImageExamples.CanvasImageNoMaxWidthExample
 ```
 
-### Adjusting Pixel Width
-
-Use `PixelWidth()` to control the character-to-pixel ratio. Lower values create taller, narrower images; higher values
-create shorter, wider ones.
-
-```csharp:symbol,bodyonly
-Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/CanvasImage.cs > CanvasImageExamples.CanvasImagePixelWidthExample
-```
-
 ## Resampling Methods
 
 When images are scaled, different resampling algorithms affect quality and performance.
