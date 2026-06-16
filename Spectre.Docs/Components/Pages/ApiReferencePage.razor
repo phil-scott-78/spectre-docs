@@ -1,0 +1,100 @@
+@* Shared body for the API reference routes. An empty slug renders the type index for
+   the area; a slug renders a single type via the shared ApiReferenceView. The /console
+   and /cli prefixes mean MainLayout already supplies the correct section header + sidebar. *@
+@using Pennington.ApiMetadata
+@inject ApiReferenceService Api
+@inject PenningtonOptions PenningtonOptions
+
+<HeadContent>
+    <meta name="description" content="@_description" />
+</HeadContent>
+
+<PageTitle>@PenningtonOptions.SiteTitle - @_title</PageTitle>
+
+<div class="max-w-7xl mx-auto">
+    <PageHeader Title="@_title" Description="@_description" />
+
+    <article class="flex-1 min-w-0">
+        @if (_notFound)
+        {
+            <div class="prose dark:prose-invert max-w-none">
+                <p>No API reference page was found for <code>@Slug</code>.</p>
+                <p><a href="@ApiReferenceService.BaseUrl(Area)">Back to the @_areaLabel API reference index</a>.</p>
+            </div>
+        }
+        else if (_typePage is not null)
+        {
+            <ApiReferenceView Model="_typePage.Model" />
+        }
+        else
+        {
+            <div class="prose dark:prose-invert max-w-none">
+                <p class="lead text-lg text-base-600 dark:text-base-400">
+                    Auto-generated reference for every public, documented type in @_areaLabel.
+                </p>
+                @foreach (var group in _groups)
+                {
+                    <h2>@group.Key</h2>
+                    <ul>
+                        @foreach (var type in group)
+                        {
+                            <li>
+                                <a href="@ApiReferenceService.LinkFor(Area, type)">@ApiReferenceService.DisplayName(type)</a>
+                                @if (!string.IsNullOrWhiteSpace(type.Summary))
+                                {
+                                    <span class="text-base-500 dark:text-base-400"> - @type.Summary</span>
+                                }
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        }
+    </article>
+</div>
+
+@code {
+    /// <summary>API metadata registration key — "console" or "cli".</summary>
+    [Parameter, EditorRequired] public required string Area { get; set; }
+
+    /// <summary>Catch-all route remainder after <c>/{area}/api/</c>; empty for the index.</summary>
+    [Parameter] public string? Slug { get; set; }
+
+    private string _title = "API Reference";
+    private string? _description;
+    private string _areaLabel = "";
+    private bool _notFound;
+    private ApiTypePage? _typePage;
+    private List<IGrouping<string, ApiTypeSummary>> _groups = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        _areaLabel = Area.Equals("cli", StringComparison.OrdinalIgnoreCase)
+            ? "Spectre.Console.Cli"
+            : "Spectre.Console";
+
+        var slug = (Slug ?? string.Empty).Trim('/');
+        if (string.IsNullOrEmpty(slug))
+        {
+            _title = $"{_areaLabel} API Reference";
+            _description = $"Browse the public API of {_areaLabel}.";
+            var types = await Api.GetTypesAsync(Area);
+            _groups = types
+                .GroupBy(t => string.IsNullOrEmpty(t.Namespace) ? "(global namespace)" : t.Namespace)
+                .OrderBy(g => g.Key, StringComparer.Ordinal)
+                .ToList();
+            return;
+        }
+
+        _typePage = await Api.GetTypePageAsync(Area, slug);
+        if (_typePage is null)
+        {
+            _notFound = true;
+            _title = "Not found";
+            return;
+        }
+
+        _title = ApiReferenceService.DisplayName(_typePage.Summary);
+        _description = _typePage.Summary.Summary;
+    }
+}

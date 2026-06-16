@@ -24,8 +24,8 @@ For **horizontal arrangement**, use [Columns](xref:console-widget-columns) inste
 
 Pass any collection of renderables to stack them vertically. Each item is rendered on a new line.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.RowsExamples.BasicRowsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Rows.cs > RowsExamples.BasicRowsExample
 ```
 
 ## Stacking Widgets
@@ -34,32 +34,32 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.RowsExamples.BasicRowsE
 
 Stack panels or other container widgets to create visually distinct sections.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.RowsExamples.RowsPanelsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Rows.cs > RowsExamples.RowsPanelsExample
 ```
 
 ### Mixed Content Types
 
 Combine different widget types (tables, charts, rules) to build rich information displays.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.RowsExamples.RowsMixedContentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Rows.cs > RowsExamples.RowsMixedContentExample
 ```
 
 ## Width Behavior
 
 Use the `Expand` property to control whether rows fill the available console width or fit to their content. When `Expand` is `false`, each row's width matches its content.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.RowsExamples.RowsExpandExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Rows.cs > RowsExamples.RowsExpandExample
 ```
 
 ## Creating from Collections
 
 Build rows dynamically from a collection of renderables, useful when the number of items varies.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.RowsExamples.RowsFromCollectionExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Rows.cs > RowsExamples.RowsFromCollectionExample
 ```
 
 ## Advanced Usage
@@ -68,16 +68,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.RowsExamples.RowsFromCo
 
 Nest Rows and Columns to create complex grid-like layouts without using Grid's more verbose API.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.RowsExamples.RowsWithColumnsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Rows.cs > RowsExamples.RowsWithColumnsExample
 ```
 
 ### Building Dashboards
 
 Create multi-section status dashboards by stacking different types of information displays.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.RowsExamples.RowsDashboardExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Rows.cs > RowsExamples.RowsDashboardExample
 ```
 
 ## See Also

@@ -6,6 +6,7 @@ Set Theme "one dark"
 Set TransparentBackground "true"
 Set Cols 82
 Set Rows 16
+Set Size "fit-height"
 Set EndBuffer 5s
 Set TypingSpeed 190ms
 

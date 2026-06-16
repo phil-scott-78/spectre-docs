@@ -1,9 +1,9 @@
-@page "/cli"
+@page "/cli/"
 @using Spectre.Console
 @inject IMarkdownContentService<SpectreConsoleCliFrontMatter> CliContentServices
-@inject ContentEngineOptions ContentEngineOptions
+@inject PenningtonOptions PenningtonOptions
 
-<PageTitle>Spectre.Console.Cli Documentation - @ContentEngineOptions.SiteTitle</PageTitle>
+<PageTitle>Spectre.Console.Cli Documentation - @PenningtonOptions.SiteTitle</PageTitle>
 
 <HeadContent>
     <meta name="description" content="Build powerful command-line applications with Spectre.Console.Cli - type-safe argument parsing, nested commands, and dependency injection for .NET" />
@@ -20,13 +20,13 @@
     <CodeBlock Language="bash">dotnet add package Spectre.Console.Cli</CodeBlock>
 
     <p>Then try this quick example that creates a simple greeting command:</p>
-    <CodeBlock Language="csharp:xmldocid">
-        T:Spectre.Docs.Cli.Examples.DemoApps.QuickStart.GreetSettings
-        T:Spectre.Docs.Cli.Examples.DemoApps.QuickStart.GreetCommand
+    <CodeBlock Language="csharp:symbol">
+        Spectre.Docs.Cli.Examples/DemoApps/QuickStart/HomePageExample.cs > GreetSettings
+        Spectre.Docs.Cli.Examples/DemoApps/QuickStart/HomePageExample.cs > GreetCommand
     </CodeBlock>
 
     <p>In your Program.cs, wire it up:</p>
-    <CodeBlock Language="csharp:xmldocid,bodyonly">M:Spectre.Docs.Cli.Examples.DemoApps.QuickStart.HomePageExample.Run(System.String[])</CodeBlock>
+    <CodeBlock Language="csharp:symbol,bodyonly">Spectre.Docs.Cli.Examples/DemoApps/QuickStart/HomePageExample.cs > HomePageExample.Run</CodeBlock>
 
 
     <p>Run it with <code>dotnet run -- World --count 3</code> to see typed argument parsing in action.</p>

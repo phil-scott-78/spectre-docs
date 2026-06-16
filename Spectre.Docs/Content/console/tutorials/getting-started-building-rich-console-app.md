@@ -52,8 +52,8 @@ The output confirms the package was installed. Now we're ready to write some cod
 
 Let's start with a simple success message. We wrap text in color tags using `[green]text[/]`:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.GettingStartedTutorial.ShowSuccessMessage
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/GettingStartedTutorial.cs > GettingStartedTutorial.ShowSuccessMessage
 ```
 
 Run the code:
@@ -72,8 +72,8 @@ Done - our first styled message.
 
 Now let's add a warning. We'll use a hex color code `[#FFA500]` for the orange symbol, and mix styled and plain text on the same line:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.GettingStartedTutorial.ShowWarningMessage(System.String)
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/GettingStartedTutorial.cs > GettingStartedTutorial.ShowWarningMessage
 ```
 
 Run the code:
@@ -92,8 +92,8 @@ Now we're mixing colors and plain text on a single line.
 
 Errors need to stand out. Let's combine bold and red in a single tag by separating them with a space:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.GettingStartedTutorial.ShowErrorMessage(System.String)
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/GettingStartedTutorial.cs > GettingStartedTutorial.ShowErrorMessage
 ```
 
 Run the code:
@@ -112,8 +112,8 @@ Our error message really stands out now.
 
 Let's help users find more information by adding a clickable link. We use `[link=URL]text[/]` to show friendly text instead of a raw URL:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.GettingStartedTutorial.ShowDocumentationLink(System.String)
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/GettingStartedTutorial.cs > GettingStartedTutorial.ShowDocumentationLink
 ```
 
 Run the code:
@@ -132,8 +132,8 @@ We've added helpful navigation to our output.
 
 Real build tools display filenames and counts that come from variables. Let's use `MarkupLineInterpolated()` to safely include dynamic values:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.GettingStartedTutorial.ShowDocumentationLink(System.String)
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/GettingStartedTutorial.cs > GettingStartedTutorial.ShowDocumentationLink
 ```
 
 Run the code:
@@ -152,8 +152,8 @@ See the [Markup Widget](xref:console-widget-markup) reference for more on escapi
 
 Now let's combine everything into our final build-output display:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.GettingStartedTutorial.Run(Spectre.Console.IAnsiConsole)
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/GettingStartedTutorial.cs > GettingStartedTutorial.Run
 ```
 
 Run the code:

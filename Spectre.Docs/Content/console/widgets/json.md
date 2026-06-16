@@ -24,8 +24,8 @@ For **hierarchical data** without JSON syntax, use [Tree](xref:console-widget-tr
 
 Pass a JSON string to the constructor. The widget automatically parses and highlights the syntax.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.BasicJsonTextExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/JsonText.cs > JsonTextExamples.BasicJsonTextExample
 ```
 
 ## Working with Complex JSON
@@ -34,16 +34,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.BasicJ
 
 JsonText automatically handles nested structures, maintaining proper indentation and syntax highlighting throughout.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.NestedJsonTextExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/JsonText.cs > JsonTextExamples.NestedJsonTextExample
 ```
 
 ### Different Value Types
 
 JsonText applies distinct colors to strings, numbers, booleans, and null values for easy visual scanning.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.JsonTextDataTypesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/JsonText.cs > JsonTextExamples.JsonTextDataTypesExample
 ```
 
 ## Customizing Colors
@@ -52,24 +52,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.JsonTe
 
 Use `MemberColor()` to change property name colors and value type methods to customize how data appears.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.JsonTextMemberStylingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/JsonText.cs > JsonTextExamples.JsonTextMemberStylingExample
 ```
 
 ### Value Type Colors
 
 Apply different colors to each JSON value type for custom color schemes or to match your application's theme.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.JsonTextValueStylingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/JsonText.cs > JsonTextExamples.JsonTextValueStylingExample
 ```
 
 ### Punctuation Colors
 
 Customize braces, brackets, colons, and commas to adjust readability or visual weight.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.JsonTextPunctuationStylingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/JsonText.cs > JsonTextExamples.JsonTextPunctuationStylingExample
 ```
 
 ## Advanced Styling
@@ -78,16 +78,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.JsonTe
 
 Use `Style` objects for additional control like bold, italic, or underline decorations on JSON elements.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.JsonTextStylesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/JsonText.cs > JsonTextExamples.JsonTextStylesExample
 ```
 
 ### Embedding in Containers
 
 Combine JsonText with panels or other containers for better presentation and context.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.JsonTextInPanelExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/JsonText.cs > JsonTextExamples.JsonTextInPanelExample
 ```
 
 ## Real-World Examples
@@ -96,16 +96,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.JsonTe
 
 Use JsonText to display API responses with clear visual distinction between property names and values.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.JsonTextApiResponseExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/JsonText.cs > JsonTextExamples.JsonTextApiResponseExample
 ```
 
 ### Configuration File Display
 
 Display configuration files with colors that make the structure easy to understand at a glance.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.JsonTextExamples.JsonTextConfigurationExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/JsonText.cs > JsonTextExamples.JsonTextConfigurationExample
 ```
 
 ## See Also

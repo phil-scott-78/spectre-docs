@@ -11,8 +11,8 @@ To test CLI applications, use `CommandAppTester` from `Spectre.Console.Cli.Testi
 
 Inject `IAnsiConsole` instead of using the static `AnsiConsole` directly. This allows tests to capture output:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.TestingCommands.GreetCommand
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/TestingCommands/Main.cs > GreetCommand
 ```
 
 ## Test with CommandAppTester
@@ -25,22 +25,22 @@ dotnet add package Spectre.Console.Cli.Testing
 
 Configure the tester like a regular `CommandApp`, then call `Run` with arguments. The result provides `ExitCode`, `Output`, and `Settings` for assertions:
 
-```csharp:xmldocid
-M:Spectre.Docs.Cli.Examples.DemoApps.TestingCommands.GreetCommandTests.Greet_WithName_ReturnsZeroAndOutputsGreeting
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/TestingCommands/Main.cs > GreetCommandTests.Greet_WithName_ReturnsZeroAndOutputsGreeting
 ```
 
 You can also verify that command-line arguments were parsed correctly:
 
-```csharp:xmldocid
-M:Spectre.Docs.Cli.Examples.DemoApps.TestingCommands.GreetCommandTests.Greet_WithCount_ParsesSettingsCorrectly
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/TestingCommands/Main.cs > GreetCommandTests.Greet_WithCount_ParsesSettingsCorrectly
 ```
 
 ## Test Interactive Prompts
 
 For commands with prompts, use `TestConsole` to queue input before running:
 
-```csharp:xmldocid
-M:Spectre.Docs.Cli.Examples.DemoApps.TestingCommands.InteractiveCommandTests.Interactive_WithQueuedInput_ProcessesCorrectly
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/TestingCommands/Main.cs > InteractiveCommandTests.Interactive_WithQueuedInput_ProcessesCorrectly
 ```
 
 Use `PushKey` for arrow keys and enter, `PushTextWithEnter` for text input.

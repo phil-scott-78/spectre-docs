@@ -1,32 +1,23 @@
-using MyLittleContentEngine.Models;
+using Pennington.FrontMatter;
 
 namespace Spectre.Console;
 
 /// <summary>
-/// Front matter for blog posts in the Spectre.Console documentation
+/// Front matter for blog posts in the Spectre.Console documentation.
 /// </summary>
-public class BlogFrontMatter : IFrontMatter
+public record BlogFrontMatter : IFrontMatter, ITaggable, IRedirectable
 {
     public string Title { get; init; } = "Empty title";
     public string Author { get; init; } = "Spectre.Console Team";
-    public string Description { get; init; } = string.Empty;
+    public string? Description { get; init; }
     public DateTime Date { get; init; } = DateTime.Now;
-    public bool IsDraft { get; init; } = false;
+    public bool IsDraft { get; init; }
     public string[] Tags { get; init; } = [];
     public string Series { get; init; } = string.Empty;
     public string? RedirectUrl { get; init; }
-    public string? Section { get; init; }
-    public string? Uid { get; init; } = null;
+    public string? SectionLabel { get; init; }
+    public string? Uid { get; init; }
     public string? Repository { get; init; }
-    
-    public Metadata AsMetadata()
-    {
-        return new Metadata()
-        {
-            Title = Title,
-            Description = Description,
-            LastMod = Date,
-            RssItem = true
-        };
-    }
+
+    DateTime? IFrontMatter.Date => Date;
 }

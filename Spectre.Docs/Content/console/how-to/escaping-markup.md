@@ -11,24 +11,24 @@ When displaying dynamic content that might contain square brackets, escape it to
 
 To safely display user-provided strings, use `Markup.Escape()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.EscapingMarkupHowTo.EscapeUserInput
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/EscapingMarkupHowTo.cs > EscapingMarkupHowTo.EscapeUserInput
 ```
 
 ## Use Safe Interpolation
 
 For cleaner code with multiple dynamic values, use `MarkupLineInterpolated()` which escapes automatically.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.EscapingMarkupHowTo.UseSafeInterpolation
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/EscapingMarkupHowTo.cs > EscapingMarkupHowTo.UseSafeInterpolation
 ```
 
 ## Strip Markup for Plain Text
 
 To get plain text without markup tags (for logging or file output), use `Markup.Remove()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.EscapingMarkupHowTo.StripMarkupForLogging
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/EscapingMarkupHowTo.cs > EscapingMarkupHowTo.StripMarkupForLogging
 ```
 
 ## See Also

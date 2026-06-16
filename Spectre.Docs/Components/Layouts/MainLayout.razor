@@ -1,7 +1,6 @@
 @using System.Collections.Immutable
-@using MyLittleContentEngine.Services.Content.TableOfContents
 @inherits LayoutComponentBase
-@inject ITableOfContentService TableOfContentService
+@inject TableOfContentsService TocService
 @inject NavigationManager NavigationManager
 
 <div class="min-h-screen bg-base-50 dark:bg-base-950">
@@ -15,8 +14,12 @@
             {
                 <aside class="hidden lg:block lg:w-64 xl:w-72 shrink-0">
                     <div class="sticky top-16 scrollbar-color scrollbar-thin scrollbar-track-base-100 scrollbar-thumb-base-400 dark:scrollbar-track-base-800 dark:scrollbar-thumb-base-600 overflow-y-auto max-h-[calc(100vh-4rem)] pr-4 -mr-4">
-                        <div class="py-8">
-                            <TableOfContentsNavigation TableOfContents="@_toc" Section="@_currentSection"/>
+                        @* SPA region wraps just the nav content so the scroll container above keeps its position across navigations.
+                           data-spa-no-transition: this region lives inside a sticky+overflow ancestor; a per-region view-transition
+                           snapshot would escape the parent's clip and flash through the sticky header. Opting out swaps it
+                           synchronously before startViewTransition, so it's already in place when both root snapshots are taken. *@
+                        <div data-spa-region="sidebar" data-spa-no-transition data-spa-region-key="@_currentSection" class="py-8">
+                            <TableOfContentsNavigation TableOfContents="@_toc" SectionLabel="@_currentSection"/>
                         </div>
                     </div>
                 </aside>
@@ -31,14 +34,14 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                 </svg>
                             </button>
-                            <TableOfContentsNavigation TableOfContents="@_toc" Section="@_currentSection"/>
+                            <TableOfContentsNavigation TableOfContents="@_toc" SectionLabel="@_currentSection"/>
                         </div>
                     </div>
                 </div>
             }
 
             <!-- Main Content -->
-            <main class="flex-1 min-w-0 lg:py-8 ">
+            <main data-spa-region="content" data-spa-loading="skeleton" class="flex-1 min-w-0 lg:py-8 ">
                 <div class="bg-white dark:bg-base-900 lg:rounded-lg lg:shadow-sm lg:border lg:border-base-200 lg:dark:border-base-800">
                     <div class="p-6 lg:p-8">
                         @Body
@@ -74,7 +77,7 @@
         // Get the table of contents for the current section
         if (!string.IsNullOrEmpty(_currentSection))
         {
-            _toc = (await TableOfContentService.GetNavigationTocAsync(currentPath, _currentSection)).First().Items.ToImmutableList();
+            _toc = await TocService.GetNavigationTreeAsync(currentPath, _currentSection);
         }
 
         await base.OnInitializedAsync();

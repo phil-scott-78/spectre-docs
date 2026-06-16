@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.54.0 released!
-Description: Spectre.Console.Cli has a new home!
-Date: 2025-11-13
+title: Spectre.Console 0.54.0 released!
+description: Spectre.Console.Cli has a new home!
+date: 2025-11-13
 ---
 
 Version `0.54.0` of Spectre.Console has been released!

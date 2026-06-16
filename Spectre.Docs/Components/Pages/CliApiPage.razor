@@ -1,0 +1,7 @@
+@page "/cli/reference/api/{*slug}"
+
+<ApiReferencePage Area="cli" Slug="@Slug" />
+
+@code {
+    [Parameter] public string? Slug { get; set; }
+}

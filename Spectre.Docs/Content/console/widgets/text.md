@@ -21,38 +21,38 @@ For **inline markup syntax** like `[bold red]text[/]`, use [Markup](xref:console
 
 Create text with a string and optional style.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.BasicTextExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.BasicTextExample
 ```
 
 ### Multi-line Text
 
 Use newline characters (`\n`) to create multi-line output.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.MultiLineTextExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.MultiLineTextExample
 ```
 
 ### Static Members
 
 Use `Text.Empty` and `Text.NewLine` for reusable empty text and line break instances.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.EmptyTextExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.EmptyTextExample
 ```
 
 ## Justification
 
 Use justification to align text within containers like panels.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextJustificationExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.TextJustificationExample
 ```
 
 Set justification via the property when you need to configure it separately from construction.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextJustificationPropertyExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.TextJustificationPropertyExample
 ```
 
 ## Overflow
@@ -63,14 +63,14 @@ Control what happens when text exceeds available width.
 - **Crop** - Truncates text at the boundary
 - **Ellipsis** - Truncates and adds an ellipsis character (…)
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextOverflowExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.TextOverflowExample
 ```
 
 Set overflow via the property for separate configuration.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextOverflowPropertyExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.TextOverflowPropertyExample
 ```
 
 ## Styling
@@ -79,8 +79,8 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextOverfl
 
 Apply colors to make text stand out or convey meaning.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextColorsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.TextColorsExample
 ```
 
 > [!NOTE]
@@ -90,46 +90,46 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextColors
 
 Use decorations to emphasize text: Bold, Italic, Underline, and Strikethrough.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextDecorationsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.TextDecorationsExample
 ```
 
 Advanced decorations like Dim, Invert, Conceal, and Blink are available but may not work in all terminals.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextAdvancedDecorationsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.TextAdvancedDecorationsExample
 ```
 
 ### Combined Styles
 
 Combine multiple decorations using bitwise flags. Styles can include foreground, background, and decorations together.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextCombinedStylesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.TextCombinedStylesExample
 ```
 
 ### Style Construction
 
 Build styles with the `Style` constructor for full control, or use `Style.Parse()` for a compact string syntax.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextStyleConstructorExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.TextStyleConstructorExample
 ```
 
 ## Properties
 
 Use `Length` and `Lines` to inspect text dimensions when building layouts or calculating sizes.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextPropertiesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.TextPropertiesExample
 ```
 
 ## Working with Containers
 
 Text widgets work well as content inside panels, tables, and other container widgets.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TextExamples.TextInContainersExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Text.cs > TextExamples.TextInContainersExample
 ```
 
 ## See Also

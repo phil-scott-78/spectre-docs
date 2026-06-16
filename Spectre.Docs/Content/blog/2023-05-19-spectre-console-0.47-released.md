@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.47 released!
-Description: Alacritty terminal support, command line improvements
-Date: 2023-05-19
+title: Spectre.Console 0.47 released!
+description: Alacritty terminal support, command line improvements
+date: 2023-05-19
 ---
 
 Version 0.47 of Spectre.Console has been released!

@@ -24,16 +24,16 @@ For **multiple selections**, use [MultiSelectionPrompt](xref:console-prompt-mult
 
 The simplest selection prompt needs a title and choices.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.BasicSelectionExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.BasicSelectionExample
 ```
 
 ## Adding a Title
 
 Use markup to style the title and draw attention to key information.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.SelectionWithTitleExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.SelectionWithTitleExample
 ```
 
 ## Populating Choices
@@ -42,16 +42,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples
 
 You can add choices using params arrays, IEnumerable collections, or individual AddChoice calls.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.AddChoicesVariationsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.AddChoicesVariationsExample
 ```
 
 ### Hierarchical Choices
 
 Use `AddChoiceGroup()` to organize choices into categories with parent-child relationships.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.HierarchicalChoicesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.HierarchicalChoicesExample
 ```
 
 ## Navigation
@@ -60,16 +60,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples
 
 Use `PageSize()` to control how many items display at once, and customize the hint text shown when more choices exist.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.PageSizeExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.PageSizeExample
 ```
 
 ### Wrap-Around
 
 Enable `WrapAround()` for circular navigation - pressing up at the top jumps to the bottom, and vice versa.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.WrapAroundExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.WrapAroundExample
 ```
 
 ## Search
@@ -78,16 +78,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples
 
 Use `EnableSearch()` to let users type and filter the list instantly - essential for long lists.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.SearchEnabledExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.SearchEnabledExample
 ```
 
 ### Search Highlighting
 
 Customize how matched characters are highlighted during search with `SearchHighlightStyle()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.SearchHighlightStyleExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.SearchHighlightStyleExample
 ```
 
 ## Styling
@@ -96,16 +96,16 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples
 
 Use `HighlightStyle()` to customize the appearance of the currently selected item.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.HighlightStyleExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.HighlightStyleExample
 ```
 
 ### Disabled Item Style
 
 Use `DisabledStyle()` to style non-selectable items like group headers.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.DisabledStyleExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.DisabledStyleExample
 ```
 
 ## Selection Modes
@@ -114,32 +114,32 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples
 
 Use `SelectionMode.Leaf` to only allow selecting leaf nodes - parent group headers become non-selectable.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.SelectionModeLeafExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.SelectionModeLeafExample
 ```
 
 ### Independent Mode
 
 Use `SelectionMode.Independent` to allow selecting both parent groups and their children.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.SelectionModeIndependentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.SelectionModeIndependentExample
 ```
 
 ## Working with Complex Objects
 
 Use `UseConverter()` to display custom formatted text for complex objects while returning the actual object.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.CustomConverterExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.CustomConverterExample
 ```
 
 ## Complete Example
 
 This comprehensive example combines search, pagination, wrap-around, custom styling, and complex objects for a realistic project selection menu.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Prompts.SelectionPromptExamples.CompleteExampleWithAllFeatures
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Prompts/SelectionPrompt.cs > SelectionPromptExamples.CompleteExampleWithAllFeatures
 ```
 
 ## See Also

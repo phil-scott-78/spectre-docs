@@ -1,7 +1,7 @@
 ---
-Title: Hello, World
-Description: To help track new releases, updates and planning for Spectre.Console, we've added a new blog to the documentation.
-Date: 2021-07-11
+title: Hello, World
+description: To help track new releases, updates and planning for Spectre.Console, we've added a new blog to the documentation.
+date: 2021-07-11
 ---
 
 To help track new releases, updates and planning for Spectre.Console, we've added a new blog to the documentation.

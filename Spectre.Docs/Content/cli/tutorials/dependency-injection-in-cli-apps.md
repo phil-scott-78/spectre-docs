@@ -36,9 +36,9 @@ dotnet add package Spectre.Console.Cli
 
 Replace `Program.cs` with a greeting command that has the logic built right in:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.NoDI.GreetSettings
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.NoDI.GreetCommand
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/NoDI/Main.cs > GreetSettings
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/NoDI/Main.cs > GreetCommand
 ```
 
 Wire it up in your entry point:
@@ -76,17 +76,17 @@ dotnet add package Microsoft.Extensions.DependencyInjection
 Now we'll create a service interface, an implementation, and the bridge classes that connect Microsoft's DI container to
 Spectre.Console.Cli:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.WithService.IGreetingService
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.WithService.GreetingService
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.WithService.TypeRegistrar
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.WithService.TypeResolver
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/WithService/Main.cs > IGreetingService
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/WithService/Main.cs > GreetingService
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/WithService/Main.cs > TypeRegistrar
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/WithService/Main.cs > TypeResolver
 ```
 
 Update the command to accept the service through its constructor:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.WithService.GreetCommand
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/WithService/Main.cs > GreetCommand
 ```
 
 Finally, configure the DI container and pass the registrar to `CommandApp`:
@@ -127,31 +127,31 @@ factory to select the right one at runtime.
 
 First, define the greeting style enum and a simplified service interface:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.DIComplete.GreetingStyle
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.DIComplete.IGreetingService
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/DIComplete/Main.cs > GreetingStyle
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/DIComplete/Main.cs > IGreetingService
 ```
 
 Create three service implementations - one for each style:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.DIComplete.CasualGreetingService
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.DIComplete.FormalGreetingService
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.DIComplete.EnthusiasticGreetingService
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/DIComplete/Main.cs > CasualGreetingService
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/DIComplete/Main.cs > FormalGreetingService
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/DIComplete/Main.cs > EnthusiasticGreetingService
 ```
 
 Now the key piece: a factory that receives the command's `Settings` through DI (Spectre.Console.Cli registers them
 automatically) and uses keyed services to resolve the correct implementation:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.DIComplete.IGreetingFactory
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.DIComplete.GreetingFactory
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/DIComplete/Main.cs > IGreetingFactory
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/DIComplete/Main.cs > GreetingFactory
 ```
 
 The command becomes very clean - it just asks the factory for a service:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.DependencyInjection.DIComplete.GreetCommand
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/DependencyInjection/DIComplete/Main.cs > GreetCommand
 ```
 
 Register everything with keyed services in your entry point:

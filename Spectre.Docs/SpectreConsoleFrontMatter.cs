@@ -1,37 +1,22 @@
-﻿using MyLittleContentEngine.Models;
+using Pennington.FrontMatter;
 
 namespace Spectre.Console;
 
-public class BaseSpectreConsoleFrontMatter : IFrontMatter
+public abstract record BaseSpectreConsoleFrontMatter : IFrontMatter, ITaggable, ISectionable, IOrderable, IRedirectable
 {
     public string Title { get; init; } = "Empty title";
-    public string Description { get; init; } = string.Empty;
-    public string? Uid { get; init; } = null;
-
+    public string? Description { get; init; }
+    public string? Uid { get; init; }
     public DateTime Date { get; init; } = DateTime.Now;
-    public bool IsDraft { get; init; } = false;
+    public bool IsDraft { get; init; }
     public string[] Tags { get; init; } = [];
     public string? RedirectUrl { get; init; }
-    public string? Section { get; init; }
+    public string? SectionLabel { get; init; }
     public int Order { get; init; } = int.MaxValue;
-    
-    public Metadata AsMetadata()
-    {
-        return new Metadata()
-        {
-            Title = Title,
-            Description = Description,
-            LastMod = Date,
-            RssItem = true,
-            Order = Order
-        };
-    }
+
+    DateTime? IFrontMatter.Date => Date;
 }
 
-public class SpectreConsoleCliFrontMatter : BaseSpectreConsoleFrontMatter
-{
-}
+public record SpectreConsoleCliFrontMatter : BaseSpectreConsoleFrontMatter;
 
-public class SpectreConsoleFrontMatter : BaseSpectreConsoleFrontMatter
-{
-}
+public record SpectreConsoleFrontMatter : BaseSpectreConsoleFrontMatter;

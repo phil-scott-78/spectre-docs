@@ -3,7 +3,6 @@ title: "Async Patterns"
 description: "Best practices for using live rendering with asynchronous operations"
 uid: "console-explanation-async-patterns"
 order: 6200
-is_draft: true
 ---
 
 This guide covers patterns and best practices for combining Spectre.Console's live rendering features (Progress, Status, Live Display) with asynchronous programming in .NET, enabling responsive console applications that handle multiple concurrent operations effectively.
@@ -30,4 +29,3 @@ Examples show downloading multiple files concurrently with progress bars, callin
 - <xref:console-live-status> - Show spinners during async work
 - <xref:console-live-live-display> - Real-time content updates
 - <xref:console-howto-showing-progress-bars> - Practical examples
-- [Best Practices](/console/explanation/best-practices-for-console-applications) - Production guidelines

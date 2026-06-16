@@ -1,9 +1,9 @@
-@page "/console"
+@page "/console/"
 @using Spectre.Console
 @inject IMarkdownContentService<SpectreConsoleFrontMatter> ConsoleContentServices
-@inject ContentEngineOptions ContentEngineOptions
+@inject PenningtonOptions PenningtonOptions
 
-<PageTitle>Spectre.Console Documentation - @ContentEngineOptions.SiteTitle</PageTitle>
+<PageTitle>Spectre.Console Documentation - @PenningtonOptions.SiteTitle</PageTitle>
 
 <HeadContent>
     <meta name="description" content="Create beautiful, cross-platform console applications with Spectre.Console - tables, progress bars, charts, and rich text formatting for .NET" />
@@ -20,7 +20,7 @@
     <CodeBlock Language="bash">dotnet add package Spectre.Console</CodeBlock>
 
     <p>Then try this quick example that demonstrates styled text, a table, and a status spinner:</p>
-    <CodeBlock Language="csharp:xmldocid,bodyonly">M:Spectre.Docs.Examples.Showcase.QuickStartSample.Run(Spectre.Console.IAnsiConsole)</CodeBlock>
+    <CodeBlock Language="csharp:symbol,bodyonly">Spectre.Docs.Examples/Showcase/QuickStartSample.cs > QuickStartSample.Run</CodeBlock>
 
     <p>Your application should look something like this:</p>
 
@@ -57,6 +57,7 @@
 
 @code {
     private Dictionary<string, List<MarkdownContentPage<SpectreConsoleFrontMatter>>> _groupedPages = new();
+
 
     private static readonly Dictionary<string, string> SectionNames = new()
     {

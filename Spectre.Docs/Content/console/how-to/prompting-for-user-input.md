@@ -14,32 +14,32 @@ When your application needs user input, use the interactive prompts.
 
 To get text input, use `AnsiConsole.Ask<T>()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.PromptingForUserInputHowTo.AskForText
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/PromptingForUserInputHowTo.cs > PromptingForUserInputHowTo.AskForText
 ```
 
 ## Ask for Confirmation
 
 To get a yes/no answer, use `AnsiConsole.Confirm()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.PromptingForUserInputHowTo.AskForConfirmation
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/PromptingForUserInputHowTo.cs > PromptingForUserInputHowTo.AskForConfirmation
 ```
 
 ## Present Choices
 
 To let users pick from options, use `SelectionPrompt`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.PromptingForUserInputHowTo.PresentChoices
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/PromptingForUserInputHowTo.cs > PromptingForUserInputHowTo.PresentChoices
 ```
 
 ## Allow Multiple Selections
 
 To let users select multiple items, use `MultiSelectionPrompt`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.PromptingForUserInputHowTo.AllowMultipleSelections
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/PromptingForUserInputHowTo.cs > PromptingForUserInputHowTo.AllowMultipleSelections
 ```
 
 ## See Also

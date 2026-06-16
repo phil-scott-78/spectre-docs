@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.55.0 released!
-Description: Now in Technicolor!
-Date: 2026-04-03
+title: Spectre.Console 0.55.0 released!
+description: Now in Technicolor!
+date: 2026-04-03
 ---
 
 Version 0.55.0 of Spectre.Console has been released!

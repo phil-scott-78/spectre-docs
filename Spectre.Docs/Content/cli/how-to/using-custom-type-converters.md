@@ -17,22 +17,22 @@ A drawing command accepting `Point` values in `X,Y` format. The converter parses
 
 Inherit from `System.ComponentModel.TypeConverter` and override `CanConvertFrom` and `ConvertFrom`:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.CustomTypeConverters.PointConverter
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/CustomTypeConverters/Main.cs > PointConverter
 ```
 
 The `Point` type it converts to:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.CustomTypeConverters.Point
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/CustomTypeConverters/Main.cs > Point
 ```
 
 ## Apply the Converter to an Option
 
 Use the `[TypeConverter]` attribute on your settings property to specify which converter to use:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.CustomTypeConverters.DrawCommand.Settings
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/CustomTypeConverters/Main.cs > DrawCommand.Settings
 ```
 
 Users can now pass points on the command line:

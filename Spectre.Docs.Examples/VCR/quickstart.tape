@@ -6,6 +6,7 @@ Set Theme "one dark"
 Set TransparentBackground "true"
 Set Cols 82
 Set Rows 14
-Set EndBuffer 2s
+Set Size "fit-height"
+Set EndBuffer 3s
 
 Exec "dotnet run --project .\Spectre.Docs.Examples\ --no-build showcase quick-start"

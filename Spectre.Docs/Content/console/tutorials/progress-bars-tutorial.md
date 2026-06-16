@@ -26,8 +26,8 @@ Here's the loading screen we're creating:
 
 Let's start with the simplest case - a single progress bar loading one asset. The `Progress()` method creates animated bars that fill as work completes:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.ProgressBarsTutorial.LoadSingleAsset
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/ProgressBarsTutorial.cs > ProgressBarsTutorial.LoadSingleAsset
 ```
 
 Run the code:
@@ -48,8 +48,8 @@ Your first progress bar is working.
 
 Games load many assets at once. Let's add parallel progress bars with different sizes - the world map is larger than sound effects:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.ProgressBarsTutorial.LoadMultipleAssets
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/ProgressBarsTutorial.cs > ProgressBarsTutorial.LoadMultipleAssets
 ```
 
 Run it:
@@ -70,8 +70,8 @@ Now we're tracking multiple operations with realistic sizes.
 
 Loading screens typically show more than just a bar. Let's add a spinner animation and elapsed time to make our display more informative:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.ProgressBarsTutorial.CustomizeLoadingDisplay
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/ProgressBarsTutorial.cs > ProgressBarsTutorial.CustomizeLoadingDisplay
 ```
 
 Run it:
@@ -92,8 +92,8 @@ Your loading screen is getting more informative.
 
 Let's add some color to make completed progress stand out. We'll use green for the filled portion and gray for the remaining:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.ProgressBarsTutorial.StyleTheLoadingScreen
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/ProgressBarsTutorial.cs > ProgressBarsTutorial.StyleTheLoadingScreen
 ```
 
 Run it:
@@ -114,8 +114,8 @@ The loading screen has some visual polish now.
 
 Some assets depend on others - textures can't load until the world map is partially ready. Let's add textures that wait until the world map reaches 25%:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.ProgressBarsTutorial.StartTaskProgrammatically
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/ProgressBarsTutorial.cs > ProgressBarsTutorial.StartTaskProgrammatically
 ```
 
 Run it:
@@ -136,8 +136,8 @@ Dependent loading sequences are now under control.
 
 Let's combine everything into a polished loading screen with all five assets, custom styling, and timing information:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.ProgressBarsTutorial.Run(Spectre.Console.IAnsiConsole)
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/ProgressBarsTutorial.cs > ProgressBarsTutorial.Run
 ```
 
 Run the complete application:

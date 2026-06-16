@@ -23,8 +23,8 @@ For **simple key-value pairs**, consider using a table with hidden headers or a 
 
 Add columns first, then rows. Each row must have the same number of cells as columns.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.BasicTableExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.BasicTableExample
 ```
 
 ## Styling
@@ -33,8 +33,8 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.BasicTabl
 
 Choose from 18 built-in border styles. Use `RoundedBorder()` for a modern look or `AsciiBorder()` for maximum compatibility.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.TableBordersExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.TableBordersExample
 ```
 
 > [!NOTE]
@@ -44,8 +44,8 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.TableBord
 
 Use `BorderColor()` to match your application's theme. Combine with markup in headers for emphasis.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.TableColorsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.TableColorsExample
 ```
 
 ## Column Configuration
@@ -54,40 +54,40 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.TableColo
 
 Align column content with `LeftAligned()`, `Centered()`, or `RightAligned()`. Right-align numeric data for easier comparison.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.TableAlignmentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.TableAlignmentExample
 ```
 
 ### Width and Padding
 
 Fix column widths with `Width()`, adjust spacing with `PadLeft()` and `PadRight()`, or prevent wrapping with `NoWrap()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.ColumnConfigurationExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.ColumnConfigurationExample
 ```
 
 ## Headers and Footers
 
 Headers display by default. Add footers for totals or summaries. Use `HideHeaders()` for key-value style layouts.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.HeadersAndFootersExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.HeadersAndFootersExample
 ```
 
 ### Hidden Headers
 
 Tables without headers work well for configuration or property displays.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.HiddenHeadersExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.HiddenHeadersExample
 ```
 
 ## Titles and Captions
 
 Add context with a title above the table and a caption below. Both support markup.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.TitlesAndCaptionsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.TitlesAndCaptionsExample
 ```
 
 ## Row Formatting
@@ -96,24 +96,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.TitlesAnd
 
 Use `ShowRowSeparators()` to add horizontal lines between rows, improving readability for dense data.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.RowSeparatorsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.RowSeparatorsExample
 ```
 
 ### Empty Rows
 
 Insert empty rows to group related data visually.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.EmptyRowsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.EmptyRowsExample
 ```
 
 ## Layout
 
 By default, tables use minimum width. Use `Expand()` to fill available console width—useful for reports or dashboards.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.ExpandModeExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.ExpandModeExample
 ```
 
 ## Advanced Usage
@@ -122,24 +122,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.ExpandMod
 
 Embed tables within cells for hierarchical data or sub-groupings.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.NestedTablesExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.NestedTablesExample
 ```
 
 ### Mixed Content
 
 Cells accept any `IRenderable`—combine Markup, Panels, and other widgets for rich layouts.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.MixedContentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.MixedContentExample
 ```
 
 ### Dynamic Updates
 
 Modify tables at runtime with `UpdateCell()`, `InsertRow()`, and `RemoveRow()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.TableExamples.DynamicTableExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/Table.cs > TableExamples.DynamicTableExample
 ```
 
 ## See Also

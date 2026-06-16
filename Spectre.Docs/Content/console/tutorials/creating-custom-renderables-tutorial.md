@@ -91,8 +91,8 @@ Our widget skeleton is ready.
 The `Measure()` method tells Spectre.Console how wide our pill needs to be. Containers like `Table` and `Panel` call
 this before rendering to calculate layouts.
 
-```csharp:xmldocid
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.Pill.Measure(Spectre.Console.Rendering.RenderOptions,System.Int32)
+```csharp:symbol
+Spectre.Docs.Examples/SpectreConsole/Tutorials/CreatingCustomRenderablesTutorial.cs > Pill.Measure
 ```
 
 Our pill width is the text length plus 4 characters: two for padding spaces and two for the rounded cap characters. We
@@ -106,8 +106,8 @@ The measurement calculation is complete.
 
 The `Render()` method produces the actual output as `Segment` objects. Each segment contains text and an optional style.
 
-```csharp:xmldocid
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.Pill.Render(Spectre.Console.Rendering.RenderOptions,System.Int32)
+```csharp:symbol
+Spectre.Docs.Examples/SpectreConsole/Tutorials/CreatingCustomRenderablesTutorial.cs > Pill.Render
 ```
 
 We yield three segments: the left cap, the padded text, and the right cap. The `yield return` pattern lets
@@ -124,8 +124,8 @@ Our pill now renders with style.
 
 Let's put it all together with our final showcase:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Tutorials.CreatingCustomRenderablesTutorial.Run(Spectre.Console.IAnsiConsole)
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Tutorials/CreatingCustomRenderablesTutorial.cs > CreatingCustomRenderablesTutorial.Run
 ```
 
 Run the code:

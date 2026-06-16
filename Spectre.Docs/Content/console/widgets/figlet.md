@@ -23,8 +23,8 @@ For **simple horizontal dividers**, use [Rule](xref:console-widget-rule) instead
 
 Create figlet text by passing a string to the constructor. The default font renders clear, readable ASCII art.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.FigletTextExamples.BasicFigletTextExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/FigletText.cs > FigletTextExamples.BasicFigletTextExample
 ```
 
 ## Styling
@@ -33,8 +33,8 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.FigletTextExamples.Basi
 
 Use the `Color()` method to match your application's theme or emphasize the message.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.FigletTextExamples.FigletTextColorExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/FigletText.cs > FigletTextExamples.FigletTextColorExample
 ```
 
 ## Alignment
@@ -43,24 +43,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.FigletTextExamples.Figl
 
 Use `Justification` to center figlet text, creating balanced banners and headers.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.FigletTextExamples.FigletTextCenterAlignmentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/FigletText.cs > FigletTextExamples.FigletTextCenterAlignmentExample
 ```
 
 ### All Alignment Options
 
 Control horizontal positioning with left, center, or right alignment.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.FigletTextExamples.FigletTextAlignmentExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/FigletText.cs > FigletTextExamples.FigletTextAlignmentExample
 ```
 
 ## Custom Fonts
 
 Load custom FIGlet fonts from `.flf` files to change the appearance. The default font works well for most cases, but custom fonts enable unique branding.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.FigletTextExamples.FigletTextCustomFontExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/FigletText.cs > FigletTextExamples.FigletTextCustomFontExample
 ```
 
 ## Advanced Usage
@@ -69,24 +69,24 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.FigletTextExamples.Figl
 
 Combine figlet text with rules to create bordered announcements.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.FigletTextExamples.FigletTextBannerExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/FigletText.cs > FigletTextExamples.FigletTextBannerExample
 ```
 
 ### Embedding in Panels
 
 Use panels to add borders and padding around figlet text, perfect for important notifications.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.FigletTextExamples.FigletTextInPanelExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/FigletText.cs > FigletTextExamples.FigletTextInPanelExample
 ```
 
 ### Welcome Screens
 
 Build multi-line welcome messages by combining figlet text with regular text widgets.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Widgets.FigletTextExamples.FigletTextWelcomeExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Widgets/FigletText.cs > FigletTextExamples.FigletTextWelcomeExample
 ```
 
 ## See Also

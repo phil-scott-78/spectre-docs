@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.50 released!
-Description: Now with 25% less lead!
-Date: 2025-04-08
+title: Spectre.Console 0.50 released!
+description: Now with 25% less lead!
+date: 2025-04-08
 ---
 
 Version 0.50 of Spectre.Console has been released!

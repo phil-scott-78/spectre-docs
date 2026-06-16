@@ -32,9 +32,9 @@ dotnet add package Spectre.Console.Cli
 
 Now replace `Program.cs` with two commands - one to add packages and one to list them:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.MultiCommand.Step1.AddCommand
-T:Spectre.Docs.Cli.Examples.DemoApps.MultiCommand.Step1.ListCommand
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/MultiCommand/Step1/Main.cs > AddCommand
+Spectre.Docs.Cli.Examples/DemoApps/MultiCommand/Step1/Main.cs > ListCommand
 ```
 
 Wire them up using `CommandApp` with `Configure()`:
@@ -72,10 +72,10 @@ Our `add` command works, but real CLIs often have subcommands. Let's refactor so
 
 Update `Program.cs` to use `AddBranch()`:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.MultiCommand.Step2.AddPackageCommand
-T:Spectre.Docs.Cli.Examples.DemoApps.MultiCommand.Step2.AddReferenceCommand
-T:Spectre.Docs.Cli.Examples.DemoApps.MultiCommand.Step2.ListCommand
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/MultiCommand/Step2/Main.cs > AddPackageCommand
+Spectre.Docs.Cli.Examples/DemoApps/MultiCommand/Step2/Main.cs > AddReferenceCommand
+Spectre.Docs.Cli.Examples/DemoApps/MultiCommand/Step2/Main.cs > ListCommand
 ```
 
 Configure the branch structure:
@@ -119,11 +119,11 @@ Most CLIs have options that apply everywhere - things like `--verbose` or `--qui
 
 Create a base settings class that other settings inherit from:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.MultiCommand.Finished.GlobalSettings
-T:Spectre.Docs.Cli.Examples.DemoApps.MultiCommand.Finished.AddPackageCommand
-T:Spectre.Docs.Cli.Examples.DemoApps.MultiCommand.Finished.AddReferenceCommand
-T:Spectre.Docs.Cli.Examples.DemoApps.MultiCommand.Finished.ListCommand
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/MultiCommand/Finished/Main.cs > GlobalSettings
+Spectre.Docs.Cli.Examples/DemoApps/MultiCommand/Finished/Main.cs > AddPackageCommand
+Spectre.Docs.Cli.Examples/DemoApps/MultiCommand/Finished/Main.cs > AddReferenceCommand
+Spectre.Docs.Cli.Examples/DemoApps/MultiCommand/Finished/Main.cs > ListCommand
 ```
 
 The configuration stays the same - each command's settings inherit from `GlobalSettings`:

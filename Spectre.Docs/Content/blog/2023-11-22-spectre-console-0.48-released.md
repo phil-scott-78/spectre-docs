@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.48 released!
-Description: .NET 8, custom help providers, and more!
-Date: 2023-11-22
+title: Spectre.Console 0.48 released!
+description: .NET 8, custom help providers, and more!
+date: 2023-11-22
 ---
 
 Version 0.48 of Spectre.Console has been released!

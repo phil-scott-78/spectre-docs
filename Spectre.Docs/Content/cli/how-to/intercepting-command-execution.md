@@ -17,16 +17,16 @@ A timing interceptor wrapping every command, reporting execution duration automa
 
 Implement `ICommandInterceptor` with two methods: `Intercept` runs before execution, `InterceptResult` runs after. The same instance handles both, so you can store state between them.
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.InterceptingCommandExecution.TimingInterceptor
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/InterceptingCommandExecution/Main.cs > TimingInterceptor
 ```
 
 ## Register the Interceptor
 
 Use `SetInterceptor` in your configuration:
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Cli.Examples.DemoApps.InterceptingCommandExecution.Demo.RunAsync(System.String[])
+```csharp:symbol,bodyonly
+Spectre.Docs.Cli.Examples/DemoApps/InterceptingCommandExecution/Main.cs > Demo.RunAsync
 ```
 
 ## Common Use Cases

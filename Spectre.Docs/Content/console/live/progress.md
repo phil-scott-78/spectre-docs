@@ -27,8 +27,8 @@ For **simple status messages without progress tracking**, use [Status](xref:cons
 
 Create a progress context and add tasks to track their completion.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.BasicProgressExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.BasicProgressExample
 ```
 
 ## Managing Tasks
@@ -37,40 +37,40 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.BasicProg
 
 Track several concurrent operations with individual progress bars.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressMultipleTasksExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressMultipleTasksExample
 ```
 
 ### Increment vs Value Assignment
 
 Use `Increment()` for relative progress updates or set `Value` directly for absolute positioning.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressIncrementExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressIncrementExample
 ```
 
 ### Indeterminate Progress
 
 Use `IsIndeterminate()` when the total duration or size is unknown, showing an animated progress bar without percentage.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressIndeterminateExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressIndeterminateExample
 ```
 
 ### Adding Tasks Dynamically
 
 Add new tasks during execution based on discovered work or changing requirements.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressDynamicTasksExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressDynamicTasksExample
 ```
 
 ### Updating Descriptions
 
 Change task descriptions during execution to provide detailed status updates.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressTaskDescriptionUpdateExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressTaskDescriptionUpdateExample
 ```
 
 ## Display Columns
@@ -79,8 +79,8 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressT
 
 Configure which information columns appear in the progress display using `Columns()`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressCustomColumnsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressCustomColumnsExample
 ```
 
 ### Available Columns
@@ -100,32 +100,32 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressC
 
 Add visual feedback with a spinning animation indicator.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressWithSpinnerExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressWithSpinnerExample
 ```
 
 ### Timing Information
 
 Display elapsed time and remaining time estimates for operations.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressTimingColumnsExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressTimingColumnsExample
 ```
 
 ### Download Progress
 
 Use specialized columns for file download scenarios with size and speed information.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressDownloadExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressDownloadExample
 ```
 
 ## Styling
 
 Customize progress bar appearance with colors to match your application theme or convey meaning.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressBarStylingExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressBarStylingExample
 ```
 
 ## Refresh Behavior
@@ -134,32 +134,32 @@ M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressB
 
 Automatically remove the progress display after all tasks complete using `AutoClear(true)`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressAutoClearExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressAutoClearExample
 ```
 
 ### Hide Completed Tasks
 
 Remove completed tasks from view while keeping active ones visible using `HideCompleted(true)`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressHideCompletedExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressHideCompletedExample
 ```
 
 ## Async Operations
 
 Use `StartAsync()` for async/await scenarios with Task-based operations.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressAsyncExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressAsyncExample
 ```
 
 ### Returning Values
 
 Progress operations can return values for use after completion.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.Reference.Live.ProgressExamples.ProgressReturnValueExample
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/Reference/Live/Progress.cs > ProgressExamples.ProgressReturnValueExample
 ```
 
 ## See Also

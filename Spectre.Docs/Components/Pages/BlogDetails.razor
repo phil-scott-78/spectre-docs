@@ -2,6 +2,7 @@
 @using Spectre.Console
 @layout BlogLayout
 @inject IMarkdownContentService<BlogFrontMatter> BlogService
+@inject NavigationManager NavigationManager
 
 @if (_post == null)
 {
@@ -35,7 +36,8 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var page = await BlogService.GetRenderedContentPageByUrlOrDefault(FileName);
+        var url = "/blog/" + (FileName ?? string.Empty).Trim('/');
+        var page = await BlogService.GetRenderedContentPageByUrlOrDefault(url);
         if (page == null)
         {
             _post = null;
@@ -43,8 +45,8 @@
             return;
         }
 
-        _post = page.Value.Page;
-        _postContent = page.Value.HtmlContent;
+        _post = page.Page;
+        _postContent = page.HtmlContent;
 
         if (_post != null && !string.IsNullOrWhiteSpace(_post.FrontMatter.Series))
         {

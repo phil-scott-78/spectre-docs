@@ -11,32 +11,32 @@ When you need to visualize data in the terminal, use chart widgets.
 
 To compare values, use `BarChart`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.DrawingChartsHowTo.CreateBarChart
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/DrawingChartsHowTo.cs > DrawingChartsHowTo.CreateBarChart
 ```
 
 ## Create a Breakdown Chart
 
 To show proportions, use `BreakdownChart`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.DrawingChartsHowTo.CreateBreakdownChart
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/DrawingChartsHowTo.cs > DrawingChartsHowTo.CreateBreakdownChart
 ```
 
 ## Show a Calendar
 
 To highlight dates, use `Calendar`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.DrawingChartsHowTo.ShowCalendar
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/DrawingChartsHowTo.cs > DrawingChartsHowTo.ShowCalendar
 ```
 
 ## Add a Rule
 
 To draw a separator, use `Rule`.
 
-```csharp:xmldocid,bodyonly
-M:Spectre.Docs.Examples.SpectreConsole.HowTo.DrawingChartsHowTo.AddRule
+```csharp:symbol,bodyonly
+Spectre.Docs.Examples/SpectreConsole/HowTo/DrawingChartsHowTo.cs > DrawingChartsHowTo.AddRule
 ```
 
 ## See Also

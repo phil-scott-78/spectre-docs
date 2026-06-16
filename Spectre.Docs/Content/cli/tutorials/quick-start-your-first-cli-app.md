@@ -40,8 +40,8 @@ The output confirms the package was installed. Now we're ready to write some cod
 
 Open `Program.cs` and replace its contents with our greeting command:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.QuickStart.FirstCommand.GreetCommand
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/QuickStart/FirstCommand/Main.cs > GreetCommand
 ```
 
 Run the application:
@@ -64,8 +64,8 @@ The CLI automatically tells you that the name argument is missing. No extra code
 
 Arguments are great for required values, but sometimes you want optional behavior. Let's add a `--count` option to repeat the greeting:
 
-```csharp:xmldocid
-T:Spectre.Docs.Cli.Examples.DemoApps.QuickStart.Complete.GreetCommand
+```csharp:symbol
+Spectre.Docs.Cli.Examples/DemoApps/QuickStart/Complete/Main.cs > GreetCommand
 ```
 
 Run the application with the new option:

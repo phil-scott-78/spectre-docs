@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.46 released!
-Description: .NET 7 support, Layout Widget, JSON rendering
-Date: 2023-01-10
+title: Spectre.Console 0.46 released!
+description: .NET 7 support, Layout Widget, JSON rendering
+date: 2023-01-10
 ---
 
 Happy new year! 🎉  

@@ -1,7 +1,7 @@
 ---
-Title: Spectre.Console 0.49 released!
-Description: Bug fixes, bug fixes, bug fixes
-Date: 2024-04-23
+title: Spectre.Console 0.49 released!
+description: Bug fixes, bug fixes, bug fixes
+date: 2024-04-23
 ---
 
 Version 0.49 of Spectre.Console has been released!
